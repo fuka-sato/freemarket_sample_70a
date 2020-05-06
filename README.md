@@ -29,7 +29,7 @@
 |size| | |
 |condition| | |
 |delivery_price| | |
- |delivery_method | | |
+ |delivery_method|hoge|hoge|
 |delivery_area | | |
 |delivery_day| | |
 |price| | |
