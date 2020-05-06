@@ -18,7 +18,6 @@
 |birth_manth|  | |
 |birth_day | | |
 
-
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -34,6 +33,3 @@
 |delivery_day| | |
 |price| | |
 |image| | |
-
-
-## 
