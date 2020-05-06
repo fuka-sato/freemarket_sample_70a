@@ -32,3 +32,8 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 end
+
+server "54.168.156.249", user: "ec2-user", roles: %w{app db web}
+
+set :rails_env, "production"
+set :unicorn_rack_env, "production"
