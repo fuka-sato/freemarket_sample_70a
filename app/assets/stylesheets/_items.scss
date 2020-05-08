@@ -1,0 +1,29 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+span{
+  background-color: red;
+  color:white;
+}
+.seller{
+  
+  .seller-item{
+
+    &__image{
+      display: flex;
+      
+      
+
+    }
+    &__name{
+     
+
+    }
+    &__details{
+      
+
+    }
+
+
+  }
+}

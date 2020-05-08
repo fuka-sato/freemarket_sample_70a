@@ -1,2 +1,46 @@
-%h1 Items#index
-%p Find me in app/views/items/index.html.haml
+.seller
+  %span.image
+   
+  .seller-item
+    .seller-item__image
+      出品画像  
+      %span 必須
+      .seller-item__image__images
+        最大１０枚までアップロードできます
+        =link_to "#"
+    .seller-item__name
+      商品名
+      %span 必須
+      %text_field_tag "４０文字まで"
+  .seller-item__details
+    商品説明
+    %span 必須
+
+  .genre
+    .item-categoly
+      カテゴリー
+      %span 必須
+    .item-status
+      商品の状態
+      %span 必須
+  .delivery
+    .delivery-pattern
+      配送方法
+      %span 必須
+    .derivery-area
+      配送エリア
+      %span 必須
+    .delivery-day
+      配送日時
+      %span 必須
+  .price
+    価格
+    .item-price
+      商品価格
+      %span 必須
+  .sale
+    出品する
+    %Br 下書きに保存する
+
+
+
