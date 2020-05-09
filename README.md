@@ -35,7 +35,7 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-+|image_id|integer|null :false, foreign_key: true| 
+|image_id|integer|null :false, foreign_key: true| 
 |name|string|null :false|
 |discription|text|null :false|
 |cellar_id|integer|null :false, foreign_key: true|
