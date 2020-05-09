@@ -130,7 +130,7 @@
 - belongs_to :users
 - belomgs_to :items
 
-## faboritesテーブル
+## favoritesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |favorite|string||
