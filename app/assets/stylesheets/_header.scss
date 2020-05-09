@@ -1,0 +1,56 @@
+.logo {
+  max-width: 140px;
+}
+
+.submit-btn {
+  position: absolute;
+  background-color: red;
+  height: 36px;
+} 
+
+.btn {
+  display: none;
+}
+
+
+.header {
+  &__in {
+      max-width: 1040px;
+      width: 100%;
+      min-height: 82px;
+      margin: 0 auto;
+      padding: 15px 0 0;
+
+      &__main {
+        display: flex;
+        align-items: center;
+
+        &__searchbox {
+          display: flex;
+          margin-left: auto;
+          height: 36px;
+          width: 100%;
+
+          .input-box {
+            width: calc(100% - 26px);
+            height: 100px;
+            padding: 0 0 0 5px;
+          }
+
+          &__btn {
+            position: relative;
+            width: 36px;
+            border: 0;
+            cursor: pointer;
+            background-color: #3ccacc;
+
+          }
+          
+        }
+      
+      }
+      &__navi {
+
+      }
+  }
+}
