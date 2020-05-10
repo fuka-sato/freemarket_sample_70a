@@ -310,3 +310,41 @@ a {
   color: #3CCACE;
 
 }
+
+.exhibit_button {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: #3CCACE;
+  text-align: center;
+  border-radius: 4%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 10px;
+
+  a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:100%;
+    width: 100%;
+  }
+
+  &__text {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    text-decoration: none;
+    margin-bottom: 5px;
+  }
+}
+
+.exhibit_button_a {
+  margin-top: 40px;
+  width: 50%;
+  height: 50%;
+}
+
+
+
