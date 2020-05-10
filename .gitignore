@@ -28,3 +28,4 @@
 
 # Gitの管理下から.DS_Storeを外す
 .DS_Store
+config/secrets.yml
