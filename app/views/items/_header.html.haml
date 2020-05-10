@@ -1,0 +1,28 @@
+.header
+  .header__in
+    .header__in__main
+      .header__in__main__icon
+        = link_to image_tag("logo.png", class: "logo"), root_path
+
+      .header__in__main__searchbox
+        %form.header__in__main__searchbox__input
+          %input(type="text" placeholder="キーワードから探す")
+          %button(type="submit")
+            = image_tag("icon-search 1.png", class: "searchbtn")
+
+          
+    .header__in__navi
+      %ul.header__in__navi__left
+        %li.header__in__navi__left__categoly
+          = link_to "#" do
+            カテゴリー
+        %li.header__in__navi__left__brand
+          = link_to "#" do
+            ブランド
+      %ul.header__in__navi__right
+        %li.header__in__navi__right__login
+          = link_to "#" do
+            ログイン
+        %li.header__in__navi__right__new
+          = link_to "#" do
+            新規会員登録
