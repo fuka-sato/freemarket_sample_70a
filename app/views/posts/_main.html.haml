@@ -1,5 +1,76 @@
 .main
   .main__visual
-    テスト
     .main__visual__content
-    .main__visual__picture
+      %h2.main__visual__content__subtitle
+        人生を変えるフリマアプリ
+      %p.main__visual__content__text
+        FURIMAは誰でも簡単に出品・購入できる 
+        %br
+        フリマアプリです
+      .main__visual__content__btn
+        = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class:"abtn"), "#"
+        = link_to image_tag("google-play-badge.svg", class:"gbtn"), "#"
+
+  .main__introduction 
+    %h2.main__introduction__subtitle
+      FURIMAが選ばれる3つの理由
+      .after
+    %ul.main__introduction__lists
+      %li.main__introduction__lists__list
+        .main__introduction__lists__list__pict
+          %span.number 1
+          = image_tag("pict-reason-01.jpg", class:"pict")
+        %h3.main__introduction__lists__list__text
+          %span 3分
+          ですぐに出品
+        %p.main__introduction__lists__list__description
+          スマホで入力するだけで簡単に出品できる！
+
+      %li.main__introduction__lists__list
+        .main__introduction__lists__list__pict
+          %span.number 2
+          = image_tag("pict-reason-02.jpg", class:"pict")
+        %h3.main__introduction__lists__list__text
+          %span シンプル
+          で使いやすい
+        %p.main__introduction__lists__list__description
+          めんどくさい入力は必要なく、検索も購入もスムーズ！
+
+      %li.main__introduction__lists__list
+        .main__introduction__lists__list__pict
+          %span.number 3
+          = image_tag("pict-reason-03.jpg", class:"pict")
+        %h3.main__introduction__lists__list__text
+          手数料
+          %span 業界最安
+        %p.main__introduction__lists__list__description
+          最大3%でお得に出品&購入！
+
+
+
+
+
+
+  .main__middle__dl
+    .main__middle__dl__content
+      %h2.main__middle__dl__content__subtitle
+        会員数日本一
+      %p.main__middle__dl__content__text
+        FURIMAは、フリマアプリで最も人気
+        %br
+        出品・購入回数も業界最多です！
+        %br
+        ほしかったあの商品に出会えるかもしれません。
+      .main__middle__dl__content__btn
+        = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class:"abtn"), "#"
+        = link_to image_tag("google-play-badge.svg", class:"gbtn"), "#"
+
+  .main__bottom__dl
+    .main__bottom__dl__content
+      %h2.main__bottom__dl__content__subtitle
+        誰でもかんたん、人生を変えるフリマアプリ
+      %p.main__bottom__dl__content__text
+        今すぐ無料ダウンロード！
+      .main__bottom__dl__content__btn
+        = link_to image_tag("Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class:"abtn"), "#"
+        = link_to image_tag("google-play-badge.svg", class:"gbtn"), "#"
