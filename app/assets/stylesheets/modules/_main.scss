@@ -15,7 +15,6 @@
       width: 100%;
       margin: 0 auto;
       padding: 100px 0 0 0; 
-      // ↑要調整
 
       &__subtitle {
         font-size: 60px;
@@ -270,6 +269,7 @@
 .main__bottom__dl {
   background-image: image-url("bg-appBanner-pict.jpg");
   padding: 100px 40px;
+  margin-top: 80px;
   position: relative;
   background-size: cover;
   background-position: center;
