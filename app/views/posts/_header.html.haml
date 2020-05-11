@@ -1,0 +1,12 @@
+.header
+  .header__in
+    .header__in__main
+      = link_to image_tag("logo.png", class: "logo"), root_path
+      .header__in__main__searchbox
+        = text_field :content, class: "input-box", placeholder: "キーワードから探す"
+        .header__in_main__searchbox_btn
+        %label{class: "btn__image"}
+          = image_tag("icon-search 1.png", class: "submit-btn")
+          = button_tag :submit, class: "btn"
+
+    .header__in__navi
