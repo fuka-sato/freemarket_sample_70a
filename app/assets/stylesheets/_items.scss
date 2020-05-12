@@ -1,29 +1,185 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.head-logo {
+  height: 40px;
+  max-width: 70%;
+  margin: 0  auto;
+}
+
+.seller{
+  text-align: start;
+  margin-left: 60px;
+  .seller-item{
+    &__image{
+      &__text{
+        display: flex;
+        margin-bottom: 5px;
+        h2 {
+          float: left;
+        }
+        span{
+          float: right;
+        }
+      }
+      &__images{
+        p{
+          font-size: 13px;
+        }
+        form{
+          height: 50px;
+          width: 50vw;
+        }
+      }
+    }
+    &__name{
+      &__text{
+        display: flex;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
+      &__message{
+        &__input{
+
+
+          }
+        }
+          
+      }
+
+    }
+  } 
+  .seller__details{
+    &__text{
+      display: flex;
+      margin-bottom: 5px;
+      h2{
+        float: left;
+      }
+      span{
+        float: right;
+      }
+    }  
+    &__product{
+      p{
+        font-size: 13px;
+      }
+    }
+  }
+  .genre{
+    &__categoly{
+      display: flex;
+      margin-bottom: 5px;
+      h2{
+        float: left;
+      }
+      span{
+        float: right;
+      }
+    }
+    &__input{
+      &__form{
+        height: 60px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+  .status{
+    &__item{
+      display: flex;
+      margin-bottom: 5px;
+      h2{
+        float: left;
+      }
+      span{
+        float: right;
+      }
+    }
+  }
+  .delivery{
+    &__pattern{
+      display: flex;
+      margin-bottom: 5px;
+      h2{
+        float: left;
+      }
+      span{
+        float: right;
+      }
+    }
+    &__area{
+      display: flex;
+      margin-bottom: 5px;
+      h2{
+        float: left;
+      }
+      span{
+        float: right;
+      }
+    }
+    &__input{
+      &__area{
+        height: 60px;
+        margin-bottom: 40px;
+      }
+      
+    }
+    &__day__date{
+      display: flex;
+      margin-bottom: 5px;
+      h2{
+        float: left;
+      }
+      span{
+        float: right;
+      }
+    }
+  }
+  .price{
+    &__item{
+      display: flex;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      h2{
+        float: left;
+      }
+      span{
+        float: right;
+      }
+    }
+  }
+  .sale{
+    &__input{
+      background-color: red;
+      color: white;
+    }
+    &__draft{
+      background-color: rgb(225, 223, 223);
+    }
+  }
+}
+
 span{
   background-color: red;
   color:white;
+  font-size: 14px;
+  padding: 2px;
+  border-radius: 5px;
 }
-.seller{
-  
-  .seller-item{
 
-    &__image{
-      display: flex;
-      
-      
-
-    }
-    &__name{
-     
-
-    }
-    &__details{
-      
-
-    }
+input{
+  width: 80vw;
+  height: 50px;
+  margin-bottom: 50px;
+}
 
 
-  }
+h2{
+  font-weight: bold;
+  margin-right: 2px;
+}
+.date{
+  text-align: center;
+  margin-bottom: o;
 }
