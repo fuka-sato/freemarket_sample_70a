@@ -8,10 +8,9 @@
 |email|string|null :false|
 
 ### Association
-- has_many :items, through: users_items
 - has_many :payment
 - has_many :comments
-- has_one :favorites
+- has_many :favorites
 - has_one :profiles
 - has_one :shipping_address
 - has_one :points
@@ -26,7 +25,7 @@
 |family_name_kana|string|null :false|
 |first_name_kana|string|null :false|
 |birth_year|integer|null :false|
-|birth_manth|integer|null :false|
+|birth_month|integer|null :false|
 |birth_day|integer|null :false|
 
 ### Association
@@ -38,7 +37,7 @@
 |image_id|integer|null :false, foreign_key: true| 
 |name|string|null :false|
 |discription|text|null :false|
-|cellar_id|integer|null :false, foreign_key: true|
+|sellar_id|integer|null :false, foreign_key: true|
 |buyer_id|integer|hull :false, foreign_key: true|
 |category_id|integer|null :false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
@@ -51,7 +50,6 @@
 
 ### Association
 - has_many :images
-- has_many :users, through: users_items
 - has_many :favorits
 - belongs_to :comments
 - belongs_to :categorys
