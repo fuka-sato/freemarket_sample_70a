@@ -1,0 +1,75 @@
+//商品詳細ページ
+.details__breadcrumbs{
+  height: 50px;
+  background-color: #ffffff;
+  border-top: 1px solid #eeeeee;
+  box-shadow: 0 3px 3px #d7d7d7;
+  list-style: none;
+  
+  &__text{
+  font-size: 14px;
+  padding-left: 165px;
+
+  .text__category {
+    float: left;
+    padding: 0 10px 0 0;
+    display: inline-block;
+    font-family: メイリオ;
+    margin-top: 16px;
+
+    .breadcrumbs__text {
+      color: black;      
+   }        
+  }
+ }
+}
+
+.mainProduct {
+  
+  &__content {
+    padding: 40px;
+
+    &__top {
+      margin: 0 auto;
+      width: 700px;
+      
+
+      &__items {
+        background-color: #ffffff;
+
+        &__name {
+        
+        }
+        &__image{
+
+          .zoom{
+
+          }
+          
+          &-small{
+
+            .small{
+
+            }
+          }
+      &__price{
+        
+        .amount{
+
+        }
+        
+        .details{
+
+        }
+      &__introduction{
+
+      &__tab{
+        
+      }
+      }
+     }
+    }
+   }
+  }
+ }
+}
