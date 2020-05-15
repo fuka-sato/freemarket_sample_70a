@@ -51,7 +51,7 @@
 |price|integer|null :false|
 
 ### Association
-- has_many :favorits
+- has_many :favorites
 - has_many :comments
 - belongs_to :user
 - belongs_to :categorys
@@ -61,11 +61,12 @@
 - belongs_to :delivery_areas
 - belongs_to :delivery_days
 - belongs_to :conditions
-- belongs_to :comments
+
 
 ## shipping_addressテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null :false, foreign_key: true|
 |family_name|string|null :false|
 |first_name|string|null :false|
 |family_name_kana|string|null :false|
@@ -83,7 +84,7 @@
 ## profilesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|users_id|integer|null :false, foreign_key: true|
+|user_id|integer|null :false, foreign_key: true|
 |user_image|text||
 |introduction|text||
 |birth_year|integer|null :false|
