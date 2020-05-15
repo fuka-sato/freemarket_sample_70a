@@ -38,7 +38,7 @@
 |------|----|-------|
 |name|string|null :false|
 |discription|text|null :false|
-|sellar_id|reference|null :false, foreign_key: true|
+|seller_id|reference|null :false, foreign_key: true|
 |buyer_id|reference|hull :false, foreign_key: true|
 |category_id|reference|null :false, foreign_key: true|
 |brand_id|reference|foreign_key: true|
@@ -85,7 +85,6 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null :false, foreign_key: true|
-|null :false, foreign_key: true|
 |card_number|integer|null :false|
 |expiration_month|integer|null :false|
 |expiration_year|integer|null :false|
@@ -147,6 +146,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |category|string|null :false|
+|ancestory|string|null :false|
 
 ### Association
 - has_many :items
@@ -187,6 +187,7 @@
 ## delivery_areasテーブル
 |Column|Type|Options|
 |------|----|-------|
+|item_id|reference|null :false|
 |delivery_area|string|null :false|
 
 ### Association
@@ -195,6 +196,7 @@
 ## delivery_daysテーブル
 |Column|Type|Options|
 |------|----|-------|
+|item_id|reference|null :false|
 |delivery_day|integer|null :false|
 
 ### Association
