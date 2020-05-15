@@ -36,7 +36,6 @@
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image|string|null :false|
 |name|string|null :false|
 |discription|text|null :false|
 |sellar_id|integer|null :false, foreign_key: true|
@@ -53,6 +52,7 @@
 ### Association
 - has_many :favorites
 - has_many :comments
+- has_many :item_images
 - belongs_to :user
 - belongs_to :category
 - belongs_to :size
@@ -215,6 +215,15 @@
 |Column|Type|Options|
 |------|----|-------|
 |condition|string|null :false|
+
+### Association
+- has_many :items
+
+## item_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item_id|integer|null :false, foreign_key: true|
+|item_image|string|null :false|
 
 ### Association
 - has_many :items
