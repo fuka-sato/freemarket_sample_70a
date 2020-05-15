@@ -8,18 +8,20 @@
 |email|string|null :false|
 
 ### Association
-- has_many :payment
+- has_many :payments
 - has_many :comments
 - has_many :favorites
-- has_one :profiles
+- has_many :items
+- has_one :profile
 - has_one :shipping_address
-- has_one :points
+- has_one :point
 - has_one :profit
 - has_one :sns
 
 ## profiles
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null :false, foreign_key: true|
 |family_name|string|null :false|
 |first_name|string|null :false|
 |family_name_kana|string|null :false|
@@ -29,12 +31,12 @@
 |birth_day|integer|null :false|
 
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|image_id|integer|null :false, foreign_key: true| 
+|image|string|null :false|
 |name|string|null :false|
 |discription|text|null :false|
 |sellar_id|integer|null :false, foreign_key: true|
@@ -49,9 +51,9 @@
 |price|integer|null :false|
 
 ### Association
-- has_many :images
 - has_many :favorits
-- belongs_to :comments
+- has_many :comments
+- belongs_to :user
 - belongs_to :categorys
 - belongs_to :sizes
 - belongs_to :brands
@@ -76,7 +78,7 @@
 |telephone_number|integer||
 
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ## profilesテーブル
 |Column|Type|Options|
@@ -89,7 +91,7 @@
 |birth_day|integer|null :false|
 
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ## paymentテーブル
 |Column|Type|Options|
@@ -100,39 +102,117 @@
 |security_code|integer|null :false|
 
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ## snsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null :false, foreign_key: true|
 |provider|string||
 
-
 ### Association
-- belongs_to :users
+- belongs_to :user
 
 ## profitテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null :false, foreign_key: true|
 |amount|integer||
 
 ### Association
--belongs_to :users
+-belongs_to :user
+
+## pointsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user_id|integer|null :false, foreign_key: true|
+|point|integer||
+
+### Association
+-belongs_to :user
+
 
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null :false, foreign_key: true|
+|item_id|integer|null :false, foreign_key: true|
 |comment|text||
 
 ### Association
-- belongs_to :users
-- belomgs_to :items
+- belongs_to :user
+- belomgs_to :item
 
 ## favoritesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|favorite|string||
+|user_id|integer|null :false, foreign_key: true|
+|item_id|integer|null :false, foreign_key: true|
 
 ### Association
-- belongs_to :users
-- belongs_to :items
+- belongs_to :user
+- belongs_to :item
+
+## categorysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null :false|
+
+### Association
+- has_many :items
+
+## sizesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|size|string|null :false|
+
+### Association
+- has_many :items
+
+## categorysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|category|string|null :false|
+
+### Association
+- has_many :items
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|brand|string||
+
+### Association
+- has_many :items
+
+## delivery_pricesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|delivery_price|integer|null :false|
+
+### Association
+- has_many :items
+
+## delivery_areasテーブル
+|Column|Type|Options|
+|------|----|-------|
+|delivery_area|string|null :false|
+
+### Association
+- has_many :items
+
+## delivery_daysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|delivery_day|integer|null :false|
+
+### Association
+- has_many :items
+
+## conditionsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|condition|string|null :false|
+
+### Association
+- has_many :items
