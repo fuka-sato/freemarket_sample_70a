@@ -21,7 +21,7 @@
 ## profiles
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null :false, foreign_key: true|
+|user_id|reference|null :false, foreign_key: true|
 |family_name|string|null :false|
 |first_name|string|null :false|
 |family_name_kana|string|null :false|
@@ -38,15 +38,15 @@
 |------|----|-------|
 |name|string|null :false|
 |discription|text|null :false|
-|sellar_id|integer|null :false, foreign_key: true|
-|buyer_id|integer|hull :false, foreign_key: true|
-|category_id|integer|null :false, foreign_key: true|
-|brand_id|integer|foreign_key: true|
-|size_id|integer|foreign_key: true|
-|condition_id|integer|null :false, foreign_key: true|
-|delivery_price_id|integer|null :false, foreign_key: true|
-|delivery_area_id|integer|null :false, foreign_key: true|
-|delivery_day_id|integer|null :false, foreign_key: true|
+|sellar_id|reference|null :false, foreign_key: true|
+|buyer_id|reference|hull :false, foreign_key: true|
+|category_id|reference|null :false, foreign_key: true|
+|brand_id|reference|foreign_key: true|
+|size_id|reference|null :false, foreign_key: true|
+|condition_id|reference|null :false, foreign_key: true|
+|delivery_price_id|reference|null :false, foreign_key: true|
+|delivery_area_id|reference|null :false, foreign_key: true|
+|delivery_day_id|reference|null :false, foreign_key: true|
 |price|integer|null :false|
 
 ### Association
@@ -66,7 +66,7 @@
 ## shipping_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null :false, foreign_key: true|
+|user_id|reference|null :false, foreign_key: true|
 |family_name|string|null :false|
 |first_name|string|null :false|
 |family_name_kana|string|null :false|
@@ -76,20 +76,7 @@
 |city|string|null :false|
 |address|string|null :false|
 |building_name|string||
-|telephone_number|integer||
-
-### Association
-- belongs_to :user
-
-## profilesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null :false, foreign_key: true|
-|user_image|text||
-|introduction|text||
-|birth_year|integer|null :false|
-|birth_month|integer|null :false|
-|birth_day|integer|null :false|
+|telephone_number|string||
 
 ### Association
 - belongs_to :user
@@ -97,7 +84,8 @@
 ## paymentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null :false, foreign_key: true|
+|user_id|reference|null :false, foreign_key: true|
+|null :false, foreign_key: true|
 |card_number|integer|null :false|
 |expiration_month|integer|null :false|
 |expiration_year|integer|null :false|
@@ -109,7 +97,7 @@
 ## snsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null :false, foreign_key: true|
+|user_id|reference|null :false, foreign_key: true|
 |provider|string||
 
 ### Association
@@ -118,7 +106,7 @@
 ## profitsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null :false, foreign_key: true|
+|user_id|reference|null :false, foreign_key: true|
 |amount|integer||
 
 ### Association
@@ -127,7 +115,7 @@
 ## pointsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null :false, foreign_key: true|
+|user_id|reference|null :false, foreign_key: true|
 |point|integer||
 
 ### Association
@@ -137,8 +125,8 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null :false, foreign_key: true|
-|item_id|integer|null :false, foreign_key: true|
+|user_id|reference|null :false, foreign_key: true|
+|item_id|reference|null :false, foreign_key: true|
 |comment|text||
 
 ### Association
@@ -148,8 +136,8 @@
 ## favoritesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null :false, foreign_key: true|
-|item_id|integer|null :false, foreign_key: true|
+|user_id|reference|null :false, foreign_key: true|
+|item_id|reference|null :false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -190,6 +178,7 @@
 ## delivery_pricesテーブル
 |Column|Type|Options|
 |------|----|-------|
+|item_id|reference|null :false|
 |delivery_price|integer|null :false|
 
 ### Association
@@ -222,7 +211,7 @@
 ## item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|integer|null :false, foreign_key: true|
+|item_id|reference|null :false, foreign_key: true|
 |item_image|string|null :false|
 
 ### Association
