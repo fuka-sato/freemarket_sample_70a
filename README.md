@@ -72,7 +72,7 @@
 |family_name_kana|string|null :false|
 |first_name_kana|string|null :false|
 |zip_code|integer|null :false|
-|prefecutures|string|null :false|
+|prefecuture|string|null :false|
 |city|string|null :false|
 |address|string|null :false|
 |building_name|string||
