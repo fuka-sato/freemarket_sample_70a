@@ -54,16 +54,16 @@
 - has_many :favorites
 - has_many :comments
 - belongs_to :user
-- belongs_to :categorys
-- belongs_to :sizes
-- belongs_to :brands
-- belongs_to :delivery_prices
-- belongs_to :delivery_areas
-- belongs_to :delivery_days
-- belongs_to :conditions
+- belongs_to :category
+- belongs_to :size
+- belongs_to :brand
+- belongs_to :delivery_price
+- belongs_to :delivery_area
+- belongs_to :delivery_day
+- belongs_to :condition
 
 
-## shipping_addressテーブル
+## shipping_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null :false, foreign_key: true|
@@ -94,9 +94,10 @@
 ### Association
 - belongs_to :user
 
-## paymentテーブル
+## paymentsテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null :false, foreign_key: true|
 |card_number|integer|null :false|
 |expiration_month|integer|null :false|
 |expiration_year|integer|null :false|
@@ -114,7 +115,7 @@
 ### Association
 - belongs_to :user
 
-## profitテーブル
+## profitsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null :false, foreign_key: true|
