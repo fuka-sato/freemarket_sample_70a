@@ -1,0 +1,96 @@
+.head-logo
+  =image_tag '/assets/logo.png', class:"logo"
+
+.seller  
+  .seller-item
+    .seller-item__image
+      
+      .seller-item__image__text
+        %h2 出品画像 
+        %span 必須
+      .seller-item__image__images
+        %p 最大3枚までアップロードできます
+      .form
+        %label
+          = icon('fas', 'camera', class: 'icon')
+          %input.form-file{:type => "file", :maximage => "3", :name => "avatar", :accept => ".png, .jpg, .jpeg, .pdf, .doc"}
+
+
+
+    .seller-item__name
+      .seller-item__name__text
+        %h2 商品名
+        %span 必須
+      .seller-item__name__message
+        %input.seller-item__name__message__input{:name => "item", :placeholder => "40文字まで入力できます", :type =>"text", :value => "", :maxlength => "40", :required => "required"}/
+
+  .seller__details
+    .seller__details__text
+      %h2 商品説明
+      %span 必須
+    .seller__details__product
+      %p 色、素材、重さ、低下、注意点など。
+      %P 例）2010年ごろに1万円で購入したジャケットです。食べ物をこぼしてしまい、目立つ汚れがあります。
+      %input.seller__details__input{:name => "itemname", :placeholder => "商品の説明を入力してください。(必須 1,000文字以内)", :type =>"text", :value => "", :maxlength => "1000", :required => "required"}/
+    
+  .genre
+    .genre__categoly
+      %h2 カテゴリー
+      %span 必須
+    .genre__input  
+      %select.genre__input__form{:name => "categoly", :placeholder => "カテゴリーを選択してください。", :type =>"text", :value => "", :required => "required"}
+        %option{:value => "0"} 選択してください　　　　　　　　　　　
+        %option{:value => "1"} レディース
+        %option{:value => "2"} メンズ
+        %option{:value => "3"} ベビー・キッズ
+        %option{:value => "4"} インテリア・住まい・小物
+        %option{:value => "5"} 本・音楽・ゲーム
+        %option{:value => "6"} おもちゃ・ホビー・グッズ
+    .genre__brand
+      %h3 ブランド（任意）
+      %input.genre__brand__input{:name => "brand", :placeholder => "ブランド名を入力してください。", :type =>"text", :value => ""}/
+  .status
+    .status__item
+      %h2 商品の状態
+      %span 必須
+    .status__input
+      %input.item-status__input{:name => "itemnstatus", :placeholder => "商品の状態を入力してください。", :type =>"text", :value => "", :required => "required"}/
+  .delivery
+    .delivery__pattern
+      %h2 配送方法
+      %span 必須
+    .delivery__way
+      %input.delivery__way__input{:name => "delivery", :placeholder => "配送方法を指定してください。", :type =>"text", :value => "", :required => "required"}/
+    .delivery__area
+      %h2 配送エリア
+      %span 必須
+    .delivery__input
+      %select.delivery__input__area{:name => "area", :placeholder => "配送地域を指定してください。", :type =>"text", :value => "", :required => "required"}
+        %option{:value => "0"} 配送地域を選択してください　　　　　　　　　　　
+        %option{:value => "1"} 大阪
+        %option{:value => "2"} 東京
+        %option{:value => "3"} 名古屋
+        %option{:value => "4"} 福岡
+        %option{:value => "5"} 札幌
+        %option{:value => "6"} 沖縄
+
+
+
+
+    .delivery__day
+      .delivery__day__date 
+        %h2 配送までの日数
+        %span 必須
+      %input{:type => "number", :name => "date", :min => "1", :required => "required"}
+        =label_tag (:"日")
+  .price
+    価格(¥300~9,999,999)
+    .price__item
+      %h2 商品価格
+      %span 必須
+    .price__input
+      %input{:type => "number", :name => "price", :max => "9999999", :min => "300", :required => "required"}  
+        =label_tag (:"円")
+  .sale
+    %input.sale__input{:type => "submit", :value => "出品する"}
+    %input.sale__draft{:type => "submit", :value => "下書きに保存する"} 
