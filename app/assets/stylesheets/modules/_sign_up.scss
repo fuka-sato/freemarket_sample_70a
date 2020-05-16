@@ -88,15 +88,23 @@
           }
           &__name-kanji {
             margin: 24px 0 0;
+            width: 100%;
 
             &__box {
               display: flex;
+              .family {
+                margin-right: 15px;
+              }
             }
           }
           &__name-katakana {
+            width: 100%;
             margin: 24px 0 0;
             &__box {
               display: flex;
+              .family {
+                margin-right: 15px;
+              }
             }
           }
           &__birth {
@@ -181,20 +189,6 @@
   } 
 }
 
-
-
-
-
-
-.family {
-  margin-right: 8px;
-  width: calc(50% - 6px);
-}
-
-.first {
-  margin: 8px 0 0;
-  width: calc(50% - 6px);
-}
 
 button.sign_up__main__in__form__input__btn {
   margin: 24px 0;
