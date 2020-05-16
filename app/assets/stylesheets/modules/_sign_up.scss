@@ -1,0 +1,159 @@
+.sign_up {
+  padding: 0 0 220px;
+  font-size: 13px;
+
+  &__header {
+    height: 128px;
+    text-align: center;
+
+    &__logo {
+      margin: 40px 0 0;
+      
+      .logo {
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+      }
+    }
+  }
+  &__main {
+    width: 700px;
+    margin: 0 auto;
+    // text-align: center;
+
+    &__in {
+      
+
+      &__subtitle {
+        font-size: 22px;
+        padding: 32px;
+        font-weight: bold;
+      }
+      &__form {
+        padding: 24px 16px 40px;
+
+        &__input {
+          max-width: 343px;
+
+          &__mailadress {
+            margin: 24px 0 0;
+          }
+          &__password {
+            margin: 24px 0 0;
+            
+            &__info {
+              margin: 8px 0 0;
+              line-height: 1.5;
+              color: #888;
+              
+            }
+          }
+          &__identification {
+
+            h3 {
+              margin: 24px 0 0;
+              font-weight: bold;
+              
+            }
+            &__text {
+              margin: 8px 0 0;
+              padding: 0;
+              
+            }
+          }
+          &__name-kanji {
+            margin: 24px 0 0;
+
+            &__box {
+              display: flex;
+            }
+          }
+          &__name-katakana {
+            margin: 24px 0 0;
+            &__box {
+              display: flex;
+            }
+          }
+          &__birth {
+            margin: 24px 0 0;
+
+            select {
+              z-index: 2;
+              height: 48px;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              font-size: 16px;
+              line-height: 1.5;
+              cursor: pointer;
+            }
+            .year {
+              background-color: white;
+              color: black;
+              margin: 0 2px;
+            }
+            .month {
+              background-color: white;
+              color: black;
+              margin: 0 2px;
+            }
+            .day {
+              background-color: white;
+              color: black;
+              margin: 0 2px;
+            }
+            &__text {
+              margin: 8px 0 0;
+              line-height: 1.5;
+              color: #888;
+            }
+          }
+          &__terms {
+            margin: 40px 0 0;
+            .terms {
+              background-color: white;
+              color: black;
+            }
+          }
+          
+        }
+      } 
+    }
+  }
+}
+
+label {
+  font-weight: 600;
+}
+
+span {
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  background-color: rgb(65, 203, 213);
+}
+
+input {
+  width: 100%;
+  margin: 8px 0 0;
+  height: 48px;
+  padding: 0 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.family {
+  margin-right: 8px;
+  width: calc(50% - 6px);
+}
+
+.first {
+  margin: 8px 0 0;
+  width: calc(50% - 6px);
+}
