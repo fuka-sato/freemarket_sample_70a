@@ -10,10 +10,11 @@
         %span 必須
       .seller-item__image__images
         %p 最大3枚までアップロードできます
-        .form
-          =image_tag '/assets/icon_camera.png', class:'camera'
-          =file_field :image, style:"", id:"upfile", required:"required", maximage:"3"
-          
+      .form
+        %label
+          = icon('fas', 'camera', class: 'icon')
+          %input.form-file{:type => "file", :maximage => "3", :name => "avatar", :accept => ".png, .jpg, .jpeg, .pdf, .doc"}
+
 
 
     .seller-item__name
@@ -28,7 +29,8 @@
       %h2 商品説明
       %span 必須
     .seller__details__product
-      %p 色、素材、重さ、低下、注意点など。例）2010年ごろに1万円で購入したジャケットです。食べ物をこぼしてしまい、目立つ汚れがあります。
+      %p 色、素材、重さ、低下、注意点など。
+      %P 例）2010年ごろに1万円で購入したジャケットです。食べ物をこぼしてしまい、目立つ汚れがあります。
       %input.seller__details__input{:name => "itemname", :placeholder => "商品の説明を入力してください。(必須 1,000文字以内)", :type =>"text", :value => "", :maxlength => "1000", :required => "required"}/
     
   .genre
