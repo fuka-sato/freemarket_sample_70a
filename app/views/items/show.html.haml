@@ -22,21 +22,22 @@
 .mainProduct
   .mainProduct__content
     .mainProduct__content__top
-      .mainProduct__conten__top__items
+      .mainProduct__content__top__items
         %h2.mainProduct__content__top__items__name
           product3
-        %ul.mainProduct__comtent__top__items__image
+        %ul.mainProduct__content__top__items__image
           %li.zoom
-          
+          = image/tag 'a007.png', width: "560", height: "350"
+        %ul.mainProduct__content__top__items__images
           %li.small
-
+          = image_tag 'a007.png'
           %li.small
-
+          = image_tag 'a001.png'
           %li.small
-
+          = image_tag 'a004.png'
         
         .mainProduct__content__top__items__price
-          %span.amount
+          .amount
             ¥30000
           %span.details
             （税込）
@@ -47,9 +48,9 @@
           親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
 
         %table.mainProduct__content__top__items__table
-          %tbody
+          %tbody.table-box
             
-            %tr.itemTable
+            %tr.itemTables
               %th.itemTable-left
                 出品者
               %td.itemTable-right 
@@ -111,17 +112,17 @@
               = icon('fas', 'flag', class: "flag-icon")
               不適切な商品の通報
         
-        .mainProduct__content__top__items__commentBox
-          %form.commentBox-text
-            %input(type="text")
-          .mainProduct__content__top__items__commentBox-notice
-            相手のことを考え丁寧なコメントを心がけましょう。
-            %br/
-            不快な言葉遣いなどは利用制限や退会処分となることがあります。
-            %br/
-          .mainProduct__content__top__items__commentBox-send
-            = icon('fas', 'comment', class: "comment-icon")
-            コメントする
+      .mainProduct__content__top__items__commentBox
+        %form.commentBox-text
+          %input(type="text")
+        .mainProduct__content__top__items__commentBox-notice
+          相手のことを考え丁寧なコメントを心がけましょう。
+          %br/
+          不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          %br/
+        .mainProduct__content__top__items__commentBox-send
+          = icon('fas', 'comment', class: "comment-icon")
+          コメントする
       
       .mainProduct__conten__top__items-links
         %ul.item-prev
