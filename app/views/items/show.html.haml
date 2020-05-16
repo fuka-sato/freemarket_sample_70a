@@ -1,3 +1,33 @@
+.header
+  .header__in
+    .header__in__main
+      .header__in__main__icon
+        = link_to image_tag("logo.png", class: "logo"), root_path
+
+      .header__in__main__searchbox
+        %form.header__in__main__searchbox__input
+          %input(type="text" placeholder="キーワードから探す")
+          %button(type="submit")
+            = image_tag("icon-search 1.png", class: "searchbtn")
+
+          
+    .header__in__navi
+      %ul.header__in__navi__left
+        %li.header__in__navi__left__categoly
+          = link_to "#" do
+            カテゴリー
+        %li.header__in__navi__left__brand
+          = link_to "#" do
+            ブランド
+      %ul.header__in__navi__right
+        %li.header__in__navi__right__login
+          = link_to "#" do
+            ログイン
+        %li.header__in__navi__right__new
+          = link_to "#" do
+            新規会員登録
+
+-# 商品詳細パンくず
 .details__breadcrumbs
   %ul.details__breadcrumbs__text
     %li.text__category
@@ -19,6 +49,7 @@
       = link_to "#", class: "breadcrumbs__text" do
         product3
 
+-# 商品詳細メインコンテンツ
 .mainProduct
   .mainProduct__content
     .mainProduct__content__top
@@ -106,17 +137,19 @@
         .mainProduct__content__top__items__optional
           %ul.optional
             %li.optional-favorite
-              = icon('fas', 'star', class: "star-icon")
-              お気に入り 0
+              = link_to "#", class: "favorite" do
+                = icon('fas', 'star', class: "star-icon")
+                お気に入り 0
             %li.optional-report
-              = icon('fas', 'flag', class: "flag-icon")
-              不適切な商品の通報
+              =link_to "#", class: "report" do
+                = icon('fas', 'flag', class: "flag-icon")
+                不適切な商品の通報
         
 
 
       .mainProduct__content__top__comments
         %form.commentBox-text
-          %input.input-text(type="text")        
+          %textarea.input-text(cols="40" rows="10" style="overflow:auto;")       
         .mainProduct__content__top__comments__notice
           .notice-text
             相手のことを考え丁寧なコメントを心がけましょう。
@@ -146,7 +179,9 @@
       .mainProduct__content__top__showMore
         = link_to "#" do
           ベビー・キッズをもっと見る
-          
+
+
+
   .main__bottom__dl
     .main__bottom__dl__content
       %h2.main__bottom__dl__content__subtitle
@@ -161,3 +196,45 @@
     = link_to image_tag("icon_camera.png", class:"exhibit_button_a"), "#"
     .exhibit_button__text
       出品する
+
+
+-# フッター
+.footer
+  %ul.footer__contents
+    %li.footer__contents__content
+      %h2.footer__contents__content__header 
+        FURIMAについて
+      %ul.footer__contents__content__texts
+        %li.footer__contents__content__texts__text
+          = link_to "会社概要（運営会社）","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "プライバシーポリシー","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "FRIMA利用規約","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "ポイントに関する特約","#",class: "link"
+
+    %li.footer__contents__content
+      %h2.footer__contents__content__header 
+        FURIMAを見る
+      %ul.footer__contents__content__texts
+        %li.footer__contents__content__texts__text
+          = link_to "カテゴリー一覧","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "ブランド一覧","#",class: "link"
+
+    %li.footer__contents__content
+      %h2.footer__contents__content__header 
+        ヘルプ&ガイド
+      %ul.footer__contents__content__texts
+        %li.footer__contents__content__texts__text
+          = link_to "FURIMAガイド","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "FURIMAロゴ利用ガイドライン","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "お知らせ","#",class: "link"
+  
+  .footer__logo
+    = link_to image_tag("logo-white.png", class:"logo"), "#"
+  %p.footer__company-name
+    © FURIMA
