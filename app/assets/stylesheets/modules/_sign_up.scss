@@ -1,14 +1,13 @@
 .sign_up {
-  padding: 0 0 220px;
+  background-color: #f8f8f8;
   font-size: 13px;
 
   &__header {
-    height: 128px;
+    height: 100px;
+    padding-top: 40px;
     text-align: center;
 
     &__logo {
-      margin: 40px 0 0;
-      
       .logo {
         width: 185px;
         height: 49px;
@@ -17,17 +16,18 @@
     }
   }
   &__main {
+    background-color: white;
     width: 700px;
     margin: 0 auto;
-    // text-align: center;
 
     &__in {
-      
-
+      width: 400px;
+      margin: 0 auto;
       &__subtitle {
         font-size: 22px;
         padding: 32px;
         font-weight: bold;
+        text-align: center;
       }
       &__form {
         padding: 24px 16px 40px;
@@ -121,6 +121,39 @@
       } 
     }
   }
+  &__footer {
+    background-color: #f8f8f8;
+    width: 456px;
+    margin: 0 auto;
+    padding-top: 30px;
+    text-align: center;
+    height: 220px;
+
+    ul {
+      display: flex;
+      margin-top: 30px;
+
+      li {
+        width: 100%;
+      }
+
+    }
+
+    a {
+      color: #333;
+      font-size: 13px;
+    }
+
+    .footerlogo {
+      width: 200px;
+      margin: 20px 0 0;
+      color: black;
+    }
+
+    p {
+      font-size: 9px;
+    }
+  } 
 }
 
 label {
@@ -156,4 +189,17 @@ input {
 .first {
   margin: 8px 0 0;
   width: calc(50% - 6px);
+}
+
+button {
+  margin: 24px 0;
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  background: #3CCACE;
+  color: #fff;
 }
