@@ -1,14 +1,21 @@
 .head-logo {
   height: 40px;
-  max-width: 70%;
+  width: 100%;
   margin: 0  auto;
+  text-align: center;
+}
+
+.logo{
+  width: 100px;
 }
 
 .seller{
   text-align: start;
   margin-left: 60px;
+  min-width: 50%;
   .seller-item{
     &__image{
+      
       &__text{
         display: flex;
         margin-bottom: 5px;
@@ -23,9 +30,10 @@
         p{
           font-size: 13px;
         }
-        form{
+        .form{
           height: 50px;
           width: 50vw;
+
         }
       }
     }
@@ -42,12 +50,9 @@
       &__message{
         &__input{
 
-
           }
         }
-          
       }
-
     }
   } 
   .seller__details{
@@ -151,7 +156,7 @@
   }
   .sale{
     &__input{
-      background-color: red;
+      background-color: rgb(65, 203, 213);
       color: white;
     }
     &__draft{

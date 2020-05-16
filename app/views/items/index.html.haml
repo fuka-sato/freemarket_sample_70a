@@ -1,16 +1,20 @@
-%p
-  =image_tag '/assets/logo.png', class:'head-logo'
+.head-logo
+  =image_tag '/assets/logo.png', class:"logo"
 
 .seller  
   .seller-item
     .seller-item__image
+      
       .seller-item__image__text
         %h2 出品画像 
         %span 必須
       .seller-item__image__images
-        %p 最大１０枚までアップロードできます
+        %p 最大3枚までアップロードできます
         .form
-          =file_field :image, style:"", id:"upfile", required:"required", maximage:"10"
+          =image_tag '/assets/icon_camera.png', class:'camera'
+          =file_field :image, style:"", id:"upfile", required:"required", maximage:"3"
+          
+
 
     .seller-item__name
       .seller-item__name__text
