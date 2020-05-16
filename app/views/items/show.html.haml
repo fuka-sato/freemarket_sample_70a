@@ -25,16 +25,15 @@
       .mainProduct__content__top__items
         %h2.mainProduct__content__top__items__name
           product3
-        %ul.mainProduct__content__top__items__image
-          %li.zoom
-          = image/tag 'a007.png', width: "560", height: "350"
+        .mainProduct__content__top__items__image
+          = image_tag 'a007.png', class: "big"
         %ul.mainProduct__content__top__items__images
-          %li.small
-          = image_tag 'a007.png'
-          %li.small
-          = image_tag 'a001.png'
-          %li.small
-          = image_tag 'a004.png'
+          %li
+            = image_tag 'a007.png', class: "small"
+          %li
+            = image_tag 'a001.png', class: "small"
+          %li
+            = image_tag 'a004.png', class: "small"
         
         .mainProduct__content__top__items__price
           .amount
@@ -46,85 +45,93 @@
         
         .mainProduct__content__top__items__introduction
           親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
-
-        %table.mainProduct__content__top__items__table
-          %tbody.table-box
+        
+        .mainProduct__content__top__items__table
+          %table
+            %tbody
+              %tr.itemTable
+                %th.table-left
+                  出品者
+                %td.table-right 
+                  hogehoge  
+  
+              %tr.itemTable2
+                %th.table-left
+                  カテゴリー
+                %td.table-right 
+                  %a(href="#")
+                    ベビー・キッズ
+                    %br/
+                  %a(href="#")
+                    ベビー服(男女兼用) ~95cm
+                    %br/
+                  %a(href="#")
+                    アウター
             
-            %tr.itemTables
-              %th.itemTable-left
-                出品者
-              %td.itemTable-right 
-                hogehoge
+              %tr.itemTable
+                %th.table-left
+                  ブランド
+                %td.table-right
             
-            %tr.itemTables
-              %th.itemTable-left
-                カテゴリー
-              %td.itemTable-right 
-                %a(href="#")
-                  ベビー・キッズ
-                  %br/
-                %a(href="#")
-                  ベビー服(男女兼用) ~95cm
-                  %br/
-                %a(href="#")
-                  アウター
             
-            %tr.itemTables
-              %th.itemTable-left
-                ブランド
-              %td.itemTable-right
-
-            %tr.itemTables
-              %th.itemTable-left
-                商品のサイズ
-              %td.itemTable-right
-
-            %tr.itemTables
-              %th.itemTable-left
-                商品の状態
-              %td.itemTable-right
-                未使用に近い
-              
-            %tr.itemTables
-              %th.itemTable-left
-                配送料の負担
-              %td.itemTable-right
-                送料込み（出品者負担）
-              
-            %tr.itemTables
-              %th.itemTable-left
-                発送元の地域
-              %td.itemTable-right
-                岩手県
+              %tr.itemTable
+                %th.table-left
+                  商品のサイズ
+                %td.table-right
             
-            %tr.itemTables
-              %th.itemTable-left
-                発送日の目安
-              %td.itemTable-right
-                4-7日で発送
+              %tr.itemTable
+                %th.table-left
+                  商品の状態
+                %td.table-right
+                  未使用に近い
+                    
+              %tr.itemTable
+                %th.table-left
+                  配送料の負担
+                %td.table-right
+                  送料込み（出品者負担）
+                
+              %tr.itemTable
+                %th.table-left
+                  発送元の地域
+                %td.table-right
+                  岩手県
+                    
+              %tr.itemTable
+                %th.table-left
+                  発送日の目安
+                %td.table-right
+                  4-7日で発送
         
         .mainProduct__content__top__items__optional
           %ul.optional
-            %li.optional-favorit
+            %li.optional-favorite
               = icon('fas', 'star', class: "star-icon")
               お気に入り 0
             %li.optional-report
               = icon('fas', 'flag', class: "flag-icon")
               不適切な商品の通報
         
-      .mainProduct__content__top__items__commentBox
+
+
+      .mainProduct__content__top__comments
         %form.commentBox-text
-          %input(type="text")
-        .mainProduct__content__top__items__commentBox-notice
-          相手のことを考え丁寧なコメントを心がけましょう。
-          %br/
-          不快な言葉遣いなどは利用制限や退会処分となることがあります。
-          %br/
-        .mainProduct__content__top__items__commentBox-send
-          = icon('fas', 'comment', class: "comment-icon")
-          コメントする
+          %input.input-text(type="text")        
+        .mainProduct__content__top__comments__notice
+          .notice-text
+            相手のことを考え丁寧なコメントを心がけましょう。
+            %br/
+            不快な言葉遣いなどは利用制限や退会処分となることがあります。
+        .mainProduct__content__top__comments__send
+          %button.send-button(type = "submit")
+            = icon('fas', 'comment', class: "comment-icon")
+            コメントする
       
-      .mainProduct__conten__top__items-links
+
+
+
+
+      .mainProduct__content__top__links
         %ul.item-prev
           %li
             = link_to "#" do
@@ -133,15 +140,13 @@
                 前の商品
           %li
             = link_to "#" do
+              次の商品
               = icon('fas', 'angle-right', class: "next-icon")
-              %span
-                次の商品
-      .mainProduct__conten__top__items-showMore
+              
+      .mainProduct__content__top__showMore
         = link_to "#" do
           ベビー・キッズをもっと見る
           
-          
-
   .main__bottom__dl
     .main__bottom__dl__content
       %h2.main__bottom__dl__content__subtitle
