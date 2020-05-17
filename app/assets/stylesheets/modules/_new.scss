@@ -1,0 +1,130 @@
+.login {
+  background-color: #f8f8f8;
+  
+  &__header {
+    background-color:#f8f8f8;
+    height: 120px;
+    text-align: center;
+
+    .headerlogo {
+      width: 200px;
+      margin-top: 20px;
+    }
+    
+  }
+  &__main {
+    background-color: #f8f8f8;
+    
+    button {
+      display: block;
+      line-height: 40px;
+      font-size: 14px;
+      cursor: pointer;
+      text-align: center;
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &__in {
+      background-color: white;
+      width: 500px;
+      margin: 0 auto;
+
+      &__no-account {
+        text-align: center;
+        padding: 40px 64px;
+
+        &__new {
+
+        a {
+          display: block;
+          margin-top: 8px;
+          margin-left: auto;
+          margin-right: auto;
+          border: 1px solid #0099e8;
+          background: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          text-align: center;
+          width: 300px;
+          }
+
+        }
+
+      }
+      &__form {
+        padding: 30px 60px;
+        text-align: center;
+
+        &__f {
+          background: #385185;
+          color: #fff;
+          border: 1px solid transparent;
+        }
+        &__g {
+          background: #fff;
+          border: 1px solid;
+          margin-top: 15px;
+        }
+        &__input {
+          input {
+            height: 26px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            width: 270px;
+            margin: 24px 0 0;
+            }
+        }
+
+        &__btn {
+          margin: 24px 0;
+          display: block;
+          width: 100%;
+          line-height: 48px;
+          font-size: 14px;
+          border: 1px solid transparent;
+          cursor: pointer;
+          text-align: center;
+          background: #3CCACE;
+          color: #fff;
+        }
+      }
+    }
+  }
+  &__footer {
+    background-color: #f8f8f8;
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+
+    ul {
+      display: flex;
+
+      li {
+        width: 100%;
+      }
+
+    }
+
+    a {
+      color: black;
+      font-size: 13px;
+    }
+
+    .footerlogo {
+      width: 200px;
+      margin: 40px 0 0;
+    }
+
+    p {
+      font-size: 9px;
+    }
+  }  
+}
