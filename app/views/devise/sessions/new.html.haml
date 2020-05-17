@@ -1,17 +1,35 @@
-%h2 Log in
-= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :password, autocomplete: "current-password"
-  - if devise_mapping.rememberable?
-    .field
-      = f.check_box :remember_me
-      = f.label :remember_me
-  .actions
-    = f.submit "Log in"
-= render "devise/shared/links"
+.login
+  .login__header
+    .login__header__logo
+      = link_to image_tag("logo.png", class: "headerlogo"), root_path
+  .login__main
+    .login__main__in
+      .login__main__in__no-account
+        %pアカウントをお持ちでない方はこちらから
+        .login__main__in__no-account__new
+          = link_to "#" do
+            新規会員登録
+      .login__main__in__form
+        %button.login__main__in__form__f(type="id")
+          facebookでログイン
+        %button.login__main__in__form__g(type="id")
+          googleでログイン
+      .login__main__in__form
+        %form.login__main__in__form__input
+          %input(type="text" placeholder="メールアドレス")
+          %input(type="text" placeholder="パスワード")
+          %button.login__main__in__form__btn(type="submit")
+            ログイン
+        = link_to "パスワードをお忘れの方","#",class: "link"
+  .login__footer
+    %ul.login__footer__etc
+      %li
+        = link_to "プライバシーポリシー","#",class: "link"
+      %li
+        = link_to "FURIMA利用規約","#",class: "link"
+      %li
+        = link_to "特定商取引に関する表記","#",class: "link"
+    .login__footer__logo
+      = link_to image_tag("logo-white.png", class: "footerlogo"), "#"
+      %p.footer__company-name
+        © FURIMA
