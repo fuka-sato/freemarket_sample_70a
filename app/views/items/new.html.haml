@@ -1,136 +1,133 @@
 .head-logo
   =image_tag '/assets/logo.png', class:"logo"
 
-.seller  
-  .seller-item
-    .seller-item__image
+.seller
+  .seller__in
+    .seller__in__item
+      .seller__in__item__image
+        .seller__in__item__image__text
+          %h2 出品画像
+          %span 必須
+        .seller__in__item__image__images
+          %p 最大3枚までアップロードできます
+        .form
+          %label
+            = icon('fas', 'camera', class: 'icon')
+            %input.form-file{:type => "file", :maximage => "3", :name => "avatar", :accept => ".png, .jpg, .jpeg, .pdf, .doc"}
+      .seller__in__item__name
+        .seller__in__item__name__text
+          %h2 商品名
+          %span 必須
+        .seller__in__item__name__message
+          %input.seller__in__item__name__message__input{:name => "item", :placeholder => "40文字まで入力できます", :type =>"text", :value => "", :maxlength => "40", :required => "required"}/
+
+    .seller__in__details
+      .seller__in__details__text
+        %h2 商品説明
+        %span 必須
+      .seller__in__details__product
+        %p 色、素材、重さ、低下、注意点など。
+        %P 例）2010年ごろに1万円で購入したジャケットです。食べ物をこぼしてしまい、目立つ汚れがあります。
+        %input.seller__in__details__input{:name => "itemname", :placeholder => "商品の説明を入力してください。(必須 1,000文字以内)", :type =>"text", :value => "", :maxlength => "1000", :required => "required"}/
       
-      .seller-item__image__text
-        %h2 出品画像 
+    .seller__in__genre
+      .seller__in__genre__categoly
+        %h2 カテゴリー
         %span 必須
-      .seller-item__image__images
-        %p 最大3枚までアップロードできます
-      .form
-        %label
-          = icon('fas', 'camera', class: 'icon')
-          %input.form-file{:type => "file", :maximage => "3", :name => "avatar", :accept => ".png, .jpg, .jpeg, .pdf, .doc"}
-
-
-
-    .seller-item__name
-      .seller-item__name__text
-        %h2 商品名
+      .seller__in__genre__input  
+        %select.seller__in__genre__input__form{:name => "categoly", :placeholder => "カテゴリーを選択してください。", :type =>"text", :value => "", :required => "required"}
+          %option{:value => "0"} 選択してください　　　　　　　　　　　
+          %option{:value => "1"} レディース
+          %option{:value => "2"} メンズ
+          %option{:value => "3"} ベビー・キッズ
+          %option{:value => "4"} インテリア・住まい・小物
+          %option{:value => "5"} 本・音楽・ゲーム
+          %option{:value => "6"} おもちゃ・ホビー・グッズ
+      .seller__in__genre__brand
+        %h3 ブランド（任意）
+        %input.seller__in__genre__brand__input{:name => "brand", :placeholder => "ブランド名を入力してください。", :type =>"text", :value => ""}/
+    .seller__in__status
+      .seller__in__status__item
+        %h2 商品の状態
         %span 必須
-      .seller-item__name__message
-        %input.seller-item__name__message__input{:name => "item", :placeholder => "40文字まで入力できます", :type =>"text", :value => "", :maxlength => "40", :required => "required"}/
-
-  .seller__details
-    .seller__details__text
-      %h2 商品説明
-      %span 必須
-    .seller__details__product
-      %p 色、素材、重さ、低下、注意点など。
-      %P 例）2010年ごろに1万円で購入したジャケットです。食べ物をこぼしてしまい、目立つ汚れがあります。
-      %input.seller__details__input{:name => "itemname", :placeholder => "商品の説明を入力してください。(必須 1,000文字以内)", :type =>"text", :value => "", :maxlength => "1000", :required => "required"}/
-    
-  .genre
-    .genre__categoly
-      %h2 カテゴリー
-      %span 必須
-    .genre__input  
-      %select.genre__input__form{:name => "categoly", :placeholder => "カテゴリーを選択してください。", :type =>"text", :value => "", :required => "required"}
-        %option{:value => "0"} 選択してください　　　　　　　　　　　
-        %option{:value => "1"} レディース
-        %option{:value => "2"} メンズ
-        %option{:value => "3"} ベビー・キッズ
-        %option{:value => "4"} インテリア・住まい・小物
-        %option{:value => "5"} 本・音楽・ゲーム
-        %option{:value => "6"} おもちゃ・ホビー・グッズ
-    .genre__brand
-      %h3 ブランド（任意）
-      %input.genre__brand__input{:name => "brand", :placeholder => "ブランド名を入力してください。", :type =>"text", :value => ""}/
-  .status
-    .status__item
-      %h2 商品の状態
-      %span 必須
-    .status__input
-      %input.item-status__input{:name => "itemnstatus", :placeholder => "商品の状態を入力してください。", :type =>"text", :value => "", :required => "required"}/
-  .delivery
-    .delivery__pattern
-      %h2 配送方法
-      %span 必須
-    .delivery__way
-      %input.delivery__way__input{:name => "delivery", :placeholder => "配送方法を指定してください。", :type =>"text", :value => "", :required => "required"}/
-    .delivery__area
-      %h2 配送エリア
-      %span 必須
-    .delivery__input
-      %select.delivery__input__area{:name => "area", :placeholder => "配送地域を指定してください。", :type =>"text", :value => "", :required => "required"}
-        %option{:value => "0"} 配送地域を選択してください　　　　　　　　　　　
-        %option{:value => "1"} 北海道
-        %option{:value => "2"} 青森県
-        %option{:value => "3"} 岩手県
-        %option{:value => "4"} 宮城県
-        %option{:value => "5"} 秋田県
-        %option{:value => "6"} 山形県
-        %option{:value => "7"} 福島県
-        %option{:value => "8"} 茨城県
-        %option{:value => "9"} 栃木県
-        %option{:value => "10"} 群馬県
-        %option{:value => "11"} 埼玉県
-        %option{:value => "12"} 千葉県
-        %option{:value => "13"} 東京都
-        %option{:value => "14"} 神奈川県
-        %option{:value => "15"} 新潟県
-        %option{:value => "16"} 富山県
-        %option{:value => "17"} 石川県
-        %option{:value => "18"} 群馬県
-        %option{:value => "19"} 山梨県
-        %option{:value => "20"} 長野県
-        %option{:value => "21"} 岐阜県
-        %option{:value => "22"} 静岡県
-        %option{:value => "23"} 愛知県
-        %option{:value => "24"} 三重県
-        %option{:value => "25"} 滋賀県
-        %option{:value => "26"} 京都府
-        %option{:value => "27"} 大阪府
-        %option{:value => "28"} 兵庫県
-        %option{:value => "29"} 奈良県
-        %option{:value => "30"} 和歌山県
-        %option{:value => "31"} 鳥取県
-        %option{:value => "32"} 島根県
-        %option{:value => "33"} 岡山県
-        %option{:value => "34"} 広島県
-        %option{:value => "35"} 山口県
-        %option{:value => "36"} 徳島県
-        %option{:value => "37"} 香川県
-        %option{:value => "38"} 愛媛県
-        %option{:value => "39"} 高知県
-        %option{:value => "40"} 福岡県
-        %option{:value => "41"} 佐賀県
-        %option{:value => "42"} 長崎県
-        %option{:value => "43"} 熊本県
-        %option{:value => "44"} 大分県
-        %option{:value => "45"} 宮崎県
-        %option{:value => "46"} 鹿児島県
-        %option{:value => "47"} 沖縄県
-
-
-
-    .delivery__day
-      .delivery__day__date 
-        %h2 配送までの日数
+      .seller__in__status__input
+        %input.seller__in__status__input__text{:name => "itemnstatus", :placeholder => "商品の状態を入力してください。", :type =>"text", :value => "", :required => "required"}/
+    .seller__in__delivery
+      .seller__in__delivery__pattern
+        %h2 配送方法
         %span 必須
-      %input{:type => "number", :name => "date", :min => "1", :required => "required"}
-        =label_tag (:"日")
-  .price
-    価格(¥300~9,999,999)
-    .price__item
-      %h2 商品価格
-      %span 必須
-    .price__input
-      %input{:type => "number", :name => "price", :max => "9999999", :min => "300", :required => "required"}  
-        =label_tag (:"円")
-  .sale
-    %input.sale__input{:type => "submit", :value => "出品する"}
-    %input.sale__draft{:type => "submit", :value => "下書きに保存する"} 
+      .seller__in__delivery__way
+        %input.seller__in__delivery__way__input{:name => "delivery", :placeholder => "配送方法を指定してください。", :type =>"text", :value => "", :required => "required"}/
+      .seller__in__delivery__area
+        %h2 配送エリア
+        %span 必須
+      .seller__in__delivery__input
+        %select.seller__in__delivery__input__area{:name => "area", :placeholder => "配送地域を指定してください。", :type =>"text", :value => "", :required => "required"}
+          %option{:value => "0"} 配送地域を選択してください　　　　　　　　　　　
+          %option{:value => "1"} 北海道
+          %option{:value => "2"} 青森県
+          %option{:value => "3"} 岩手県
+          %option{:value => "4"} 宮城県
+          %option{:value => "5"} 秋田県
+          %option{:value => "6"} 山形県
+          %option{:value => "7"} 福島県
+          %option{:value => "8"} 茨城県
+          %option{:value => "9"} 栃木県
+          %option{:value => "10"} 群馬県
+          %option{:value => "11"} 埼玉県
+          %option{:value => "12"} 千葉県
+          %option{:value => "13"} 東京都
+          %option{:value => "14"} 神奈川県
+          %option{:value => "15"} 新潟県
+          %option{:value => "16"} 富山県
+          %option{:value => "17"} 石川県
+          %option{:value => "18"} 群馬県
+          %option{:value => "19"} 山梨県
+          %option{:value => "20"} 長野県
+          %option{:value => "21"} 岐阜県
+          %option{:value => "22"} 静岡県
+          %option{:value => "23"} 愛知県
+          %option{:value => "24"} 三重県
+          %option{:value => "25"} 滋賀県
+          %option{:value => "26"} 京都府
+          %option{:value => "27"} 大阪府
+          %option{:value => "28"} 兵庫県
+          %option{:value => "29"} 奈良県
+          %option{:value => "30"} 和歌山県
+          %option{:value => "31"} 鳥取県
+          %option{:value => "32"} 島根県
+          %option{:value => "33"} 岡山県
+          %option{:value => "34"} 広島県
+          %option{:value => "35"} 山口県
+          %option{:value => "36"} 徳島県
+          %option{:value => "37"} 香川県
+          %option{:value => "38"} 愛媛県
+          %option{:value => "39"} 高知県
+          %option{:value => "40"} 福岡県
+          %option{:value => "41"} 佐賀県
+          %option{:value => "42"} 長崎県
+          %option{:value => "43"} 熊本県
+          %option{:value => "44"} 大分県
+          %option{:value => "45"} 宮崎県
+          %option{:value => "46"} 鹿児島県
+          %option{:value => "47"} 沖縄県
+
+
+
+      .seller__in__delivery__day
+        .seller__in__delivery__day__date 
+          %h2 配送までの日数
+          %span 必須
+        %input{:type => "number", :name => "date", :min => "1", :required => "required"}
+          =label_tag (:"日")
+    .seller__in__price
+      価格(¥300~9,999,999)
+      .seller__in__price__item
+        %h2 商品価格
+        %span 必須
+      .seller__in__price__input
+        %input{:type => "number", :name => "price", :max => "9999999", :min => "300", :required => "required"}  
+          =label_tag (:"円")
+    .seller__in__sale
+      %input.seller__in__sale__input{:type => "submit", :value => "出品する"}
+      %input.seller__in__sale__draft{:type => "submit", :value => "下書きに保存する"} 

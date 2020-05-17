@@ -1,57 +1,111 @@
 .head-logo {
-  height: 60px;
-  width: 100%;
+  height: 100px;
+  width: 100px;
   margin: 0  auto;
   text-align: center;
+  .logo{
+    width: 160px;
+    height: 40px;
+    margin-top: 40px;
+  }
 }
-
-.logo{
-  width: 150px;
-  height: 60px;
-}
-
 .seller{
-  text-align: start;
-  margin-left: 70px;
-  min-width: 60%;
-  .seller-item{
-    &__image{
+  background-color: #ffffff;
+  padding: 0 60px;
+  .seller__in{
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+    &__item{
+      &__image{
+        &__text{
+          display: flex;
+          margin-bottom: 5px;
+          h2 {
+            float: left;
+          }
+          span{
+            float: right;
+          }
+        }
+        &__images{
+          p{
+            font-size: 13px;
+          }
+        }
+        .form{
+          position: relative;
+          height: 50px;
+          width: 85vw;
+          background-color: rgb(235, 239, 240);
+          text-align: center;
+          margin-bottom: 40px;
+          label{
+            width: 100%;
+            .icon{
+              position: absolute;
+              top: 16px;
+            }
+            input{
+              display: none;
+            }
+          }
+        }
+      }
+      &__name{
+        &__text{
+          display: flex;
+          margin-bottom: 5px;
+          h2{
+            float: left;
+          }
+          span{
+            float: right;
+          }
+        }
+      }
+    }  
+    &__details{
       &__text{
         display: flex;
         margin-bottom: 5px;
-        h2 {
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
+      }  
+      &__product{
+        p{
+          font-size: 13px;
+        }
+        
+      }
+    }
+    &__genre{
+      &__categoly{
+        display: flex;
+        margin-bottom: 5px;
+        h2{
           float: left;
         }
         span{
           float: right;
         }
       }
-      &__images{
-        p{
-          font-size: 13px;
-        }
-      }
-      .form{
-        position: relative;
-        height: 50px;
-        width: 85vw;
-        background-color: rgb(235, 239, 240);
-        text-align: center;
-        margin-bottom: 40px;
-        label{
-          width: 100%;
-          .icon{
-            position: absolute;
-            top: 16px;
-          }
-          input{
-            display: none;
-          }
+      &__input{
+        &__form{
+          width: 56vw;
+          height: 50px;
+          margin-bottom: 50px;
         }
       }
     }
-    &__name{
-      &__text{
+    &__status{
+      &__item{
         display: flex;
         margin-bottom: 5px;
         h2{
@@ -62,116 +116,67 @@
         }
       }
     }
-  }  
-  .seller__details{
-    &__text{
-      display: flex;
-      margin-bottom: 5px;
-      h2{
-        float: left;
+    &__delivery{
+      &__pattern{
+        display: flex;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
       }
-      span{
-        float: right;
-      }
-    }  
-    &__product{
-      p{
-        font-size: 13px;
-      }
-      
-    }
-  }
-  .genre{
-    &__categoly{
-      display: flex;
-      margin-bottom: 5px;
-      h2{
-        float: left;
-      }
-      span{
-        float: right;
-      }
-    }
-    &__input{
-      &__form{
-        width: 56vw;
-        height: 50px;
-        margin-bottom: 50px;
-      }
-    }
-  }
-  .status{
-    &__item{
-      display: flex;
-      margin-bottom: 5px;
-      h2{
-        float: left;
-      }
-      span{
-        float: right;
-      }
-    }
-  }
-  .delivery{
-    &__pattern{
-      display: flex;
-      margin-bottom: 5px;
-      h2{
-        float: left;
-      }
-      span{
-        float: right;
-      }
-    }
-    &__area{
-      display: flex;
-      margin-bottom: 5px;
-      h2{
-        float: left;
-      }
-      span{
-        float: right;
-      }
-    }
-    &__input{
       &__area{
-        height: 60px;
-        margin-bottom: 40px;
-        width: 60%;
+        display: flex;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
       }
-      
+      &__input{
+        &__area{
+          height: 60px;
+          margin-bottom: 40px;
+          width: 60%;
+        }
+        
+      }
+      &__day__date{
+        display: flex;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
+      }
     }
-    &__day__date{
-      display: flex;
-      margin-bottom: 5px;
-      h2{
-        float: left;
-      }
-      span{
-        float: right;
-      }
-    }
-  }
-  .price{
-    &__item{
-      display: flex;
-      margin-top: 5px;
-      margin-bottom: 5px;
-      h2{
-        float: left;
-      }
-      span{
-        float: right;
+    &__price{
+      &__item{
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
       }
     }
-  }
-  .sale{
-    &__input{
-      background-color: rgb(65, 203, 213);
-      color: white;
-    }
-    &__draft{
-      background-color: rgb(225, 223, 223);
+    &__sale{
+      &__input{
+        background-color: rgb(65, 203, 213);
+        color: white;
+      }
+      &__draft{
+        background-color: rgb(225, 223, 223);
+      }
     }
   }
 }
