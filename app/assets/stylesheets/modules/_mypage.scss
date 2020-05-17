@@ -1,4 +1,5 @@
 .mypage {
+  background-color: #f8f8f8;
   &__header {
   }
   &__breadcrumbs {
@@ -8,42 +9,121 @@
 
   @media screen and (min-width: 1000px) {
     &__main {
-      background-color: green;
+      background-color: #f8f8f8;
       width: 100%;
+      margin-top: 40px;
 
           &__side {
-            background-color: blue;
+            background-color:#f8f8f8;
             width: 300px;
             float: left;
             margin-left: 110px;
+
+            p {
+              font-weight: bold;
+            }
+
+            ul.mypage__main__side__upper {
+              margin-bottom: 30px;
+
+            }
+            li {
+              background-color: #fff;
+              padding: 10px;
+              border: solid 1px;
+              border-color: #EEE;
+            }
+            li + li {
+              border-top: none;
+            }
           }
     
           &__content {
-            background-color: pink;
             width: 700px;
             float: right;
             margin-right: 110px;
+            
+            &__upper {
+              background-color: pink;
+              height: 200px;
+              text-align: center;
+            }
+            &__downer {
+              background-color: white;
+              height: 600px;
+              text-align: center;
+
+              li.title {
+                padding-bottom: 20px;
+                border: solid 1px;
+                border-color: #EEE;
+                font-weight: bold;
+              }
+              li.post {
+                margin-top: 30%;
+              }
+            }
           }
     }
   }
 
   @media screen and (max-width: 1000px) {
     &__main {
-      background-color: green;
+      background-color: #f8f8f8;
       width: 100%;
+      margin-top: 40px;
 
-        &__side {
-          background-color: blue;
-          width: 700px;
-          float: left;
-          margin-left: 110px;
-        }
-  
-        &__content {
+      &__side {
+        background-color: #f8f8f8;
+        width: 700px;
+        float: left;
+        margin-left: 110px;
+      }
+
+      p {
+        font-weight: bold;
+      }
+
+      ul.mypage__main__side__upper {
+        margin-bottom: 30px;
+
+      }
+      li {
+        background-color: #fff;
+        padding: 10px;
+        border: solid 1px;
+        border-color: #EEE;
+      }
+      li + li {
+        border-top: none;
+      }
+
+      &__content {
+        background-color: pink;
+        width: 700px;
+        float: left;
+        margin-left: 110px;
+        margin-bottom: 40px;
+
+        &__upper {
           background-color: pink;
-          width: 700px;
-          float: left;
-          margin-left: 110px;
+          height: 200px;
+          text-align: center;
+        }
+        &__downer {
+          background-color: white;
+          height: 600px;
+          text-align: center;
+
+          li.title {
+            padding-bottom: 20px;
+            border: solid 1px;
+            border-color: #EEE;
+            font-weight: bold;
+          }
+          li.post {
+          }
+        }
         }
     }
   }
