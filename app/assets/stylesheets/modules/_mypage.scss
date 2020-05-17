@@ -1,50 +1,56 @@
 .mypage {
   &__header {
   }
-  &__pankuzuheader {
+  &__breadcrumbs {
     background-color: red;
     padding: 0 120px;
   }
 
-  &__main {
-    background-color: green;
-    width: 100%;
+  @media screen and (min-width: 1000px) {
+    &__main {
+      background-color: green;
+      width: 100%;
 
-    @media screen and (max-width: 700px) {
-      &__in {
-        display: flex;
-        background-color: yellow;
-        width: 100%;
-  
+          &__side {
+            background-color: blue;
+            width: 300px;
+            float: left;
+            margin-left: 110px;
+          }
+    
+          &__content {
+            background-color: pink;
+            width: 700px;
+            float: right;
+            margin-right: 110px;
+          }
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    &__main {
+      background-color: green;
+      width: 100%;
+
         &__side {
           background-color: blue;
-          width: 100%;
+          width: 700px;
+          float: left;
+          margin-left: 110px;
         }
   
         &__content {
           background-color: pink;
-          width: 100%;
+          width: 700px;
+          float: left;
+          margin-left: 110px;
         }
-  
-      }
     }
-
-    &__in {
-      display: flex;
-      background-color: yellow;
-      width: 100%;
-
-      &__side {
-        background-color: blue;
-        width: 700px;
-      }
-
-      &__content {
-        background-color: pink;
-        width: 700px;
-      }
-
-    }
-
   }
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: block;
 }
