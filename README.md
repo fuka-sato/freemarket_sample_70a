@@ -81,7 +81,7 @@
 ### Association
 - belongs_to :user
 
-## paymentsテーブル
+## paymentsテーブル(Pay.jp)
 |Column|Type|Options|
 |------|----|-------|
 |user_id|reference|null :false, foreign_key: true|
