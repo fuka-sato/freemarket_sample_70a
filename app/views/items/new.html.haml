@@ -119,7 +119,8 @@
         .seller__in__delivery__day__date 
           %h2 配送までの日数
           %span 必須
-        %input{:type => "number", :name => "date", :min => "1", :required => "required"}
+        .seller__in__delivery__day__input 
+          %input{:type => "number", :name => "date", :min => "1", :required => "required"}
           =label_tag (:"日")
     .seller__in__price
       価格(¥300~9,999,999)
@@ -128,7 +129,7 @@
         %span 必須
       .seller__in__price__input
         %input{:type => "number", :name => "price", :max => "9999999", :min => "300", :required => "required"}  
-          =label_tag (:"円")
+        =label_tag (:"円")
     .seller__in__sale
       %input.seller__in__sale__input{:type => "submit", :value => "出品する"}
       %input.seller__in__sale__draft{:type => "submit", :value => "下書きに保存する"} 

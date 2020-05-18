@@ -1,26 +1,23 @@
 .head-logo {
-  height: 100px;
-  width: 100px;
-  margin: 0  auto;
   text-align: center;
   .logo{
-    width: 160px;
-    height: 40px;
+    width: 180px;
+    height: 55px;
     margin-top: 40px;
+    margin-bottom: 40px;
   }
 }
 .seller{
-  background-color: #eff3f3;
-  padding: 0 250px;
-  max-width: 1040px;
+  background-color: #f8f8f8;
   min-width: 80%;
-  .seller__in{
+  &__in{
     background-color: #ffffff;
-    width: 100%;
+    width: 50vw;
     margin: 0 auto;
-    padding: 15px 150px;
+    padding-left: 100px;
+    padding-right: 100px;
     &__item{
-      width: 50%;
+      width: 400px;
       &__image{
         &__text{
           display: flex;
@@ -38,13 +35,13 @@
           }
         }
         .form{
-          position: relative;
           height: 100px;
-          width: 50vw;
+          width: 45vw;
           background-color: rgb(235, 239, 240);
           margin-bottom: 40px;
           text-align: center;
           label{
+            position: relative;
             width: 100%;
             .icon{
               position: absolute;
@@ -70,6 +67,7 @@
       }
     }  
     &__details{
+      width: 400px;
       &__text{
         display: flex;
         margin-bottom: 5px;
@@ -88,6 +86,7 @@
       }
     }
     &__genre{
+      width: 400px;
       &__categoly{
         display: flex;
         margin-bottom: 5px;
@@ -107,6 +106,7 @@
       }
     }
     &__status{
+      width: 400px;
       &__item{
         display: flex;
         margin-bottom: 5px;
@@ -119,6 +119,7 @@
       }
     }
     &__delivery{
+      width: 400px;
       &__pattern{
         display: flex;
         margin-bottom: 5px;
@@ -147,18 +148,31 @@
         }
         
       }
-      &__day__date{
-        display: flex;
-        margin-bottom: 5px;
-        h2{
-          float: left;
+      &__day{
+        &__date{
+          display: flex;
+          margin-bottom: 5px;
+          h2{
+            float: left;
+          }
+          span{
+            float: right;
+          }
         }
-        span{
-          float: right;
+
+        &__input{
+          display: flex;
+          input{
+            float: left;
+          }
+          label{
+            margin-top: 30px;
+          }
         }
       }
     }
     &__price{
+      width: 400px;
       &__item{
         display: flex;
         margin-top: 5px;
@@ -170,8 +184,18 @@
           float: right;
         }
       }
+      &__input{
+        display: flex;
+        input{
+          float: left;
+        }
+        label{
+          margin-top: 30px;
+        }
+      }
     }
     &__sale{
+      width: 400px;
       &__input{
         background-color: rgb(65, 203, 213);
         color: white;
@@ -192,7 +216,7 @@ span{
 }
 
 input{
-  width: 50vw;
+  width: 45vw;
   height: 50px;
   margin-bottom: 50px;
 }
