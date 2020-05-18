@@ -10,15 +10,17 @@
   }
 }
 .seller{
-  background-color: #ffffff;
-  padding: 0 60px;
+  background-color: #eff3f3;
+  padding: 0 250px;
+  max-width: 1040px;
+  min-width: 80%;
   .seller__in{
-    max-width: 1040px;
+    background-color: #ffffff;
     width: 100%;
-    min-height: 82px;
     margin: 0 auto;
-    padding: 15px 0 0;
+    padding: 15px 150px;
     &__item{
+      width: 50%;
       &__image{
         &__text{
           display: flex;
@@ -37,16 +39,16 @@
         }
         .form{
           position: relative;
-          height: 50px;
-          width: 85vw;
+          height: 100px;
+          width: 50vw;
           background-color: rgb(235, 239, 240);
-          text-align: center;
           margin-bottom: 40px;
+          text-align: center;
           label{
             width: 100%;
             .icon{
               position: absolute;
-              top: 16px;
+              top: 40px;
             }
             input{
               display: none;
@@ -98,7 +100,7 @@
       }
       &__input{
         &__form{
-          width: 56vw;
+          width: 60%;
           height: 50px;
           margin-bottom: 50px;
         }
@@ -190,7 +192,7 @@ span{
 }
 
 input{
-  width: 85vw;
+  width: 50vw;
   height: 50px;
   margin-bottom: 50px;
 }
