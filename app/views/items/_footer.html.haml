@@ -1,0 +1,39 @@
+.footer
+  %ul.footer__contents
+    %li.footer__contents__content
+      %h2.footer__contents__content__header 
+        FURIMAについて
+      %ul.footer__contents__content__texts
+        %li.footer__contents__content__texts__text
+          = link_to "会社概要（運営会社）","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "プライバシーポリシー","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "FRIMA利用規約","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "ポイントに関する特約","#",class: "link"
+
+    %li.footer__contents__content
+      %h2.footer__contents__content__header 
+        FURIMAを見る
+      %ul.footer__contents__content__texts
+        %li.footer__contents__content__texts__text
+          = link_to "カテゴリー一覧","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "ブランド一覧","#",class: "link"
+
+    %li.footer__contents__content
+      %h2.footer__contents__content__header 
+        ヘルプ&ガイド
+      %ul.footer__contents__content__texts
+        %li.footer__contents__content__texts__text
+          = link_to "FURIMAガイド","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "FURIMAロゴ利用ガイドライン","#",class: "link"
+        %li.footer__contents__content__texts__text
+          = link_to "お知らせ","#",class: "link"
+  
+  .footer__logo
+    = link_to image_tag("logo-white.png", class:"logo"), "#"
+  %p.footer__company-name
+    © FURIMA

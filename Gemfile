@@ -76,3 +76,5 @@ group :development, :test do
 end
 
 gem 'font-awesome-sass', '~> 5.4.1'
+gem 'devise'
+gem 'payjp'

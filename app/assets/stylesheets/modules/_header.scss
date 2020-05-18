@@ -1,0 +1,97 @@
+.logo {
+  width: 100%;
+  vertical-align: bottom;
+}
+
+.header {
+  background-color: #ffffff;
+  padding: 0 60px;
+  &__in {
+    max-width: 1040px;
+    width: 100%;
+    min-height: 82px;
+    margin: 0 auto;
+    padding: 15px 0 0;
+
+    &__main {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      &__icon {
+        padding-bottom: 10px;
+        margin-right: 30px;
+        border-radius: 4px;
+
+        a {
+          width: 140px;
+          display: block;
+        }
+      }
+
+      &__searchbox {
+        margin-left: auto;
+        width: 100%;
+
+        form {
+          width: 100%;
+          display: flex;
+          margin-bottom: 5px;
+
+          input {
+            width: calc(100% - 26px);
+            height: 36px;
+            padding: 0 0 0 5px;
+          }
+          button {
+            width: 36px;
+            border: 0;
+            cursor: pointer;
+            background-color: #3CCACE;
+            padding: 8px;
+
+            .searchbtn {
+              width: 100%;
+              vertical-align: bottom;
+            }
+          }
+        }
+      }
+    }
+
+    &__navi {
+      font-size: 14px;
+      display: flex;
+      margin-bottom: 10px;
+
+      a {
+        display: flex;
+        align-items: center;
+        color: #333;
+        text-decoration: none;
+        line-height: 32px;
+        
+      }
+
+      &__right {
+        margin-left: auto;
+        display: flex;
+
+        a {
+          padding-left: 30px;
+        }
+      }
+
+      &__left {
+        position: relative;
+        display: flex;
+
+        a {
+          padding-right: 30px;
+        }
+      }
+
+    }
+  }
+}
+

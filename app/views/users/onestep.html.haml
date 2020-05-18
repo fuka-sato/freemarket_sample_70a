@@ -1,0 +1,28 @@
+.new-user_registration
+  .new-user_registration__header
+    .new-user_registration__header__logo
+      = link_to image_tag("logo.png", class: "headerlogo"), root_path
+  .new-user_registration__main
+    .new-user_registration__main__in
+      %p.new-user_registration__main__in__subtitle
+        新規会員登録
+      .new-user_registration__main__in__form
+        .new-user_registration__main__in__form__new
+          = link_to "メールアドレスで登録する" ,new_user_registration_path
+        %button.new-user_registration__main__in__form__f(type="id")
+          Facebookでログイン
+        %button.new-user_registration__main__in__form__g(type="id")
+          Googleでログイン
+
+  .new-user_registration__footer
+    %ul.new-user_registration__footer__etc
+      %li
+        = link_to "プライバシーポリシー","#",class: "link"
+      %li
+        = link_to "FURIMA利用規約","#",class: "link"
+      %li
+        = link_to "特定商取引に関する表記","#",class: "link"
+    .new-user_registration__footer__logo
+      = link_to image_tag("logo-white.png", class: "footerlogo"), root_path
+      %p.footer__company-name
+        © FURIMA 
