@@ -1,3 +1,234 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.head-logo {
+  text-align: center;
+  background-color: #f8f8f8;
+  
+  .logo{
+    width: 180px;
+    height: 55px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #f8f8f8;
+  }
+}
+.seller{
+  background-color: #f8f8f8;
+  min-width: 80%;
+  &__in{
+    background-color: #ffffff;
+    width: 50vw;
+    margin: 0 auto;
+    padding: 60px 35px 60px 60px;
+    &__item{
+      width: 400px;
+      &__image{
+        &__text{
+          display: flex;
+          margin-bottom: 5px;
+          h2 {
+            float: left;
+          }
+          span{
+            float: right;
+          }
+        }
+        &__images{
+          p{
+            font-size: 13px;
+          }
+        }
+        .form{
+          height: 100px;
+          width: 45vw;
+          background-color: rgb(235, 239, 240);
+          margin-bottom: 40px;
+          text-align: center;
+          label{
+            position: relative;
+            width: 100%;
+            .icon{
+              position: absolute;
+              top: 40px;
+            }
+            input{
+              display: none;
+            }
+          }
+        }
+      }
+      &__name{
+        &__text{
+          display: flex;
+          margin-bottom: 5px;
+          h2{
+            float: left;
+          }
+          span{
+            float: right;
+          }
+        }
+      }
+    }  
+    &__details{
+      width: 400px;
+      &__text{
+        display: flex;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
+      }  
+      &__product{
+        p{
+          font-size: 13px;
+        }
+        
+      }
+    }
+    &__genre{
+      width: 400px;
+      &__categoly{
+        display: flex;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
+      }
+      &__input{
+        &__form{
+          width: 60%;
+          height: 50px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+    &__status{
+      width: 400px;
+      &__item{
+        display: flex;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
+      }
+    }
+    &__delivery{
+      width: 400px;
+      &__pattern{
+        display: flex;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
+      }
+      &__area{
+        display: flex;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
+      }
+      &__input{
+        &__area{
+          height: 60px;
+          margin-bottom: 40px;
+          width: 60%;
+        }
+        
+      }
+      &__day{
+        &__date{
+          display: flex;
+          margin-bottom: 5px;
+          h2{
+            float: left;
+          }
+          span{
+            float: right;
+          }
+        }
+
+        &__input{
+          display: flex;
+          input{
+            float: left;
+          }
+          label{
+            margin-top: 30px;
+          }
+        }
+      }
+    }
+    &__price{
+      width: 400px;
+      &__item{
+        display: flex;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        h2{
+          float: left;
+        }
+        span{
+          float: right;
+        }
+      }
+      &__input{
+        display: flex;
+        input{
+          float: left;
+        }
+        label{
+          margin-top: 30px;
+        }
+      }
+    }
+    &__sale{
+      width: 400px;
+      &__input{
+        background-color: rgb(65, 203, 213);
+        color: white;
+      }
+      &__draft{
+        background-color: rgb(225, 223, 223);
+      }
+    }
+  }
+}
+
+span{
+  background-color:rgb(65, 203, 213);
+  color:white;
+  font-size: 14px;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+input{
+  width: 45vw;
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+
+h2{
+  font-weight: bold;
+  margin-right: 2px;
+}
+.date{
+  text-align: center;
+  margin-bottom: o;
+}
