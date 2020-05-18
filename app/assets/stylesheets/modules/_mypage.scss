@@ -18,13 +18,16 @@
             width: 300px;
             float: left;
             margin-left: 110px;
+            font-size: 14px;
 
             p {
               font-weight: bold;
+              margin-bottom: 5px;
             }
 
             ul.mypage__main__side__upper {
               margin-bottom: 30px;
+              
 
             }
             li {
@@ -32,6 +35,11 @@
               padding: 10px;
               border: solid 1px;
               border-color: #EEE;
+
+              a {
+                text-decoration: none;
+                color: black;
+              }
             }
             li + li {
               border-top: none;
@@ -54,10 +62,11 @@
               text-align: center;
 
               li.title {
-                padding-bottom: 20px;
+                padding: 20px;
                 border: solid 1px;
                 border-color: #EEE;
                 font-weight: bold;
+                line-height: 20px;
               }
               li.post {
                 margin-top: 30%;
@@ -78,6 +87,7 @@
         width: 700px;
         float: left;
         margin-left: 110px;
+        font-size: 14px;
       }
 
       p {
@@ -86,6 +96,7 @@
 
       ul.mypage__main__side__upper {
         margin-bottom: 30px;
+        font-size: 14px;
 
       }
       li {
@@ -93,6 +104,10 @@
         padding: 10px;
         border: solid 1px;
         border-color: #EEE;
+        a {
+          text-decoration: none;
+          color: black;
+        }
       }
       li + li {
         border-top: none;
@@ -116,10 +131,11 @@
           text-align: center;
 
           li.title {
-            padding-bottom: 20px;
             border: solid 1px;
             border-color: #EEE;
             font-weight: bold;
+            padding: 20px;
+            line-height: 20px;
           }
           li.post {
           }
