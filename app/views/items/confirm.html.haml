@@ -1,54 +1,77 @@
 .confirm
 
-.confirm__header
-  .confirm__header__logo
-    = link_to image_tag("logo.png"),"#"
+  .confirm__header
+    .confirm__header__logo
+      = link_to image_tag("logo.png"),"/"
 
-.confirm__main
-  .confirm__main__field
-    .confirm__main__field__items
+  .confirm__main
+    .confirm__main__field
+      .confirm__main__field__items
 
-      .confirm__main__field__items__header
-        %h2.confirm-title
-          購入内容の確認
+        .confirm__main__field__items__header
+          %h2.confirm-title
+            購入内容の確認
 
-      .confirm__main__field__items__item
-        .confirm__main__field__items__item__area
-          .confirm__main__field__items__item__name--box
-            .confirm-itemImage
-              = image_tag 'a007.png'
-            .confirm-itemName
-              伝説のオイルサーディン
-            .confirm-itemPrice
-              ¥30,000 (税込) 送料込み
-      .confirm__main__field__items__shipping
-        .confirm__main__field__items__shipping__area
-          .confirm__main__field__items__shipping__area__box
-            %ul.price-text-area
-              %li.price-title
-                支払い金額
-              %li.price-amount
-                ¥30,000
-            .price-point
-              = check_box_tag :check1, class: "check"
-              = label_tag :check1, "ポイントを使用(所持ポイント:P0)", class: "check-text"
-      
-      .confirm__main__field__items__pay
-        .confirm__main__field__items__pay__area
-          .confirm__main__field__items__pay__area__box
-            .pay-method
-              支払い方法
-            .pay-method-input
+        .confirm__main__field__items__item
+          .confirm__main__field__items__item__area
+            .confirm__main__field__items__item__area__box
+              .confirm-itemImage
+                = image_tag 'a007.png'
+              .confirm-itemName
+                伝説のオイルサーディン
+              .confirm-itemPrice
+                ¥30,000 (税込) 送料込み
+        .confirm__main__field__items__shipping
+          .confirm__main__field__items__shipping__area
+            .confirm__main__field__items__shipping__area__box
+              %ul.price-text-area
+                %li.price-title
+                  支払い金額
+                %li.price-amount
+                  ¥30,000
+              .price-point
+                = check_box_tag :check1, class: "check"
+                = label_tag :check1, "ポイントを使用(所持ポイント:P0)", class: "check-text"
+
+        .confirm__main__field__items__pay
+          .confirm__main__field__items__pay__area
+            .confirm__main__field__items__pay__area__box
+              .pay-method
+                支払い方法
+              .pay-method-input
+                = link_to "#" do
+                  = icon("fas", "plus-circle")
+                  登録してください
+
+        .confirm__main__field__items__shipping
+          .confirm__main__field__items__shipping__area
+            .confirm__main__field__items__shipping__area__box
+              .shipping-method
+                配送先
+              .shipping-method-input
+                = link_to "#" do
+                  = icon("fas", "plus-circle")
+                  登録してください
+
+        .confirm__main__field__items__buy
+          .confirm__main__field__items__buy__area
+            .confirm__main__field__items__buy__area__box
               = link_to "#" do
-                = icon("fas", "plus-circle")
-                登録してください
+                .buy-text
+                  購入する
 
-      .confirm__main__field__items__shipping
-        .confirm__main__field__items__shipping__area
-          .confirm__main__field__items__shipping__area__box
-            .shipping-method
-              配送先
-            .pay-method-input
-              = link_to "#" do
-                = icon("fas", "plus-circle")
-                登録してください
+      .confirm__main__field__info
+        .confirm__main__field__info__box
+          %ul.info-navi
+            %li.privacy-navi
+              プライバシーポリシー
+            %li.terms-of-service
+              フリマ利用規約
+            %li.trade-write
+              特定商取引に関する表記
+
+          .logo-area
+            = link_to image_tag('logo-white.png', class: "furima-logo"), "/"
+
+          .company
+            ©️FURIMA, Inc.

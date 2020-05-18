@@ -1,0 +1,147 @@
+.confirm{
+  background-color: #f8f8f8;
+  &__header{
+    height: 125px;
+    &__logo{
+      height: 125px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        
+        height: 50px;
+        
+      }
+      
+    }
+  }
+
+  &__main {
+    &__field{
+      width: 700px;
+      margin: 0 auto;
+      &__items{
+         background-color: #ffffff;
+        &__header{
+          height: 100px;
+          border-bottom: 1px solid #f8f8f8;
+          text-align: center;
+          h2 {
+            font-size: 20px;
+            line-height: 100px;
+            font-weight: bold;
+          }
+        }
+
+        &__item{
+          height: 140px;
+          &__area{
+            &__box{
+              .confirm-itemImage{
+              img{
+                width: 60px;
+                height: 80px;
+                object-fit: cover;
+              }
+
+              }
+              .confirm-itemName{
+
+              }
+              .confirm-itemPrice{
+
+              }
+            }
+          }
+        }
+
+        &__shipping{
+          &__area{
+            &__box{
+              .price-text-area{
+                .price-title{
+
+                }
+                .price-amount{
+
+                }
+                .price-point{
+                  .check{
+
+                  }
+                  .check-text{
+
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &__pay {
+          &__area {
+            &__box {
+              .pay-method {
+
+              }
+              .pay-method-input {
+
+              a {
+
+                i {
+
+              }
+              }
+            }
+          }
+          }
+
+        }
+
+        &__shipping{
+          &__area{
+            &__box{
+              .shipping-method{
+
+              }
+              .shipping-method-input{
+              a {
+                i{
+
+                }
+              }
+              }
+            }
+
+          }
+        }
+
+
+      }
+
+      &__info{
+        &__box{
+          .info-navi{
+            .privacy-navi{
+
+            }
+            .terms-of-service{
+
+            }
+            .trade-write{
+
+            }
+          }
+        }
+        .lpgo-area{
+          .urima-logo{
+
+          }
+        }
+        .company{
+
+        }
+      }
+      }
+    }
+}
