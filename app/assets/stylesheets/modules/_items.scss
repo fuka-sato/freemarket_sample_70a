@@ -75,7 +75,7 @@
           }
         }
       }
-    }  
+    }
     &__details{
       width: 400px;
       margin-bottom: 40px;
@@ -134,7 +134,6 @@
         }
       }
     }
-
     &__status{
       width: 400px;
       &__item{
@@ -157,14 +156,27 @@
     }
     &__delivery{
       width: 400px;
+      &__title{
+        font-size: 14px;
+        color: grey;
+        font-weight: bold;
+      }
       &__pattern{
         display: flex;
         margin-bottom: 15px;
+        margin-top: 15px;
         h2{
           float: left;
         }
         span{
           float: right;
+        }
+      }
+      &__way{
+        &__input{
+          height: 50px;
+          margin-bottom: 40px;
+          width: 45vw;
         }
       }
       &__area{
@@ -179,9 +191,9 @@
       }
       &__input{
         &__area{
-          height: 60px;
+          height: 50px;
           margin-bottom: 40px;
-          width: 60%;
+          width: 45vw;
         }
         
       }
@@ -196,23 +208,25 @@
             float: right;
           }
         }
-
         &__input{
-          display: flex;
-          input{
-            float: left;
-          }
-          label{
-            margin-top: 30px;
+          &__text{
+            height: 50px;
+            margin-bottom: 40px;
+            width: 45vw;
           }
         }
       }
     }
     &__price{
       width: 400px;
+      &__title{
+        font-size: 14px;
+        color: grey;
+        font-weight: bold;
+      }
       &__item{
         display: flex;
-        margin-top: 5px;
+        margin-top: 15px;
         margin-bottom: 15px;
         h2{
           float: left;
