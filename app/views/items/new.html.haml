@@ -29,7 +29,8 @@
         -# =form_for @item do |f|
         %textarea{class: 'seller__in__details__product__input', placeholder: '商品の説明。(必須 1,000文字以内)&#13;&#10;(色、素材、重さ、低下、注意点など)&#13;&#10;&#13;&#10;例）2010年ごろに1万円で購入したジャケットです。&#13;&#10; 食べ物をこぼしてしまい、目立つ汚れがあります。'.html_safe, cols:'40', rows:'4', type: 'text', value: '', maxlength: '1000', required: 'required'}
     .seller__in__genre
-      %P 商品の詳細
+      .seller__in__genre__title
+        %P 商品の詳細
       .seller__in__genre__categoly
         %h2 カテゴリー
         %span 必須
@@ -42,15 +43,30 @@
           %option{:value => "4"} インテリア・住まい・小物
           %option{:value => "5"} 本・音楽・ゲーム
           %option{:value => "6"} おもちゃ・ホビー・グッズ
+          %option{:value => "7"} コスメ・香水・美容
+          %option{:value => "8"} 家電・スマホ・カメラ
+          %option{:value => "9"} スポーツ・レジャー
+          %option{:value => "10"} ハンドメイド
+          %option{:value => "11"} チケット
+          %option{:value => "12"} 自動車・オートバイ
+          %option{:value => "13"} その他
+
       .seller__in__genre__brand
-        %h3 ブランド（任意）
-        %input.seller__in__genre__brand__input{:name => "brand", :placeholder => "ブランド名を入力してください。", :type =>"text", :value => ""}/
+        %p ブランド（任意）
+        %input.seller__in__genre__brand__input{:name => "brand", :placeholder => "例）シャネル", :type =>"text", :value => ""}/
     .seller__in__status
       .seller__in__status__item
         %h2 商品の状態
         %span 必須
       .seller__in__status__input
-        %input.seller__in__status__input__text{:name => "itemnstatus", :placeholder => "商品の状態を入力してください。", :type =>"text", :value => "", :required => "required"}/
+        %select.seller__in__status__input__text{:name => "itemnstatus", :placeholder => "商品の状態を入力してください。", :type =>"text", :value => "", :required => "required"}
+          %option{:value => "0"} 選択してください　　　　　　　　　　　
+          %option{:value => "1"} 新品、未使用
+          %option{:value => "2"} 未使用に近い
+          %option{:value => "3"} 目立った傷や汚れなし
+          %option{:value => "4"} やや傷や汚れあり
+          %option{:value => "5"} 傷や汚れあり
+          %option{:value => "6"} 全体的に状態が悪い
     .seller__in__delivery
       .seller__in__delivery__pattern
         %h2 配送方法

@@ -100,12 +100,12 @@
       }
     }
     &__genre{
-      p{
+      width: 400px;
+      &__title{
         font-size: 14px;
         color: grey;
         font-weight: bold;
-      }
-      width: 400px;
+      } 
       &__categoly{
         display: flex;
         margin-bottom: 15px;
@@ -119,12 +119,22 @@
       }
       &__input{
         &__form{
-          width: 60%;
+          width: 45vw;
           height: 50px;
           margin-bottom: 50px;
         }
       }
+      &__brand{
+        p{
+          font-size: 12px;
+          margin-bottom: 15px;
+        }
+        &__input{
+          padding-left: 15px;
+        }
+      }
     }
+
     &__status{
       width: 400px;
       &__item{
@@ -135,6 +145,13 @@
         }
         span{
           float: right;
+        }
+      }
+      &__input{
+        &__text{
+          width: 45vw;
+          height: 50px;
+          margin-bottom: 50px;
         }
       }
     }
