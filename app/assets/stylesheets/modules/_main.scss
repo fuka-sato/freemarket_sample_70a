@@ -10,6 +10,12 @@
   background-repeat: no-repeat;
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
 
+  a {
+    text-decoration: none;
+    color: #3CCACE;
+  
+  }
+
     &__content {
       max-width: 1280px;
       width: 100%;
