@@ -40,42 +40,47 @@
         .confirm__main__field__items__pay
           .confirm__main__field__items__pay__area
             .confirm__main__field__items__pay__area__box
-              .pay-method
-                支払い方法
-              .pay-method-input
-                = link_to "#" do
-                  = icon("fas", "plus-circle")
-                  登録してください
+              .pay-method-box
+                .pay-method
+                  支払い方法
+                .pay-method-input
+                  = link_to "#" do
+                    = icon("fas", "plus-circle")
+                    登録してください
 
         .confirm__main__field__items__shipping
           .confirm__main__field__items__shipping__area
             .confirm__main__field__items__shipping__area__box
-              .shipping-method
-                配送先
-              .shipping-method-input
-                = link_to "#" do
-                  = icon("fas", "plus-circle")
-                  登録してください
+              .shipping-box
+                .shipping-method
+                  配送先
+                .shipping-method-input
+                  = link_to "#" do
+                    = icon("fas", "plus-circle")
+                    登録してください
 
         .confirm__main__field__items__buy
           .confirm__main__field__items__buy__area
             .confirm__main__field__items__buy__area__box
-              = link_to "#" do
-                .buy-text
-                  購入する
+              .buy-link-box
+                = link_to "#" do
+                  .buy-text
+                    購入する
 
       .confirm__main__field__info
         .confirm__main__field__info__box
           %ul.info-navi
             %li.privacy-navi
-              プライバシーポリシー
+              = link_to "#" do
+                プライバシーポリシー
             %li.terms-of-service
-              フリマ利用規約
+              = link_to "#" do
+                フリマ利用規約
             %li.trade-write
-              特定商取引に関する表記
-
+              = link_to "#" do
+                特定商取引に関する表記
           .logo-area
-            = link_to image_tag('logo-white.png', class: "furima-logo"), "/"
-
+            .logo-furima
+              = link_to image_tag('logo-white.png'), "/"
           .company
             ©️FURIMA, Inc.
