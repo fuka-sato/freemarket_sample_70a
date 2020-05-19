@@ -1,3 +1,5 @@
+-# 商品購入確認ページ
+
 .confirm
 
   .confirm__header
@@ -17,20 +19,22 @@
             .confirm__main__field__items__item__area__box
               .confirm-itemImage
                 = image_tag 'a007.png'
-              .confirm-itemName
-                伝説のオイルサーディン
-              .confirm-itemPrice
-                ¥30,000 (税込) 送料込み
-        .confirm__main__field__items__shipping
-          .confirm__main__field__items__shipping__area
-            .confirm__main__field__items__shipping__area__box
+                .confirm__itemText
+                  .confirm-itemName
+                    product3
+                  .confirm-itemPrice
+                    ¥30,000 (税込) 送料込み
+
+        .confirm__main__field__items__price
+          .confirm__main__field__items__price__area
+            .confirm__main__field__items__price__area__box
               %ul.price-text-area
                 %li.price-title
                   支払い金額
                 %li.price-amount
                   ¥30,000
               .price-point
-                = check_box_tag :check1, class: "check"
+                = check_box_tag :check1
                 = label_tag :check1, "ポイントを使用(所持ポイント:P0)", class: "check-text"
 
         .confirm__main__field__items__pay

@@ -34,46 +34,78 @@
         }
 
         &__item{
-          height: 140px;
+          border-bottom: 1px solid #f8f8f8;
+          height: 146px;
           &__area{
+            padding: 33px 180px;
+
             &__box{
+              width: 340px;
               .confirm-itemImage{
+                display: flex;
               img{
-                width: 60px;
+                width: 80px;
                 height: 80px;
-                object-fit: cover;
-              }
+                
+                }
+              .confirm__itemText{
+                width: 240px;
+                height: 80px;
+                margin-left: 20px;
+                margin-top: 5px;
+                .confirm-itemName{
+                 margin-bottom: 16px;
+                    }
+                .confirm-itemPrice{
 
-              }
-              .confirm-itemName{
-
-              }
-              .confirm-itemPrice{
-
+                    }
+                }
               }
             }
           }
         }
 
-        &__shipping{
+        &__price{
+          height: 136px;
+          
           &__area{
+            padding: 0 176px;
+            width: 348px;
+          
+            
             &__box{
+              height: 103px;
+              width: 348px;
+              padding-top: 33px;
+              border-bottom: 1px solid #f8f8f8;
               .price-text-area{
+                display: flex;
+                justify-content: space-between;
                 .price-title{
-
+                  font-weight: bolder;
+                  font-size: 12px;
+                  margin-top: 4px;
                 }
                 .price-amount{
-
-                }
-                .price-point{
-                  .check{
-
-                  }
-                  .check-text{
-
-                  }
+                  font-size: 20px;
+                  font-weight: bolder;
                 }
               }
+              .price-point{
+                  
+                #check1 {
+                  transform: scale(1.5);
+                  
+                  }
+                .check-text{
+                  font-size: 13px;
+                  margin-left: 5px;
+                  vertical-align: middle;
+                    
+
+                  }
+                }
+              
             }
           }
         }
