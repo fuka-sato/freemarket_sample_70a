@@ -7,56 +7,27 @@
     .clearfix
       .mypage__main__content
         .mypage__main__content__upper
-          profile
+          .mypage__main__content__upper__in
+            = link_to do
+              %figure
+                = image_tag("ぬこさま.jpeg", class: "usericon")
+              %p.mypage__main__content__upper__in__name
+                あさこ
+              .mypage__main__content__upper__in__number
+                .mypage__main__content__upper__in__number__left
+                  評価
+                  %span.number
+                    100
+                .mypage__main__content__upperr__in__number__right
+                  出品数
+                  %span.number
+                    50
         .mypage__main__content__downer
           %ul
             %li.title お知らせ
             %li.post お知らせは特にありません
       .mypage__main__side
-        %p マイページ
-        %ul.mypage__main__side__upper
-          %li
-            = link_to "お知らせ","#"
-          %li 
-            = link_to "いいね！一覧","#"
-          %li 
-            = link_to "出品する","#"
-          %li 
-            = link_to "下書き一覧","#"
-          %li 
-            = link_to "出品した商品 - 出品中","#"
-          %li 
-            = link_to "出品した商品 - 取引中","#"
-          %li 
-            = link_to "出品した商品 - 売却済み - 取引中","#"
-          %li 
-            = link_to "購入した商品 - 取引中","#"
-          %li 
-            = link_to "購入した商品 - 過去の取引","#"
-          %li 
-            = link_to "ニュース一覧","#"
-          %li 
-            = link_to "評価一覧","#"
-          %li
-            = link_to " ガイド","#"
-          %li 
-            = link_to " お問い合わせ","#"
-        %ul.mypage__main__side__downer
-          %p 設定
-          %li 
-            = link_to " プロフィール","#"
-          %li 
-            = link_to " 発送元・お届け先住所変更","#"
-          %li 
-            = link_to " 支払い方法","#"
-          %li 
-            = link_to "メール/パスワード","#"
-          %li 
-            = link_to "本人情報","#"
-          %li 
-            = link_to "電話番号の確認","#"
-          %li
-            = link_to " ログアウト","#"
+        = render "mypage-side"
   .mypage__subfooter
     = render "/items/subfooter"
   .mypage__footer

@@ -9,6 +9,11 @@
   background-position: top center;
   background-repeat: no-repeat;
   text-shadow: 0 0 5px rgba(0,0,0,0.4);
+  a {
+    text-decoration: none;
+    color: #3CCACE;
+  
+  }
 
     &__content {
       max-width: 1280px;
@@ -223,6 +228,12 @@
   padding: 80px 0 0;
   height: 100%;
   background-color: #f8f8f8;
+  
+  a {
+    text-decoration: none;
+    color: #3CCACE;
+  
+  }
 
   &__head {
     text-align: center;
@@ -305,11 +316,7 @@
   }
 }
 
-a {
-  text-decoration: none;
-  color: #3CCACE;
 
-}
 
 .exhibit_button {
   position: relative;
