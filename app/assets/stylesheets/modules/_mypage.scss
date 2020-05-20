@@ -13,7 +13,7 @@
         background-color:#f8f8f8;
         width: 300px;
         float: left;
-        margin-left: 200px;
+        margin-left: 100px;
         font-size: 14px;
 
         &__in {
@@ -46,12 +46,12 @@
       &__content {
         width: 700px;
         float: right;
-        margin-right: 200px;
+        margin-right: 100px;
         margin-top: 30px;
 
         
         &__upper {
-          background-color: pink;
+          background-color: white;
           height: 200px;
 
           &__in {
@@ -148,14 +148,13 @@
     }
 
       &__content {
-        background-color: pink;
         width: 700px;
         float: left;
         margin-left: 110px;
         margin-bottom: 40px;
 
         &__upper {
-          background-color: pink;
+          background-color: white;
           height: 200px;
 
           &__in {

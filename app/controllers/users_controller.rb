@@ -4,4 +4,11 @@ class UsersController < ApplicationController
 
   def onestep
   end
+
+  def card
+  end
+
+  def logout
+  end
+  
 end

@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :users, only: :index do
     collection do
       get :onestep
+      get :card
+      get :logout
     end
   end
 end
