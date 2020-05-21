@@ -5,8 +5,11 @@ Rails.application.routes.draw do
     collection do
       get :onestep
       get :card
-      get :cardnew
       get :logout
     end
   end
+  # ↓バックエンド作業の際、usersにネストさせる！
+  resources :creditcards, :new do
+  end
+
 end

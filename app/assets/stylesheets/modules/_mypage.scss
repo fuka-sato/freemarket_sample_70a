@@ -52,9 +52,9 @@
         
         &__upper {
           background-color: white;
-          height: 200px;
 
           &__in {
+            height: 40vh;
             text-align: center;
             position: relative;
             margin: 0 auto;
@@ -87,6 +87,7 @@
         }
       }
         &__downer {
+          margin-top: 20px;
           background-color: white;
           height: 600px;
           text-align: center;
@@ -193,6 +194,7 @@
           background-color: white;
           height: 600px;
           text-align: center;
+          margin-top: 20px;
 
           li.title {
             border: solid 1px;
