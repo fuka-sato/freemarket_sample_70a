@@ -8,9 +8,57 @@
       .clearfix
         .mypage__main__content
           .mypage__main__content__upper
-            ここら辺を編集してフォームを作ります（明日の自分へ）
-            .mypage__main__content__upper__btn
-              = link_to "クレジットカード情報登録","#"
+            %h2.mypage__main__content__upper__title
+              クレジットカード情報入力
+            %form.mypage__main__content__upper__form
+              .mypage__main__content__upper__form__number
+                %labelカード番号
+                %span必須
+                %br
+                %input(type="text" placeholder="半角数字のみ")
+              .mypage__main__content__upper__form__ex
+                %label有効期限
+                %span必須
+                %br
+                %select(name="month")
+                  %option(value="")
+                  %option(value="1")1
+                  %option(value="2")2
+                  %option(value="3")3
+                  %option(value="4")4
+                  %option(value="5")5
+                  %option(value="6")6
+                  %option(value="7")7
+                  %option(value="8")8
+                  %option(value="9")9
+                  %option(value="10")10
+                  %option(value="11")11
+                  %option(value="12")12
+                %span.month
+                  月
+
+                %select(name="year")
+                  %option(value="")
+                  %option(value="20")20
+                  %option(value="21")21
+                  %option(value="22")22
+                  %option(value="23")23
+                  %option(value="24")24
+                  %option(value="25")25
+                  %option(value="26")26
+                  %option(value="27")27
+                  %option(value="28")28
+                  %option(value="29")29
+                  %option(value="30")30
+                %span.year
+                  年
+              .mypage__main__content__upper__form__security
+                %labelセキュリティコード
+                %span必須
+                %br
+                %input(type="text" placeholder="カード背面4桁もしくは3桁の番号")
+              %button.mypage__main__content__upper__form__btn(type="submit")
+                追加する
         .mypage__main__side
           = render "mypage-side"
     .mypage__subfooter
