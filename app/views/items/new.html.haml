@@ -15,13 +15,13 @@
         .form
           %label
             = icon('fas', 'camera', class: 'icon')
-            %input.form-file{:type => "file", :maximage => "3", :name => "avatar", :accept => ".png, .jpg, .jpeg, .pdf, .doc"}
+            %input.form-file{type: "file", maximage: "3", name: "avatar", accept: ".png, .jpg, .jpeg, .pdf, .doc"}
       .seller__in__item__name
         .seller__in__item__name__text
           %h2 商品名
           %span 必須
         .seller__in__item__name__message
-          %input.seller__in__item__name__message__input{:name => "item", :placeholder => "40文字まで", :type =>"text", :value => "", :maxlength => "40", :required => "required"}/
+          %input.seller__in__item__name__message__input{name: "item", placeholder: "40文字まで", type: "text", value: "", maxlength: "40", required: "required"}/
 
     .seller__in__details
       .seller__in__details__text
@@ -37,7 +37,7 @@
         %h2 カテゴリー
         %span 必須
       .seller__in__genre__input  
-        %select.seller__in__genre__input__form{:name => "categoly", :placeholder => "カテゴリーを選択してください。", :type =>"text", :value => "", :required => "required"}
+        %select.seller__in__genre__input__form{name: "categoly", placeholder: "カテゴリーを選択してください。", type: "text", value: "", required: "required"}
           %option{:value => "0"} 選択してください　　　　　　　　　　　
           %option{:value => "1"} レディース
           %option{:value => "2"} メンズ
@@ -55,13 +55,13 @@
 
       .seller__in__genre__brand
         %p ブランド（任意）
-        %input.seller__in__genre__brand__input{:name => "brand", :placeholder => "例）シャネル", :type =>"text", :value => ""}/
+        %input.seller__in__genre__brand__input{name: "brand", placeholder: "例）シャネル", type: "text", value: ""}/
     .seller__in__status
       .seller__in__status__item
         %h2 商品の状態
         %span 必須
       .seller__in__status__input
-        %select.seller__in__status__input__text{:name => "itemnstatus", :placeholder => "商品の状態を入力してください。", :type =>"text", :value => "", :required => "required"}
+        %select.seller__in__status__input__text{name: "itemnstatus", placeholder: "商品の状態を入力してください。", type: "text", value: "", required: "required"}
           %option{:value => "0"} 選択してください　　　　　　　　　　　
           %option{:value => "1"} 新品、未使用
           %option{:value => "2"} 未使用に近い
@@ -77,7 +77,7 @@
         %h2 配送料の負担
         %span 必須
       .seller__in__delivery__way
-        %select.seller__in__delivery__way__input{:name => "delivery", :placeholder => "選択してください。", :type =>"text", :value => "", :required => "required"}
+        %select.seller__in__delivery__way__input{name: "delivery", placeholder: "選択してください。", type: "text", value: "", required: "required"}
           %option{:value => "0"} 選択してください　　　　　　　　　　　
           %option{:value => "1"} 送料込み（出品者負担）
           %option{:value => "2"} 着払い(購入者負担)
@@ -85,7 +85,7 @@
         %h2 発送元の地域
         %span 必須
       .seller__in__delivery__input
-        %select.seller__in__delivery__input__area{:name => "area", :placeholder => "選択してください。", :type =>"text", :value => "", :required => "required"}
+        %select.seller__in__delivery__input__area{name: "area", placeholder: "選択してください。", type: "text", value: "", required: "required"}
           %option{:value => "0"} 選択してください　　　　　　　　　　　
           %option{:value => "1"} 北海道
           %option{:value => "2"} 青森県
@@ -140,7 +140,7 @@
           %h2 発送までの日数
           %span 必須
         .seller__in__delivery__day__input
-          %select.seller__in__delivery__day__input__text{:type => "number", :name => "date", :min => "1", :required => "required"}
+          %select.seller__in__delivery__day__input__text{type: "number", name: "date", min: "1", required: "required"}
             %option{:value => "0"} 選択してください　　　　　　　　　　　
             %option{:value => "1"} 1~2日で発送
             %option{:value => "2"} 2~3日で発送
@@ -155,7 +155,7 @@
           %span 必須
         %li.seller__in__price__item__list
           =label_tag (:"¥")
-          %input{:type => "number", :name => "price", :max => "9999999", :min => "300", :value => "0", :required => "required"}
+          %input{type: "number", name: "price", max: "9999999", min: "300", value: "0", required: "required"}
       %ul.seller__in__price__tax
         %li 販売手数料　(10％）
         %li ー
@@ -164,8 +164,8 @@
         %li ー
 
     .seller__in__sale
-      %input.seller__in__sale__input{:type => "submit", :value => "出品する"}
-      %input.seller__in__sale__draft{:type => "submit", :value => "下書きに保存"} 
+      %input.seller__in__sale__input{type: "submit", value: "出品する"}
+      %input.seller__in__sale__draft{type: "submit", value: "下書きに保存"} 
     .seller__in__retern
       = link_to "もどる","#",class: "retern"
     .seller__in__promise
