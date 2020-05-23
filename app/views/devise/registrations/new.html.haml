@@ -7,13 +7,14 @@
     .sign_up__main__in
       %h2.sign_up__main__in__subtitle
         会員情報入力
-      %form.sign_up__main__in__form
-        .sign_up__main__in__form__input
-          .sign_up__main__in__form__input__nickname
-            %labelニックネーム
-            %span必須
-            %br
-            %input(type="text" placeholder="例）フリマ太郎")
+      .sign_up__main__in__form
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          .sign_up__main__in__form__input
+            .sign_up__main__in__form__input__nickname
+              %labelニックネーム
+              %span必須
+              %br
+              %input(type="text" placeholder="例）フリマ太郎")
 
           .sign_up__main__in__form__input__mailadress
             %labelメールアドレス
@@ -206,10 +207,10 @@
           %button.sign_up__main__in__form__input__btn(type="submit")
             登録する
         
-          .sign_up__main__in__form__input__plivacypolicy
-            %p.sign_up__main__in__form__input__plivacypolicy__text
-              This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
-          
+        .sign_up__main__in__form__input__plivacypolicy
+          %p.sign_up__main__in__form__input__plivacypolicy__text
+            This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+        
 
   .sign_up__footer
     %ul.sign_up__footer__footer__etc

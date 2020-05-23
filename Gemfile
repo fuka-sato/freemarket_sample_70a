@@ -75,6 +75,6 @@ group :development, :test do
   gem 'capistrano3-unicorn'
 end
 
-gem 'font-awesome-sass', '~> 5.4.1'
+gem 'font-awesome-sass'
 gem 'devise'
 gem 'payjp'
