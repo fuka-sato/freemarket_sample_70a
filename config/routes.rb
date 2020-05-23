@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root to: "items#index"
   resources :items
@@ -7,4 +8,7 @@ Rails.application.routes.draw do
       get :onestep
     end
   end
+
+  resources  :items
+  
 end
