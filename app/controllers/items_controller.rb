@@ -17,4 +17,6 @@ class ItemsController < ApplicationController
     # @item = Item.new
   end
 
+  def confirm
+  end
 end
