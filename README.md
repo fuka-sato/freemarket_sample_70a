@@ -163,9 +163,11 @@
 |Column|Type|Options|
 |------|----|-------|
 |category|string|null :false|
+|ancestory|string||
 
 ### Association
 - has_many :items
+- has_ancestory
 
 ## brandsテーブル
 |Column|Type|Options|
