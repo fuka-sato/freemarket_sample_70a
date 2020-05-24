@@ -1,0 +1,327 @@
+//  商品出品ページ メインコンテンツ
+
+.head-logo {
+  text-align: center;
+  background-color: #f8f8f8;
+  .logo{
+    width: 180px;
+    height: 55px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #f8f8f8;
+  }
+}
+.seller{
+  background-color: #f8f8f8;
+  min-width: 80%;
+  &__in{
+    background-color: #ffffff;
+    width: 50vw;
+    margin: 0 auto;
+    padding: 60px 40px 60px 60px;
+    &__item{
+      width: 400px;
+      &__image{
+        &__text{
+          display: flex;
+          margin-bottom: 15px;
+          h2 {
+            @include h2;
+          }
+          span{
+            @include span;
+          }
+        }
+        &__images{
+          p{
+            font-size: 13px;
+            margin-bottom: 10px;
+          }
+        }
+        .form{
+          height: 100px;
+          width: 46vw;
+          background-color: rgb(235, 239, 240);
+          margin-bottom: 40px;
+          text-align: center;
+          label{
+            position: relative;
+            width: 100%;
+            .icon{
+              position: absolute;
+              top: 40px;
+            }
+            input{
+              @include input;
+              display: none;
+            }
+          }
+        }
+      }
+      &__name{
+        &__text{
+          display: flex;
+          margin-bottom: 15px;
+          h2{
+            @include h2;
+          }
+          span{
+            @include span;
+          }
+        }
+        &__message{
+          &__input{
+            @include input;
+            padding-left: 10px;
+            width: 45vw;
+          }
+        }
+      }
+    }
+    &__details{
+      width: 400px;
+      margin-bottom: 40px;
+      &__text{
+        display: flex;
+        margin-bottom: 15px;
+        h2{
+          @include h2;
+        }
+        span{
+          @include span;
+        }
+      }  
+      &__product{
+        &__input{
+          @include input;
+          font-size: 15px;
+          padding-left: 15px;
+          padding-top: 15px;
+          width: 45vw;
+          height: 150px;
+        }
+      }
+    }
+    &__genre{
+      width: 400px;
+      &__title{
+        font-size: 14px;
+        color: grey;
+        font-weight: bold;
+      } 
+      &__categoly{
+        display: flex;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        h2{
+          @include h2;
+        }
+        span{
+          @include span;
+        }
+      }
+      &__input{
+        @include input;
+        &__form{
+          width: 47vw;
+          height: 50px;
+          margin-bottom: 50px;
+        }
+      }
+      &__brand{
+        p{
+          font-size: 12px;
+          margin-bottom: 15px;
+        }
+        &__input{
+          @include input;
+          padding-left: 15px;
+        }
+      }
+    }
+    &__status{
+      width: 400px;
+      &__item{
+        display: flex;
+        margin-bottom: 15px;
+        h2{
+          @include h2;
+        }
+        span{
+          @include span;
+        }
+      }
+      &__input{
+        @include input;
+        &__text{
+          width: 47vw;
+          height: 50px;
+          margin-bottom: 50px;
+        }
+      }
+    }
+    &__delivery{
+      width: 400px;
+      &__title{
+        font-size: 14px;
+        color: grey;
+        font-weight: bold;
+      }
+      &__pattern{
+        display: flex;
+        margin-bottom: 15px;
+        margin-top: 15px;
+        h2{
+          @include h2;
+        }
+        span{
+          @include span;
+        }
+      }
+      &__way{
+        &__input{
+          height: 50px;
+          margin-bottom: 50px;
+          width: 47vw;
+        }
+      }
+      &__area{
+        display: flex;
+        margin-bottom: 15px;
+        h2{
+          @include h2;
+        }
+        span{
+          @include span;
+        }
+      }
+      &__input{
+        @include input;
+        &__area{
+          height: 50px;
+          margin-bottom: 50px;
+          width: 47vw;
+        }
+      }
+      &__day{
+        &__date{
+          display: flex;
+          margin-bottom: 15px;
+          h2{
+            @include h2;
+          }
+          span{
+            @include span;
+          }
+        }
+        &__input{
+          @include input;
+          &__text{
+            height: 50px;
+            margin-bottom: 50px;
+            width: 47vw;
+          }
+        }
+      }
+    }
+    &__price{
+      width: 47vw;
+      &__title{
+        font-size: 14px;
+        color: grey;
+        font-weight: bold;
+      }
+      &__item{
+        display: flex;
+        margin-top: 40px;
+        margin-bottom: 15px;
+        justify-content: space-between;
+        width: 47vw;
+        &__list{
+          display: flex;
+          height: 90px;
+          h2{
+            @include h2;
+            margin-top: 70px;
+          }
+          span{
+            @include span;
+            margin-top: 70px;
+          }
+
+          label{
+            float: left;
+            margin-top: 80px;
+            margin-right: 5px;
+          }
+          input{
+            @include input;
+            float: right;
+            height: 50px;
+            margin-top: 50px;
+            width: 20vw;
+            text-align: right;
+          }
+        }
+      }
+      &__tax{
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+      }
+      &__fee{
+        margin-top: 40px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 60px;
+      }
+    }
+    &__sale{
+      width: 400px;
+      &__input{
+        @include input;
+        background-color: rgb(65, 203, 213);
+        color: white;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      &__draft{
+        @include input;
+        background-color: rgb(225, 223, 223);
+        font-size: 13px;
+        font-weight: bold;
+      }
+    }
+    &__retern{
+      text-align: center;
+      width: 45vw;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    &__promise{
+      font-size: 12px;
+    }
+  }
+  &__rule{
+    padding: 60px 450px 60px 400px;
+    &__text{
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+    }
+  }
+}
+.footer-logo {
+  text-align: center;
+  background-color: #f8f8f8;
+  .white-logo{
+    width: 180px;
+    height: 55px;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    background-color: #f8f8f8;
+  }
+  p{
+    font-size: 11px;
+  }
+}

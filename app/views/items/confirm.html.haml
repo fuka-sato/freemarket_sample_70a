@@ -1,0 +1,86 @@
+-# 商品購入確認ページ
+
+.confirm
+
+  .confirm__header
+    .confirm__header__logo
+      = link_to image_tag("logo.png"),"/"
+
+  .confirm__main
+    .confirm__main__field
+      .confirm__main__field__items
+
+        .confirm__main__field__items__header
+          %h2.confirm-title
+            購入内容の確認
+
+        .confirm__main__field__items__item
+          .confirm__main__field__items__item__area
+            .confirm__main__field__items__item__area__box
+              .confirm-itemImage
+                = image_tag 'a007.png'
+                .confirm__itemText
+                  .confirm-itemName
+                    product3
+                  .confirm-itemPrice
+                    ¥30,000 (税込) 送料込み
+
+        .confirm__main__field__items__price
+          .confirm__main__field__items__price__area
+            .confirm__main__field__items__price__area__box
+              %ul.price-text-area
+                %li.price-title
+                  支払い金額
+                %li.price-amount
+                  ¥30,000
+              .price-point
+                = check_box_tag :check1
+                = label_tag :check1, "ポイントを使用(所持ポイント:P0)", class: "check-text"
+
+        .confirm__main__field__items__pay
+          .confirm__main__field__items__pay__area
+            .confirm__main__field__items__pay__area__box
+              .pay-method-box
+                .pay-method
+                  支払い方法
+                .pay-method-input
+                  = link_to "#" do
+                    = icon("fas", "plus-circle")
+                    登録してください
+
+        .confirm__main__field__items__shipping
+          .confirm__main__field__items__shipping__area
+            .confirm__main__field__items__shipping__area__box
+              .shipping-box
+                .shipping-method
+                  配送先
+                .shipping-method-input
+                  = link_to "#" do
+                    = icon("fas", "plus-circle")
+                    登録してください
+
+        .confirm__main__field__items__buy
+          .confirm__main__field__items__buy__area
+            .confirm__main__field__items__buy__area__box
+              .buy-link-box
+                = link_to "#" do
+                  .buy-text
+                    購入する
+
+      .confirm__main__field__info
+        .confirm__main__field__info__box
+          %ul.info-navi
+            %li.privacy-navi
+              = link_to "#" do
+                プライバシーポリシー
+            %li.terms-of-service
+              = link_to "#" do
+                フリマ利用規約
+            %li.trade-write
+              = link_to "#" do
+                特定商取引に関する表記
+          .logo-area
+            .logo-furima
+              = link_to image_tag('logo-white.png'), "/"
+          .company
+            ©️FURIMA, Inc.

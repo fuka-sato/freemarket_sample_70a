@@ -15,5 +15,7 @@ module FreemarketSample70a
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    Rails.application.config.assets.paths << Rails.root.join("vendor", "original_assets", "images")
   end
 end

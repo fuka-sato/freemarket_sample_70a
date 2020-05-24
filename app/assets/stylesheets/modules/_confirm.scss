@@ -1,0 +1,278 @@
+.confirm{
+  background-color: #f5f5f5;
+  &__header{
+    height: 125px;
+    &__logo{
+      height: 125px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        
+        height: 50px;
+        
+      }
+    }
+  }
+
+  &__main {
+    &__field{
+      width: 700px;
+      margin: 0 auto;
+      &__items{
+         background-color: #ffffff;
+        &__header{
+          height: 100px;
+          border-bottom: 1px solid #f8f8f8;
+          text-align: center;
+          h2 {
+            font-size: 20px;
+            line-height: 100px;
+            font-weight: bold;
+          }
+        }
+
+        &__item{
+          border-bottom: 1px solid #f5f5f5;
+          height: 146px;
+          &__area{
+            padding: 33px 180px;
+
+            &__box{
+              width: 340px;
+              .confirm-itemImage{
+                display: flex;
+              img{
+                width: 80px;
+                height: 80px;
+                
+                }
+              .confirm__itemText{
+                width: 240px;
+                height: 80px;
+                margin-left: 20px;
+                margin-top: 5px;
+                .confirm-itemName{
+                 margin-bottom: 16px;
+                    }
+                .confirm-itemPrice{
+                  font-weight: bolder;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        &__price{
+          height: 136px;
+          
+          &__area{
+            padding: 0 176px;
+            width: 348px;
+          
+            
+            &__box{
+              height: 103px;
+              width: 348px;
+              padding-top: 33px;
+              border-bottom: 1px solid #f5f5f5;
+              .price-text-area{
+                display: flex;
+                justify-content: space-between;
+                .price-title{
+                  font-weight: bolder;
+                  font-size: 16px;
+                  margin-top: 6px;
+                }
+                .price-amount{
+                  font-size: 24px;
+                  font-weight: bolder;
+                }
+              }
+              .price-point{
+                  margin-top: 15px;
+                #check1 {
+                  transform: scale(1.5);
+                  
+                  }
+                .check-text{
+                  font-size: 13px;
+                  margin-left: 5px;
+                  vertical-align: middle;
+                    
+
+                }
+              }
+            }
+          }
+        }
+
+        &__pay {
+          height: 136px;
+          &__area {
+            padding: 0 176px;
+            width: 348px;
+            &__box {
+              height: 93px;
+              width: 348px;
+              padding-top: 43px;
+              border-bottom: 1px solid #f8f8f8;
+                .pay-method-box{
+                  height: 40px;
+                  width: 348px;
+                  .pay-method {
+                    font-size: 14px;
+                    font-weight: bolder;
+                  }
+                  .pay-method-input {
+                    font-size: 14px;
+                    margin-top: 5px;
+                    
+                    a:hover{
+                      text-decoration: underline;
+                    }
+                    
+                    a {
+                      text-decoration: none;
+                      color: #3ccace;
+                }
+              }
+            }
+          }
+        }
+       }
+
+        &__shipping{
+          height: 136px;
+          &__area{
+            padding: 0 176px;
+            width: 348px;
+            &__box{
+              height: 93px;
+              width: 348px;
+              padding-top: 43px;
+              border-bottom: 1px solid #f8f8f8;
+              .shipping-box{
+                height: 40px;
+                width: 348px;
+                .shipping-method{
+                  font-size: 14px;
+                  font-weight: bolder;
+                }
+                .shipping-method-input{
+                  font-size: 14px;
+                    margin-top: 5px;
+
+                a:hover{
+                  text-decoration: underline;
+                }
+
+                a {
+                  color: #3ccace;
+                  text-decoration: none;
+               }
+              }
+             }
+            }
+           }
+          }
+         
+
+        &__buy{
+          height: 136px;
+          &__area{
+          padding: 0 176px;
+          width: 348px;
+            &__box{
+              height: 93px;
+              width: 348px;
+              padding-top: 35px;
+            
+              .buy-link-box{
+                height: 50px;
+                width:  348px;
+                background-color: #3ccace;
+                a {
+                  text-decoration: none;
+                
+                
+                  .buy-text{
+                  
+                  color: #ffffff;
+                  font-weight: bolder;
+                  text-align: center;
+                  font-size:  16px;
+                  line-height: 50px;
+                    
+                  }
+                
+                 }
+               }
+             }
+           }
+         }
+       }
+
+
+
+      &__info{
+        height: 200px;
+      
+        &__box{
+          height: 140px;
+          width: 380px;
+          position: absolute;
+          margin: 40px 160px 20px;
+          .info-navi{
+            display: flex;
+            font-size: 12px;
+            justify-content: space-between;
+            .privacy-navi{
+              a {
+              text-decoration: none;
+              color: black;
+              }
+            }
+            .terms-of-service{
+              a {
+                text-decoration: none;
+                color: black;
+                }
+            }
+            .trade-write{
+              a {
+                text-decoration: none;
+                color: black;
+              }
+            }
+          }
+        
+          .logo-area{
+            width: 380px;
+            height: 80px;
+            .logo-furima{
+            display: flex;
+            justify-content: center;
+            width: 380px;
+            height: 50px;
+            padding-top: 40px;
+              a{
+                height: 50px;
+              
+                img {
+              height: 50px;
+              }
+            }
+          }
+        }
+      }
+          .company{
+            margin-top: 10px;
+            text-align: center;
+            font-size: 10px;
+          }
+         }
+        }
+       }
+      }
