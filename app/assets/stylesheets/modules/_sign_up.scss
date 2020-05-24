@@ -32,32 +32,44 @@
       &__form {
         padding: 24px 16px 40px;
 
+        span {
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          color: #fff;
+          font-size: 12px;
+          background-color: rgb(65, 203, 213);
+        }
+
+        .input-box {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 0 10px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+        }
+
+        .fami-box {
+          width: 100%;
+          margin: 8px 0 0;
+          height: 48px;
+          padding: 0 10px;
+          border-radius: 4px;
+          border: 1px solid #ccc;
+          background: #fff;
+          line-height: 1.5;
+          font-size: 16px;
+          margin-right: 10px;
+        }
+
         &__input {
-          max-width: 343px;
 
           label {
             font-weight: 600;
-          }
-
-          input {
-            width: 100%;
-            margin: 8px 0 0;
-            height: 48px;
-            padding: 0 10px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 16px;
-          }
-
-          span {
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #fff;
-            font-size: 12px;
-            background-color: rgb(65, 203, 213);
           }
 
           &__mailadress {
@@ -92,9 +104,7 @@
 
             &__box {
               display: flex;
-              .family {
-                margin-right: 15px;
-              }
+
             }
           }
           &__name-katakana {
@@ -102,9 +112,7 @@
             margin: 24px 0 0;
             &__box {
               display: flex;
-              .family {
-                margin-right: 15px;
-              }
+
             }
           }
           &__birth {
@@ -121,21 +129,7 @@
               line-height: 1.5;
               cursor: pointer;
             }
-            .year {
-              background-color: white;
-              color: black;
-              margin: 0 2px;
-            }
-            .month {
-              background-color: white;
-              color: black;
-              margin: 0 2px;
-            }
-            .day {
-              background-color: white;
-              color: black;
-              margin: 0 2px;
-            }
+
             &__text {
               margin: 8px 0 0;
               line-height: 1.5;
@@ -190,15 +184,18 @@
 }
 
 
-button.sign_up__main__in__form__input__btn {
-  margin: 24px 0;
-  display: block;
-  width: 100%;
-  line-height: 48px;
-  font-size: 14px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  text-align: center;
-  background: #3CCACE;
-  color: #fff;
+.sign_up__main__in__form__input__btn {
+
+  .btn {
+    margin: 24px 0;
+    display: block;
+    width: 100%;
+    line-height: 48px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    background: #3CCACE;
+    color: #fff;
+  }
 }
