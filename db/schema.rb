@@ -18,9 +18,7 @@ ActiveRecord::Schema.define(version: 2020_05_23_142927) do
     t.string "first_name", null: false
     t.string "family_name_kana", null: false
     t.string "first_name_kana", null: false
-    t.integer "birth_year", null: false
-    t.integer "birth_month", null: false
-    t.integer "birth_day", null: false
+    t.date "birth_day", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"

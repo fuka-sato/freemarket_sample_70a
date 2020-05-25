@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-
+    
   end
 
   # GET /resource/edit
