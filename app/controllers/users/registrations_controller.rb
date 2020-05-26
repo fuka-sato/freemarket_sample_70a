@@ -12,9 +12,25 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    @user = User.create(configure_sign_up_params)
+    if @user.save
+      redirect_to root_path
+    else
+        render action: :new
+    end
     
+  
   end
+  
 
+  
+  
+  def configure_sign_up_params
+
+    devise_parameter_sanitizer.permit(:sign_up) do |params|
+    params.permit(:sign_up, keys: [:nickname, :email, :encrypted_password, :profile_attributes =>[:family_name, :first_name,:family_name_kana,:first_name_kana,:birth_day]])
+  end
+end
   # GET /resource/edit
   # def edit
   #   super
@@ -42,9 +58,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
-  # def configure_sign_up_params
-  #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
-  # end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_account_update_params

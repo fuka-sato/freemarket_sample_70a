@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users, only: :index do
+  resources :users do
     collection do
       get :onestep
     end
