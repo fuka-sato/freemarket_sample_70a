@@ -20,9 +20,6 @@ Rails.application.routes.draw do
   resources :creditcards, :new do
   end
 
-
-
   resources  :items
-  
 
 end
