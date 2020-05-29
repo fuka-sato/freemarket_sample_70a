@@ -19,8 +19,16 @@
           = link_to "#" do
             ブランド
       %ul.header__in__navi__right
-        %li.header__in__navi__right__login
-          = link_to "ログイン" ,new_user_session_path
-            
-        %li.header__in__navi__right__new
-          = link_to '新規会員登録', onestep_users_path
+        - if user_signed_in?
+          %li.header__in__navi__right__login
+            = link_to  "#" do
+              マイページ
+
+            %li.header__in__navi__right__new
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete
+        - else
+          %li.header__in__navi__right__login
+            = link_to "ログイン" ,new_user_session_path
+              
+          %li.header__in__navi__right__new
+            = link_to '新規会員登録', onestep_users_path

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: { 
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
 
   root to: "items#index"
   resources :items do
@@ -15,6 +18,4 @@ Rails.application.routes.draw do
     end
   end
 
-  resources  :items
-  
 end

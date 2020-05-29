@@ -14,12 +14,13 @@
         %button.login__main__in__form__g(type="id")
           googleでログイン
       .login__main__in__form
-        %form.login__main__in__form__input
-          %input(type="text" placeholder="メールアドレス")
-          %input(type="text" placeholder="パスワード")
-          %button.login__main__in__form__btn(type="submit")
-            ログイン
-        = link_to "パスワードをお忘れの方","#",class: "link"
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+          .login__main__in__form__input
+            = f.email_field :email, class: 'input', placeholder: 'メールアドレス' 
+            = f.password_field :password, class: 'input', placeholder: 'パスワード'
+            .login__main__in__form__btn
+              = f.submit 'ログイン', class: 'btn'
+            = link_to "パスワードをお忘れの方","#",class: "link"
   .login__footer
     %ul.login__footer__etc
       %li

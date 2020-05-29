@@ -7,28 +7,22 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
     @user = User.new
-    @profile = @user.build_profile
+    @user.build_profile
   end
 
   # POST /resource
   def create
-    @user = User.create(configure_sign_up_params)
-    if @user.save
-      redirect_to root_path
-    else
-        render action: :new
-    end
-    
-  
+    super
+    user = User.new(configure_sign_up_params)
+    user.save
   end
   
 
   
   
   def configure_sign_up_params
-
     devise_parameter_sanitizer.permit(:sign_up) do |params|
-    params.permit(:sign_up, keys: [:nickname, :email, :encrypted_password, :profile_attributes =>[:family_name, :first_name,:family_name_kana,:first_name_kana,:birth_day]])
+    params.permit(:sign_up, keys: [:nickname, :email, :password, :profile_attributes =>[:family_name, :first_name,:family_name_kana,:first_name_kana,:birth_day]])
   end
 end
   # GET /resource/edit
