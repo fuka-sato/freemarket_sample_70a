@@ -1,0 +1,36 @@
+.mypage
+  .mypage__header
+    = render "/items/header"
+  .mypage__breadcrumbs
+    = render "/items/bread-crumbs"
+  .mypage__main
+    .clearfix
+      .mypage__main__content
+        .mypage__main__content__upper
+          .mypage__main__content__upper__in
+            = link_to do
+              %figure
+                = image_tag("ぬこさま.jpeg", class: "usericon")
+              %p.mypage__main__content__upper__in__name
+                あさこ
+              .mypage__main__content__upper__in__number
+                .mypage__main__content__upper__in__number__left
+                  評価
+                  %span.number
+                    100
+                .mypage__main__content__upperr__in__number__right
+                  出品数
+                  %span.number
+                    50
+        .mypage__main__content__downer
+          %ul
+            %li.title お知らせ
+            %li.post お知らせは特にありません
+      .mypage__main__side
+        = render "mypage-side"
+  .mypage__subfooter
+    = render "/items/subfooter"
+  .mypage__footer
+    = render "/items/footer"
+.button
+  = render "/items/exhibit-btn"

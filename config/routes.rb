@@ -15,7 +15,12 @@ Rails.application.routes.draw do
   resources :users do
     collection do
       get :onestep
+      get :card
+      get :logout
     end
   end
 
+  # ↓バックエンド作業の際、usersにネストさせる！
+  resources :creditcards, :new do
+  end
 end

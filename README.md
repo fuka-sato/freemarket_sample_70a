@@ -21,7 +21,7 @@
 ## profiles
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null :false, foreign_key: true|
+|user_id|references|null :false, foreign_key: true|
 |family_name|string|null :false|
 |first_name|string|null :false|
 |family_name_kana|string|null :false|
@@ -38,15 +38,15 @@
 |------|----|-------|
 |name|string|null :false|
 |discription|text|null :false|
-|seller_id|reference|null :false, foreign_key: true|
-|buyer_id|reference|hull :false, foreign_key: true|
-|category_id|reference|null :false, foreign_key: true|
-|brand_id|reference|foreign_key: true|
-|size_id|reference|null :false, foreign_key: true|
-|condition_id|reference|null :false, foreign_key: true|
-|delivery_price_id|reference|null :false, foreign_key: true|
-|delivery_area_id|reference|null :false, foreign_key: true|
-|delivery_day_id|reference|null :false, foreign_key: true|
+|seller_id|references|null :false, foreign_key: true|
+|buyer_id|references|hull :false, foreign_key: true|
+|category_id|references|null :false, foreign_key: true|
+|brand_id|references|foreign_key: true|
+|size_id|references|null :false, foreign_key: true|
+|condition_id|references|null :false, foreign_key: true|
+|delivery_price_id|references|null :false, foreign_key: true|
+|delivery_area_id|references|null :false, foreign_key: true|
+|delivery_day_id|references|null :false, foreign_key: true|
 |price|integer|null :false|
 
 ### Association
@@ -66,7 +66,7 @@
 ## shipping_addressesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null :false, foreign_key: true|
+|user_id|references|null :false, foreign_key: true|
 |family_name|string|null :false|
 |first_name|string|null :false|
 |family_name_kana|string|null :false|
@@ -84,7 +84,7 @@
 ## paymentsテーブル(Pay.jp)
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null :false, foreign_key: true|
+|user_id|references|null :false, foreign_key: true|
 |card_number|integer|null :false|
 |expiration_month|integer|null :false|
 |expiration_year|integer|null :false|
@@ -96,7 +96,7 @@
 ## snsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null :false, foreign_key: true|
+|user_id|references|null :false, foreign_key: true|
 |provider|string||
 
 ### Association
@@ -105,7 +105,7 @@
 ## profitsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null :false, foreign_key: true|
+|user_id|references|null :false, foreign_key: true|
 |amount|integer||
 
 ### Association
@@ -114,7 +114,7 @@
 ## pointsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null :false, foreign_key: true|
+|user_id|references|null :false, foreign_key: true|
 |point|integer||
 
 ### Association
@@ -124,8 +124,8 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null :false, foreign_key: true|
-|item_id|reference|null :false, foreign_key: true|
+|user_id|references|null :false, foreign_key: true|
+|item_id|references|null :false, foreign_key: true|
 |comment|text||
 
 ### Association
@@ -135,8 +135,8 @@
 ## favoritesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null :false, foreign_key: true|
-|item_id|reference|null :false, foreign_key: true|
+|user_id|references|null :false, foreign_key: true|
+|item_id|references|null :false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -180,7 +180,7 @@
 ## delivery_pricesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|reference|null :false|
+|item_id|references|null :false|
 |delivery_price|integer|null :false|
 
 ### Association
@@ -189,7 +189,7 @@
 ## delivery_areasテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|reference|null :false|
+|item_id|references|null :false|
 |delivery_area|string|null :false|
 
 ### Association
@@ -198,7 +198,7 @@
 ## delivery_daysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|reference|null :false|
+|item_id|references|null :false|
 |delivery_day|integer|null :false|
 
 ### Association
@@ -215,7 +215,7 @@
 ## item_imagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|reference|null :false, foreign_key: true|
+|item_id|references|null :false, foreign_key: true|
 |item_image|string|null :false|
 
 ### Association

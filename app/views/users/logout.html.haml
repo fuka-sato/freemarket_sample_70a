@@ -1,0 +1,20 @@
+.wrapper
+  .mypage
+    .mypage__header
+      = render "/items/header"
+    .mypage__breadcrumbs
+      = render "/items/bread-crumbs"
+    .mypage__main
+      .clearfix
+        .mypage__main__content
+          .mypage__main__content__upper
+            .mypage__main__content__upper__btn
+              = link_to "ログアウト","#"
+        .mypage__main__side
+          = render "mypage-side"
+    .mypage__subfooter
+      = render "/items/subfooter"
+    .mypage__footer
+      = render "/items/footer"
+  .button
+    = render "/items/exhibit-btn"
