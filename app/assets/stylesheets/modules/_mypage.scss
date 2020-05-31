@@ -1,7 +1,5 @@
 .mypage {
   background-color: #f8f8f8;
-  &__header {
-  }
 
   @media screen and (min-width: 1000px) {
     &__main {
@@ -129,7 +127,6 @@
         .mypage__main__side__in__upper {
           margin-bottom: 30px;
           font-size: 14px;
-
         }
         li {
           background-color: #fff;
@@ -201,10 +198,8 @@
             padding: 20px;
             line-height: 20px;
           }
-          li.post {
-          }
         }
-        }
+      }
     }
   }
 }
