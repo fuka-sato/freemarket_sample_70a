@@ -26,7 +26,8 @@
             %labelパスワード
             %span必須
             %br
-            = f.password_field :password, class: 'input-box', placeholder: '7文字以上の半角英数字'          
+            = f.password_field :password, class: 'input-box', placeholder: '7文字以上の半角英数字'
+            = f.password_field :password_confirmation, class: 'input-box', placeholder: '確認のためもう一度入力'              
             %p.sign_up__main__in__form__input__password__info
               ※ 英字と数字の両方を含めて設定してください
             
@@ -72,7 +73,7 @@
                 に同意したものとみなします
           
           .sign_up__main__in__form__input__btn
-            = f.submit '登録する', class: 'btn'
+            = f.submit '住所登録へ', class: 'btn'
             
 
         

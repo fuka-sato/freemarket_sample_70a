@@ -12,19 +12,42 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    super
-    user = User.new(configure_sign_up_params)
-    user.save
+    @user = User.new(configure_sign_up_params)
+    unless @user.valid?
+      render :new and return
+    end
+    @user.save
+    render template: 'shipping_addresses/new'
+    # @user = User.new(configure_sign_up_params)
+    # binding.pry
+    # unless @user.valid?
+    #   flash.now[:alert] = @user.errors.full_messages
+    #   render :new and return
+    # end
+    # session["devise.regist_data"] = {user: @user.attributes}
+    # session["devise.regist_data"] = {profile: @user.profile.attributes}
+    # session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    # @shipping_address = @user.build_shipping_address
+    # render :new_shipping_address
   end
-  
 
   
+
+
+  # def complete
+  # end
+
   
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up) do |params|
-    params.permit(:sign_up, keys: [:nickname, :email, :password, :profile_attributes =>[:family_name, :first_name,:family_name_kana,:first_name_kana,:birth_day]])
+    params.require(:user).permit(
+      :nickname, 
+      :email, 
+      :password, 
+      :profile_attributes =>[:family_name, :first_name,:family_name_kana,:first_name_kana,:birth_day])
   end
-end
+
+  
+
   # GET /resource/edit
   # def edit
   #   super

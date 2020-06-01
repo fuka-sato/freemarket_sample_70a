@@ -9,7 +9,7 @@
         .mypage__main__content
           .mypage__main__content__upper
             .mypage__main__content__upper__btn
-              = link_to "ログアウト","#"
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
         .mypage__main__side
           = render "mypage-side"
     .mypage__subfooter

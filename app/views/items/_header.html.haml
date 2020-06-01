@@ -21,11 +21,7 @@
       %ul.header__in__navi__right
         - if user_signed_in?
           %li.header__in__navi__right__login
-            = link_to  "#" do
-              マイページ
-
-            %li.header__in__navi__right__new
-            = link_to 'ログアウト', destroy_user_session_path, method: :delete
+            = link_to  "マイページ" ,users_path
         - else
           %li.header__in__navi__right__login
             = link_to "ログイン" ,new_user_session_path

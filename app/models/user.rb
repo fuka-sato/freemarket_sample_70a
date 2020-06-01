@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :validatable
 
+  validates_confirmation_of :password  
+  attr_accessor :password_confirmation 
+
   validates :nickname,
   presence: true,                     # 必須
   uniqueness: true,                   # 一意性
@@ -20,6 +23,7 @@ class User < ApplicationRecord
   format: { with: /\A[a-z0-9]+\z/i }  # 半角英数字のみ
 
   has_one :profile
+  has_one :shipping_address
   accepts_nested_attributes_for :profile
 end
 
