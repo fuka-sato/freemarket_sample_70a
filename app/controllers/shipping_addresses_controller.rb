@@ -5,12 +5,13 @@ class ShippingAddressesController < ApplicationController
   end
   
   def create
+    @user = User.find(params[:user_id])
     @shipping_address = ShippingAddress.new(shipping_address_params)
     unless @shipping_address.valid?
-      render :new
+      render :new and return
     end
     @shipping_address.save
-    render :complete
+    redirect_to  complete_user_shipping_addresses_path(@user) and return
   end
 
   def complete
