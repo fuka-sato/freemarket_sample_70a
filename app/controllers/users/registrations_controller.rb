@@ -17,27 +17,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new and return
     end
     @user.save
-    render template: 'shipping_addresses/new'
-    # @user = User.new(configure_sign_up_params)
-    # binding.pry
-    # unless @user.valid?
-    #   flash.now[:alert] = @user.errors.full_messages
-    #   render :new and return
-    # end
-    # session["devise.regist_data"] = {user: @user.attributes}
-    # session["devise.regist_data"] = {profile: @user.profile.attributes}
-    # session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    # @shipping_address = @user.build_shipping_address
-    # render :new_shipping_address
+    redirect_to  new_user_shipping_address_path(@user)
+
   end
 
-  
-
-
-  # def complete
-  # end
-
-  
   def configure_sign_up_params
     params.require(:user).permit(
       :nickname, 

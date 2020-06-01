@@ -1,13 +1,11 @@
 class ShippingAddressesController < ApplicationController
   def new
-    # binding.pry
-    # @user = User.find(params[:user_id])
-    @shipping_address = Shipping_address.new
+    @user = User.find(params[:user_id])
+    @shipping_address = ShippingAddress.new
   end
   
   def create
-    # @user = User.find(params[:user_id])
-    @shipping_address = Shipping_address.new(shipping_address_params)
+    @shipping_address = ShippingAddress.new(shipping_address_params)
     unless @shipping_address.valid?
       render :new
     end
