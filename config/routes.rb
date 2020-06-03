@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       get :card
       get :logout
     end
-    resources :shipping_addresses  do
+    resources :shipping_addresses do
       collection do
         get :complete
       end

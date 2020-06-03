@@ -8,6 +8,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def new
     @user = User.new
     @user.build_profile
+    @shipping_address = ShippingAddress.new
   end
 
   # POST /resource
@@ -18,24 +19,8 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     @user.save
     render template: 'shipping_addresses/new'
-    # @user = User.new(configure_sign_up_params)
-    # binding.pry
-    # unless @user.valid?
-    #   flash.now[:alert] = @user.errors.full_messages
-    #   render :new and return
-    # end
-    # session["devise.regist_data"] = {user: @user.attributes}
-    # session["devise.regist_data"] = {profile: @user.profile.attributes}
-    # session["devise.regist_data"][:user]["password"] = params[:user][:password]
-    # @shipping_address = @user.build_shipping_address
-    # render :new_shipping_address
+    
   end
-
-  
-
-
-  # def complete
-  # end
 
   
   def configure_sign_up_params
@@ -47,6 +32,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   
+
+
+  # @user = User.new(configure_sign_up_params)
+    # binding.pry
+    # unless @user.valid?
+    #   flash.now[:alert] = @user.errors.full_messages
+    #   render :new and return
+    # end
+    # session["devise.regist_data"] = {user: @user.attributes}
+    # session["devise.regist_data"] = {profile: @user.profile.attributes}
+    # session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    # @shipping_address = @user.build_shipping_address
+    # render :new_shipping_address
 
   # GET /resource/edit
   # def edit
