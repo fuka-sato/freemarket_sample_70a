@@ -17,6 +17,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new and return
     end
     @user.save
+    sign_in(:user, @user)
     redirect_to  new_user_shipping_address_path(@user)
 
   end
