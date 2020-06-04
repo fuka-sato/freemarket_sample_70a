@@ -29,8 +29,8 @@ class ShippingAddress < ApplicationRecord
   format: { with: /\A[ぁ-んァ-ン一-龥]/ } 
 
   validates :telephone_number,
-  presence: true,
-  format: { with: /\A[0-9]+\z/ }
+  format: { with: /\A[0-9]+\z/ },
+  allow_blank: true
 
   belongs_to :user
 end

@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
+  
   # devise_scope :user do
   #   get 'addresses', to: 'users/registrations#new_shipping_address'
   #   post 'addresses', to: 'users/registrations#create_address'
