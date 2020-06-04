@@ -9,6 +9,7 @@
         発送元・お届け先住所登録
       .sign_up__main__in__form
         = form_for [@user, @shipping_address] do |f|
+          = render 'layouts/validationerror', model: f.object
           .sign_up__main__in__form__input
             .sign_up__main__in__form__input__name-kanji
               %labelお名前（全角）
