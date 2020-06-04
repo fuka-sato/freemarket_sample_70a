@@ -5,11 +5,6 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   
-  # devise_scope :user do
-  #   get 'addresses', to: 'users/registrations#new_shipping_address'
-  #   post 'addresses', to: 'users/registrations#create_address'
-  #   get 'complete', to: 'users/registrations#complete'
-  # end
 
   root to: "items#index"
   resources :items do
