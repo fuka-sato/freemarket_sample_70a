@@ -78,3 +78,5 @@ end
 gem 'font-awesome-sass'
 gem 'devise'
 gem 'payjp'
+gem 'ancestry'
+gem 'jquery-rails'

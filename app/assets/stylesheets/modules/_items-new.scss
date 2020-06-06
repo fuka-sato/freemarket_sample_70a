@@ -122,7 +122,7 @@
       }
       &__input{
         @include input;
-        &__form{
+        .select-default{
           width: 47vw;
           height: 50px;
           margin-bottom: 50px;
