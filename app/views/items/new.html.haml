@@ -36,27 +36,11 @@
       .seller__in__genre__categoly
         %h2 カテゴリー
         %span 必須
+
+        -# ↓  ！！！！！！"seller__in__genre__input__box", id:"select-category"は変更しないでください！！！！！！
       .seller__in__genre__input  
-        = form_with category: @parents, id: "select-category", remote: true do |f|
+        = form_with category: @parents, class:"seller__in__genre__input__box", id:"select-category", remote: true do |f|
           = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
-          -# = f.collection_select :category_ids, @parents, :id, :name,{prompt: "選択してください"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
-        -#   = f.collection_select :category_ids, @parents, :id, :name,{prompt: "選択してください"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
-        -#   = f.collection_select :category_ids, @parents, :id, :name,{prompt: "選択してください"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
-        -# %select.seller__in__genre__input__form{name: "categoly", placeholder: "カテゴリーを選択してください。", type: "text", value: "", required: "required"}
-        -#   %option{:value => "0"} 選択してください　　　　　　　　　　　
-        -#   %option{:value => "1"} レディース
-        -#   %option{:value => "2"} メンズ
-        -#   %option{:value => "3"} ベビー・キッズ
-        -#   %option{:value => "4"} インテリア・住まい・小物
-        -#   %option{:value => "5"} 本・音楽・ゲーム
-        -#   %option{:value => "6"} おもちゃ・ホビー・グッズ
-        -#   %option{:value => "7"} コスメ・香水・美容
-        -#   %option{:value => "8"} 家電・スマホ・カメラ
-        -#   %option{:value => "9"} スポーツ・レジャー
-        -#   %option{:value => "10"} ハンドメイド
-        -#   %option{:value => "11"} チケット
-        -#   %option{:value => "12"} 自動車・オートバイ
-        -#   %option{:value => "13"} その他
 
       .seller__in__genre__brand
         %p ブランド（任意）
