@@ -38,9 +38,10 @@
         %span 必須
       .seller__in__genre__input  
         = form_with category: @parents, id: "select-category", remote: true do |f|
-          = f.collection_select :category_ids, @parents, :id, :name,{prompt: "選択してください"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+          = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
           -# = f.collection_select :category_ids, @parents, :id, :name,{prompt: "選択してください"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
-          -# = f.collection_select :category_ids, @parents, :id, :name,{prompt: "選択してください"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+        -#   = f.collection_select :category_ids, @parents, :id, :name,{prompt: "選択してください"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
+        -#   = f.collection_select :category_ids, @parents, :id, :name,{prompt: "選択してください"}, class: "select-default", id: "parent-form", name: 'item[category_ids][]'
         -# %select.seller__in__genre__input__form{name: "categoly", placeholder: "カテゴリーを選択してください。", type: "text", value: "", required: "required"}
         -#   %option{:value => "0"} 選択してください　　　　　　　　　　　
         -#   %option{:value => "1"} レディース
