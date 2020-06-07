@@ -39,7 +39,7 @@
 |name|string|null :false|
 |discription|text|null :false|
 |seller_id|references|null :false, foreign_key: true|
-|buyer_id|references|hull :false, foreign_key: true|
+|buyer_id|references|null :false, foreign_key: true|
 |category_id|references|null :false, foreign_key: true|
 |brand_id|references|foreign_key: true|
 |size_id|references|null :false, foreign_key: true|
@@ -48,6 +48,7 @@
 |delivery_area_id|references|null :false, foreign_key: true|
 |delivery_day_id|references|null :false, foreign_key: true|
 |price|integer|null :false|
+
 
 ### Association
 - has_many :favorites
@@ -180,7 +181,6 @@
 ## delivery_pricesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null :false|
 |delivery_price|integer|null :false|
 
 ### Association
@@ -189,7 +189,6 @@
 ## delivery_areasテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|references|null :false|
 |delivery_area|string|null :false|
 
 ### Association
