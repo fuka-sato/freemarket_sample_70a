@@ -4,8 +4,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  
-  devise_for :users
 
   root to: "items#index"
   resources :items do
