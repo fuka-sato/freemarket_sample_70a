@@ -18,6 +18,7 @@ class ItemsController < ApplicationController
     #商品出品関連
     if user_signed_in?
       @item = Item.new
+      @item.build_brand
       # @item.images.new
     else
       redirect_to root_path
@@ -51,13 +52,13 @@ class ItemsController < ApplicationController
       :discription,
       :item_images,
       :category_id,
-      :brand_id,
       :size_id,
       :condition_id,
       :delivery_price_id,
       :delivery_area_id,
       :delivery_day_id,
-      :price
+      :price,
+      :brand_attributes =>[:id, :brand]
     ).merge(seller_id: current_user.id)
   end
 

@@ -131,12 +131,30 @@
           margin-bottom: 50px;
         }
       }
+      &__size {
+        margin-top:150px;
+        display: flex;
+        h2{
+          @include h2;
+        }
+        span{
+          @include span
+        }
+      }
+      #item_size_id {
+        @include input;
+        padding-left: 10px;
+        margin-top: 10px;
+        width: 47vw;
+      }
       &__brand{
-        margin-top: 150px;
-        
-        p{
-          font-size: 12px;
-          margin-bottom: 15px;
+        display: flex;
+        margin-bottom: 10px;
+        h2{
+          @include h2;
+        }
+        span{
+          @include span;
         }
         &__input{
           @include input;
@@ -158,7 +176,7 @@
       }
       &__input{
         @include input;
-        &__text{
+        #item_condition_id{
           width: 47vw;
           height: 50px;
           margin-bottom: 50px;
@@ -184,7 +202,7 @@
         }
       }
       &__way{
-        &__input{
+        #item_delivery_price_id{
           height: 50px;
           margin-bottom: 50px;
           width: 47vw;
@@ -202,7 +220,7 @@
       }
       &__input{
         @include input;
-        &__area{
+        #item_delivery_area_id{
           height: 50px;
           margin-bottom: 50px;
           width: 47vw;
@@ -221,7 +239,7 @@
         }
         &__input{
           @include input;
-          &__text{
+          #item_delivery_day_id{
             height: 50px;
             margin-bottom: 50px;
             width: 47vw;
@@ -259,7 +277,7 @@
             margin-top: 80px;
             margin-right: 5px;
           }
-          input{
+          .price-box{
             @include input;
             float: right;
             height: 50px;

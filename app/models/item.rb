@@ -10,4 +10,6 @@ class Item < ApplicationRecord
   belongs_to :delivery_area
   belongs_to :delivery_day
   belongs_to :condition
+
+  accepts_nested_attributes_for :brand
 end
