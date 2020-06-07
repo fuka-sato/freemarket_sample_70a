@@ -92,13 +92,16 @@
         }
       }  
       &__product{
+        .product-box {
+          width: 45vw;
+          // height: 150px;
+        }
         &__input{
-          @include input;
           font-size: 15px;
           padding-left: 15px;
           padding-top: 15px;
-          width: 45vw;
-          height: 150px;
+          // width: 45vw;
+          // height: 150px;
         }
       }
     }

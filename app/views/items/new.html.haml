@@ -23,15 +23,15 @@
             %h2 商品名
             %span 必須
           .seller__in__item__name__message
-            %input.seller__in__item__name__message__input{name: "item", placeholder: "40文字まで", type: "text", value: "", maxlength: "40", required: "required"}/
+            = f.text_field :name, class: 'seller__in__item__name__message__input', placeholder: '40文字まで', maxlength: "40"
 
       .seller__in__details
         .seller__in__details__text
           %h2 商品説明
           %span 必須
         .seller__in__details__product
-          -# =form_for @item do |f|
-          %textarea{class: 'seller__in__details__product__input', placeholder: '商品の説明。(必須 1,000文字以内)&#13;&#10;(色、素材、重さ、低下、注意点など)&#13;&#10;&#13;&#10;例）2010年ごろに1万円で購入したジャケットです。&#13;&#10; 食べ物をこぼしてしまい、目立つ汚れがあります。'.html_safe, cols:'40', rows:'4', type: 'text', value: '', maxlength: '1000', required: 'required'}
+          = f.text_area :discription,:size => '21x7', class: 'product-box', placeholder: '商品の説明。(必須 1,000文字以内)&#13;&#10;(色、素材、重さ、低下、注意点など)&#13;&#10;&#13;&#10;例）2010年ごろに1万円で購入したジャケットです。&#13;&#10; 食べ物をこぼしてしまい、目立つ汚れがあります。'.html_safe, value: '', maxlength: '1000'
+
       .seller__in__genre
         .seller__in__genre__title
           %P 商品の詳細
