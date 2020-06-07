@@ -7,12 +7,6 @@ class ItemsController < ApplicationController
     # @item = Item.find(params[:id])
   end
 
-  def edit
-  end
-
-  def create
-  end
-
   def new
     #セレクトボックスの初期値設定
     @category_parent_array = ["---"]
@@ -20,6 +14,21 @@ class ItemsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
     @category_parent_array << parent.name
       end
+
+    #商品出品関連
+    if user_signed_in?
+      @item = Item.new
+      # @item.images.new
+    else
+      redirect_to root_path
+    end
+  end
+
+  def create
+    @item = Item.create(item_params)
+  end
+
+  def edit
   end
 
   def get_category_children
@@ -33,6 +42,23 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+  end
+
+  private
+  def item_params
+    params.require(:item).permit(
+      :name, 
+      :discription,
+      :item_images,
+      :category_id,
+      :brand_id,
+      :size_id,
+      :condition_id,
+      :delivery_price_id,
+      :delivery_area_id,
+      :delivery_day_id,
+      :price
+    ).merge(seller_id: current_user.id)
   end
 
 end
