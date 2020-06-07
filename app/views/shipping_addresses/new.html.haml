@@ -1,0 +1,95 @@
+.sign_up
+  .sign_up__header
+    .sign_up__header__logo
+      = link_to image_tag("logo.png", class: "logo"), root_path
+  
+  .sign_up__main
+    .sign_up__main__in
+      %h2.sign_up__main__in__subtitle
+        発送元・お届け先住所登録
+      .sign_up__main__in__form
+        = form_for [@user, @shipping_address] do |f|
+          = render 'layouts/validationerror', model: f.object
+          .sign_up__main__in__form__input
+            .sign_up__main__in__form__input__name-kanji
+              %labelお名前（全角）
+              %span必須
+              %br
+              .sign_up__main__in__form__input__name-kanji__box
+                = f.text_field :family_name, class: 'fami-box', placeholder: '例）山田'          
+                = f.text_field :first_name, class: 'input-box', placeholder: '例）彩'  
+
+            .sign_up__main__in__form__input__name-katakana
+              %labelお名前（カナ）
+              %span必須
+              %br
+              .sign_up__main__in__form__input__name-katakana__box
+                = f.text_field :family_name_kana, class: 'fami-box', placeholder: '例）ヤマダ'          
+                = f.text_field :first_name_kana, class: 'input-box', placeholder: '例）アヤ' 
+
+            .sign_up__main__in__form__input__zipcode
+              %label郵便番号
+              %span必須
+              %br
+              = f.text_field :zip_code, class: 'input-box', placeholder: '例）0000000'
+
+
+            .sign_up__main__in__form__input__prefecuture
+              %label都道府県
+              %span必須
+              %br
+              = f.text_field :prefecuture, class: 'input-box', placeholder: '例）東京都'
+
+
+            .sign_up__main__in__form__input__city
+              %label市区町村
+              %span必須
+              %br
+              = f.text_field :city, class: 'input-box', placeholder: '例）横浜市緑区'
+
+            .sign_up__main__in__form__input__address
+              %label番地
+              %span必須
+              %br
+              = f.text_field :address, class: 'input-box', placeholder: '例）青山1-1-1'
+
+            .sign_up__main__in__form__input__buildingname
+              %label建物名
+              %span.nini任意
+              %br
+              = f.text_field :building_name, class: 'input-box', placeholder: '例）柳ビル103'
+
+            .sign_up__main__in__form__input__telephonenumber
+              %label電話
+              %span.nini任意
+              %br
+              = f.text_field :telephone_number, class: 'input-box', placeholder: '例）09012345678'
+            
+            .sign_up__main__in__form__input__terms
+              %p.sign_up__main__in__form__input__terms__text
+                「登録する」のボタンを押すことにより、
+                %p.terms
+                  = link_to "利用規約","#"
+                  に同意したものとみなします
+            
+            .sign_up__main__in__form__input__btn
+              = f.submit '登録する', class: 'btn'
+
+          
+          .sign_up__main__in__form__input__plivacypolicy
+            %p.sign_up__main__in__form__input__plivacypolicy__text
+              This site is protected by reCAPTCHA and the Google Privacy Policy and Terms of Service apply.
+          
+
+  .sign_up__footer
+    %ul.sign_up__footer__footer__etc
+      %li
+        = link_to "プライバシーポリシー","#",class: "link"
+      %li
+        = link_to "FURIMA利用規約","#",class: "link"
+      %li
+        = link_to "特定商取引に関する表記","#",class: "link"
+    .sign_up__footer__logo
+      = link_to image_tag("logo-white.png", class: "footerlogo"), root_path
+      %p.footer__company-name
+        © FURIMA 

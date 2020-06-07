@@ -76,7 +76,7 @@
 |city|string|null :false|
 |address|string|null :false|
 |building_name|string||
-|telephone_number|string||
+|telephone_number|integer||
 
 ### Association
 - belongs_to :user

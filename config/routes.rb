@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
 
-  devise_for :users
+  devise_for :users, controllers: { 
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
+  
+
   root to: "items#index"
   resources :items do
     member do
@@ -8,11 +13,16 @@ Rails.application.routes.draw do
     end
   end
   
-  resources :users, only: :index do
+  resources :users do
     collection do
       get :onestep
       get :card
       get :logout
+    end
+    resources :shipping_addresses do
+      collection do
+        get :complete
+      end
     end
   end
 
@@ -20,6 +30,5 @@ Rails.application.routes.draw do
   resources :creditcards, :new do
   end
 
-  resources  :items
-
+  
 end
