@@ -41,6 +41,7 @@ $(function(){
       .done(function(children){
         $('#children_input').remove(); //親が変更された時、子以下を削除
         $('#grandchildren_inputt').remove();
+        
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendOption(child);

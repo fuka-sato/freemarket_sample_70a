@@ -129,6 +129,8 @@
         }
       }
       &__brand{
+        margin-top: 150px;
+        
         p{
           font-size: 12px;
           margin-bottom: 15px;
@@ -328,12 +330,13 @@
 
 .listing-select-wrapper__box--select {
   height: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   width: 47vw;
 }
 
-.seller__in__genre__input__box {
+.seller__in__genre__input__box--select {
   height: 50px;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   width: 47vw;
+  // margin-top: 100px;
 }
