@@ -5,25 +5,27 @@ $(function(){
     return html;
   }
   // 子カテゴリーの表示作成
-  function appendChidrenBox(insertHTML){
+  function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='seller__in__genre__input__added' id= 'children_input'>
                         <div class='seller__in__genre__input__box'>
-                          <select class="seller__in__genre__input__box--select" id="child_category" name="category_id">
+                          <select class="seller__in__genre__input__box--select" id="child_category" name="category_id"> 
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
+                          </select>
                         </div>
                       </div>`;
     $('.seller__in__genre__input').append(childSelectHtml);
   }
   // 孫カテゴリーの表示作成
-  function appendGrandchidrenBox(insertHTML){
+  function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='seller__in__genre__input__added' id= 'grandchildren_input'>
                               <div class='seller__in__genre__input__box'>
                                 <select class="seller__in__genre__input__box--select" id="grandchild_category" name="category_id">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
+                                </select>
                               </div>
                             </div>`;
     $('.seller__in__genre__input').append(grandchildSelectHtml);
@@ -46,7 +48,7 @@ $(function(){
         children.forEach(function(child){
           insertHTML += appendOption(child);
         });
-        appendChidrenBox(insertHTML);
+        appendChildrenBox(insertHTML);
       })
       .fail(function(){
         alert('カテゴリー取得に失敗しました');
@@ -73,7 +75,7 @@ $(function(){
           grandchildren.forEach(function(grandchild){
             insertHTML += appendOption(grandchild);
           });
-          appendGrandchidrenBox(insertHTML);
+          appendGrandchildrenBox(insertHTML);
         }
       })
       .fail(function(){

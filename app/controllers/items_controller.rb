@@ -13,9 +13,9 @@ class ItemsController < ApplicationController
     #データベースから、親カテゴリーのみ抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
     @category_parent_array << parent.name
-      end
+    end
 
-    #商品出品関連
+    商品出品関連
     if user_signed_in?
       @item = Item.new
       @item.build_brand
