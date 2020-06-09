@@ -19,7 +19,7 @@ class ItemsController < ApplicationController
     #データベースから、親カテゴリーのみ抽出し、配列化
     Category.where(ancestry: nil).each do |parent|
     @category_parent_array << parent.name
-      end
+    end
   end
 
   def get_category_children

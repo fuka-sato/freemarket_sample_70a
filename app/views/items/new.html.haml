@@ -39,7 +39,7 @@
 
         -# ↓  ！！！！！！"seller__in__genre__input__box", id:"select-category"は変更しないでください！！！！！！
       .seller__in__genre__input  
-        = form_with category: @parents, class:"seller__in__genre__input__box", id:"select-category", remote: true do |f|
+        = form_with category: @parents, class:"seller__in__genre__input__box", id:"select-category" do |f|
           = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
 
       .seller__in__genre__brand

@@ -12,18 +12,20 @@ $(function(){
                           <select class="seller__in__genre__input__box--select" id="child_category" name="category_id">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
+                          </select>
                         </div>
                       </div>`;
     $('.seller__in__genre__input').append(childSelectHtml);
   }
   // 孫カテゴリーの表示作成
-  function appendGrandchidrenBox(insertHTML){
+  function appendGrandchildrenBox(insertHTML){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='seller__in__genre__input__added' id= 'grandchildren_input'>
                               <div class='seller__in__genre__input__box'>
                                 <select class="seller__in__genre__input__box--select" id="grandchild_category" name="category_id">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
+                                </select>
                               </div>
                             </div>`;
     $('.seller__in__genre__input').append(grandchildSelectHtml);
@@ -73,7 +75,7 @@ $(function(){
           grandchildren.forEach(function(grandchild){
             insertHTML += appendOption(grandchild);
           });
-          appendGrandchidrenBox(insertHTML);
+          appendGrandchildrenBox(insertHTML);
         }
       })
       .fail(function(){
