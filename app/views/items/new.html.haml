@@ -14,9 +14,13 @@
           .seller__in__item__image__images
             %p 最大3枚までアップロードできます
           .form
-            %label
-              = icon('fas', 'camera', class: 'icon')
-              = f.file_field :image, class: 'input'
+            -# %label{for: "item_item_images_attributes_0_item_image", class: "label-box", id: "label-box--0"}
+            -#   %pre.label-box__text-visible クリックしてファイルをアップロード
+            .hidden-content
+              = f.fields_for :item_images do |i|
+                = i.file_field :item_image, class: 'hidden-field'
+                %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][item_image]", id: "item_item_images_attributes_0_item_image" }
+                %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][item_image]", id: "item_item_images_attributes_0_item_image" }
         .seller__in__item__name
           .seller__in__item__name__text
             %h2 商品名

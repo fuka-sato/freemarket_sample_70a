@@ -47,7 +47,8 @@
           label{
             position: relative;
             width: 100%;
-            .icon{
+
+            pre{
               position: absolute;
               top: 40px;
             }
@@ -56,6 +57,9 @@
               display: none;
             }
           }
+        }
+        .hidden-content {
+          // display: none;
         }
       }
       &__name{
