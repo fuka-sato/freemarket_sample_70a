@@ -41,10 +41,10 @@
         .seller__in__genre__categoly
           %h2 カテゴリー
           %span 必須
-
         .seller__in__genre__input  
           .seller__in__genre__input__box
-            = f.select :category, @category_parent_array, {}, {class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+            -# = f.collection_select :category_id, @category_parent_array, :id,:name,{include_blank: "---"},{class: 'listing-select-wrapper__box--select', id: 'parent_category'}
+            = f.collection_select :category_id,Category.roots, :id,:name,{include_blank: "---"},required: true, class: 'listing-select-wrapper__box--select', id: 'parent_category'
 
         .seller__in__genre__size
           %h2 サイズ
@@ -54,8 +54,7 @@
         .seller__in__genre__brand
           %h2 ブランド
         .seller__in__genre__brand-input
-          = f.fields_for :brand do |brand|
-            = brand.text_field :brand, class: 'seller__in__item__name__message__input', placeholder: '例）シャネル', maxlength: "40"
+          = f.collection_select :brand_id, Brand.all, :id, :brand, :prompt => "ブランドを選択"
 
       .seller__in__status
         .seller__in__status__item
