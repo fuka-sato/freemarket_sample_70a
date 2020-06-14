@@ -18,7 +18,7 @@ class ItemsController < ApplicationController
     if user_signed_in?
       @item = Item.new
       @item.build_brand
-      @item.item_images.build
+      @item.item_images.new
       #セレクトボックスの初期値設定
       @category_parent_array = ["---"]
 
@@ -40,6 +40,11 @@ class ItemsController < ApplicationController
     else
       render :new and return
     end 
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to root_path
   end
 
   def get_category_children
@@ -67,7 +72,7 @@ class ItemsController < ApplicationController
       :delivery_day_id,
       :price,
       :brand_id,
-      :item_images_attributes =>[:id, :_destroy,:item_image]
+      :item_images_attributes => [:id, :_destroy,:item_image]
     ).merge(seller_id: current_user.id)
   end
 end
