@@ -160,10 +160,7 @@
         span{
           @include span;
         }
-        &__input{
-          @include input;
-          padding-left: 15px;
-        }
+        
       }
     }
     &__status{
@@ -364,4 +361,10 @@
   margin-bottom: 10px;
   width: 47vw;
   // margin-top: 100px;
+}
+
+#item_brand_id {
+  height: 50px;
+  margin-bottom: 10px;
+  width: 47vw;
 }
