@@ -79,3 +79,4 @@ gem 'font-awesome-sass'
 gem 'devise'
 gem 'payjp'
 gem 'pry-rails'
+gem "jquery-rails"

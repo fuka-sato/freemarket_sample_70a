@@ -27,8 +27,14 @@ Rails.application.routes.draw do
   end
 
   # ↓バックエンド作業の際、usersにネストさせる！
-  resources :creditcards, :new do
+  resources :creditcards, only: [:new, :show] do
+    collection do
+      post 'show', to: 'creditcads#show'
+      post 'create', to: 'creditcards#create'
+      post 'delete', to: 'creditcards#delete'
+    end
   end
+  
 
   
 end

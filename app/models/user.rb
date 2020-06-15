@@ -25,6 +25,7 @@ class User < ApplicationRecord
   has_one :profile
   has_one :shipping_address
   accepts_nested_attributes_for :profile
+  has_many :creditcards
 end
 
 
