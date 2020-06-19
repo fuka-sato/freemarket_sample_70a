@@ -52,17 +52,16 @@ ActiveRecord::Schema.define(version: 2020_06_07_132936) do
 
   create_table "item_images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "item_image", null: false
+    t.bigint "item_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "item_id", null: false
     t.index ["item_id"], name: "index_item_images_on_item_id"
   end
 
   create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.text "discription", null: false
-    t.bigint "item_image_id", null: false
-    t.bigint "buyer_id", null: false
+    t.integer "buyer_id"
     t.bigint "seller_id", null: false
     t.bigint "category_id", null: false
     t.bigint "brand_id", null: false
@@ -75,13 +74,11 @@ ActiveRecord::Schema.define(version: 2020_06_07_132936) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["brand_id"], name: "index_items_on_brand_id"
-    t.index ["buyer_id"], name: "index_items_on_buyer_id"
     t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["condition_id"], name: "index_items_on_condition_id"
     t.index ["delivery_area_id"], name: "index_items_on_delivery_area_id"
     t.index ["delivery_day_id"], name: "index_items_on_delivery_day_id"
     t.index ["delivery_price_id"], name: "index_items_on_delivery_price_id"
-    t.index ["item_image_id"], name: "index_items_on_item_image_id"
     t.index ["seller_id"], name: "index_items_on_seller_id"
     t.index ["size_id"], name: "index_items_on_size_id"
   end
@@ -141,9 +138,7 @@ ActiveRecord::Schema.define(version: 2020_06_07_132936) do
   add_foreign_key "items", "delivery_areas"
   add_foreign_key "items", "delivery_days"
   add_foreign_key "items", "delivery_prices"
-  add_foreign_key "items", "item_images"
   add_foreign_key "items", "sizes"
-  add_foreign_key "items", "users", column: "buyer_id"
   add_foreign_key "items", "users", column: "seller_id"
   add_foreign_key "profiles", "users"
   add_foreign_key "shipping_addresses", "users"

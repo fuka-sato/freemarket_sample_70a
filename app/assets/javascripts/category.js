@@ -1,7 +1,7 @@
 $(function(){
   // カテゴリーセレクトボックスのオプションを作成
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
   // 子カテゴリーの表示作成
@@ -9,7 +9,7 @@ $(function(){
     var childSelectHtml = '';
     childSelectHtml = `<div class='seller__in__genre__input__added' id= 'children_input'>
                         <div class='seller__in__genre__input__box'>
-                          <select class="seller__in__genre__input__box--select" id="child_category" name="category_id"> 
+                          <select class="seller__in__genre__input__box--select" id="child_category"> 
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           </select>
@@ -22,7 +22,7 @@ $(function(){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='seller__in__genre__input__added' id= 'grandchildren_input'>
                               <div class='seller__in__genre__input__box'>
-                                <select class="seller__in__genre__input__box--select" id="grandchild_category" name="category_id">
+                                <select class="seller__in__genre__input__box--select" id="grandchild_category">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
                                 </select>
