@@ -3,7 +3,7 @@ class Item < ApplicationRecord
   belongs_to :seller, class_name: "User"
   has_many :item_images,dependent: :destroy 
   belongs_to :size
-  belongs_to :brand, optional: true
+  belongs_to :brand
   belongs_to :delivery_price
   belongs_to :delivery_area
   belongs_to :delivery_day

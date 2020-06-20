@@ -14,5 +14,6 @@ brands = Brand.create([
   {brand: "シュプリーム"},
   {brand: "ヴィヴィアンウェストウッド"},
   {brand: "コンバース"},
-  {brand: "シャネル"}
+  {brand: "シャネル"},
+  {brand: "その他"}
   ])
