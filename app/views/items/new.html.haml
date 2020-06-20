@@ -57,6 +57,7 @@
         .seller__in__genre__brand
           %h2 ブランド
           %span 必須
+          
         .seller__in__genre__brand-input
           = f.collection_select :brand_id, Brand.all, :id, :brand, :prompt => "ブランドを選択"
 
