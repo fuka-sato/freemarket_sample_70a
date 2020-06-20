@@ -76,14 +76,11 @@
       &__product{
         .product-box {
           width: 47vw;
-          // height: 150px;
         }
         &__input{
           font-size: 15px;
           padding-left: 15px;
           padding-top: 15px;
-          // width: 45vw;
-          // height: 150px;
         }
       }
     }
@@ -339,7 +336,6 @@
   height: 50px;
   margin-bottom: 10px;
   width: 47vw;
-  // margin-top: 100px;
 }
 
 #item_brand_id {
@@ -353,7 +349,6 @@
   display: block;
   margin: 16px auto 0;
   display: flex;
-  // flex-wrap: wrap;
 
   //プレビュー表示欄のCSS
   .prev-content {
