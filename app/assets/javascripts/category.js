@@ -22,7 +22,7 @@ $(function(){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='seller__in__genre__input__added' id= 'grandchildren_input'>
                               <div class='seller__in__genre__input__box'>
-                                <select class="seller__in__genre__input__box--select" id="grandchild_category">
+                                <select class="seller__in__genre__input__box--select" id="grandchild_category" name="category_id">
                                   <option value="---" data-category="---">---</option>
                                   ${insertHTML}
                                 </select>
@@ -32,6 +32,7 @@ $(function(){
   }
   // 親カテゴリー選択後のイベント
   $('#parent_category').on('change', function(){
+
     var parentCategory = document.getElementById('parent_category').value; //選択された親カテゴリーの名前を取得
     // $('#parent_category option:selected').val();
     if (parentCategory != "---"){ //親カテゴリーが初期値でないことを確認
