@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
       #セレクトボックスの初期値設定
       @category_parent_array = ["---"]
     else
-      redirect_to root_path
+      redirect_to onestep_users_path
     end
   end
 
