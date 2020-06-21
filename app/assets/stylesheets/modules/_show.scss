@@ -25,9 +25,9 @@
     .breadcrumbs__text:hover {
       color: #3ccace;
       
-   }        
+    }        
   }
- }
+  }
 }
 
 .mainProduct {
@@ -97,8 +97,8 @@
             font-weight: bold;
         }
         
+        
           .details {
-
         }
       }
         &__introduction {
@@ -275,4 +275,44 @@
       }
     }
   }
+  .buy-link-box{
+    height: 50px;
+    width:  100%;
+    background-color: #3ccace;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 15px;
+
+    a {
+      text-decoration: none;
+      color: white;
+      }
   }
+  .items-show-button__edit {
+    height: 50px;
+    width:  100%;
+    background-color: #00b0ff;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 15px;
+  a {
+    text-decoration: none;
+    color: white;
+    }
+  }
+  .items-show-button__cancel {
+    height: 50px;
+    width:  100%;
+    background-color: #00b0ff;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 50px;
+    margin-bottom: 15px;
+  a {
+    text-decoration: none;
+    color: white;
+    }
+  }
+}

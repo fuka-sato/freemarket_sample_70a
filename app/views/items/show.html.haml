@@ -7,7 +7,7 @@
   %ul.details__breadcrumbs__text
     %li.text__category
       = link_to "#", class: "breadcrumbs__text" do
-        HURIMA
+        FURIMA
     %li.text__category
       = icon('fas', 'angle-right')
     %li.text__category
@@ -104,6 +104,20 @@
                   発送日の目安
                 %td.table-right
                   = @item.delivery_day.delivery_day
+
+          - if user_signed_in? && @item.seller_id == current_user.id
+            .items-show-button__edit
+              = link_to '編集する', "#"
+            .items-show-button__cancel
+              = link_to '出品を取り消す', "#"
+
+          - else
+            .buy-link-box
+              - if user_signed_in?
+                = link_to '購入確認画面へ', "#"
+              - else
+                = link_to "ログイン" ,new_user_session_path
+          
         
         .mainProduct__content__top__items__optional
           %ul.optional
