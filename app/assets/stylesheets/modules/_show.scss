@@ -100,7 +100,25 @@
           .details {
 
         }
-      }
+      } 
+        &__buy{
+          width: 610px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: red;
+          margin-bottom: 15px;
+          cursor : pointer;
+
+          a{
+            text-decoration: none;
+            color: white;
+            font-size: 25px;
+            font-weight: bolder;
+
+          }
+        }
         &__introduction {
             display: block;      
             font-size: 19px;
