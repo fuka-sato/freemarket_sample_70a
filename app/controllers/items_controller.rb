@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
 
 
   def get_category_children
-  @category_children = Category.find(params[:parent_name]).children
+  @category_children = Category.find("#{params[:parent_name]}").children
   end
   # 子カテゴリーが選択された後に動くアクション
   def get_category_grandchildren
