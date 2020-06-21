@@ -38,25 +38,7 @@
             margin-bottom: 10px;
           }
         }
-        .form{
-          height: 100px;
-          width: 46vw;
-          background-color: rgb(235, 239, 240);
-          margin-bottom: 40px;
-          text-align: center;
-          label{
-            position: relative;
-            width: 100%;
-            .icon{
-              position: absolute;
-              top: 40px;
-            }
-            input{
-              @include input;
-              display: none;
-            }
-          }
-        }
+        
       }
       &__name{
         &__text{
@@ -73,7 +55,7 @@
           &__input{
             @include input;
             padding-left: 10px;
-            width: 45vw;
+            width: 47vw;
           }
         }
       }
@@ -92,13 +74,13 @@
         }
       }  
       &__product{
+        .product-box {
+          width: 47vw;
+        }
         &__input{
-          @include input;
           font-size: 15px;
           padding-left: 15px;
           padding-top: 15px;
-          width: 45vw;
-          height: 150px;
         }
       }
     }
@@ -122,25 +104,43 @@
       }
       &__input{
         @include input;
-        &__form{
+        .select-default{
           width: 47vw;
           height: 50px;
           margin-bottom: 50px;
         }
       }
+      &__size {
+        margin-top:150px;
+        display: flex;
+        h2{
+          @include h2;
+        }
+        span{
+          @include span
+        }
+      }
+      #item_size_id {
+        @include input;
+        padding-left: 10px;
+        margin-top: 10px;
+        width: 47vw;
+      }
       &__brand{
-        p{
-          font-size: 12px;
-          margin-bottom: 15px;
+        display: flex;
+        margin-bottom: 10px;
+        h2{
+          @include h2;
         }
-        &__input{
-          @include input;
-          padding-left: 15px;
+        span{
+          @include span;
         }
+        
       }
     }
     &__status{
       width: 400px;
+      margin-top: 40px;
       &__item{
         display: flex;
         margin-bottom: 15px;
@@ -153,7 +153,7 @@
       }
       &__input{
         @include input;
-        &__text{
+        #item_condition_id{
           width: 47vw;
           height: 50px;
           margin-bottom: 50px;
@@ -179,7 +179,7 @@
         }
       }
       &__way{
-        &__input{
+        #item_delivery_price_id{
           height: 50px;
           margin-bottom: 50px;
           width: 47vw;
@@ -197,7 +197,7 @@
       }
       &__input{
         @include input;
-        &__area{
+        #item_delivery_area_id{
           height: 50px;
           margin-bottom: 50px;
           width: 47vw;
@@ -216,7 +216,7 @@
         }
         &__input{
           @include input;
-          &__text{
+          #item_delivery_day_id{
             height: 50px;
             margin-bottom: 50px;
             width: 47vw;
@@ -254,7 +254,7 @@
             margin-top: 80px;
             margin-right: 5px;
           }
-          input{
+          .price-box{
             @include input;
             float: right;
             height: 50px;
@@ -325,3 +325,110 @@
     font-size: 11px;
   }
 }
+
+.listing-select-wrapper__box--select {
+  height: 50px;
+  margin-bottom: 10px;
+  width: 47vw;
+}
+
+.seller__in__genre__input__box--select {
+  height: 50px;
+  margin-bottom: 10px;
+  width: 47vw;
+}
+
+#item_brand_id {
+  height: 50px;
+  margin-bottom: 10px;
+  width: 47vw;
+}
+
+//image投稿欄のCSS
+.post__drop__box__container{
+  display: block;
+  margin: 16px auto 0;
+  display: flex;
+
+  //プレビュー表示欄のCSS
+  .prev-content {
+    display: flex;
+    .preview-box {
+      height: 162px;
+      width: 112px;
+      margin: 0 15px 10px 0;
+      .upper-box {
+        height: 112px;
+        width: 100%;
+        img{
+          width: 112px;
+          height: 112px;
+        }
+      }
+      .lower-box {
+        display: flex;
+        text-align: center;
+        .update-box {
+          color: #00b0ff;
+          width: 50%;
+          height: 50px;
+          line-height: 50px;
+          border: 1px solid #eee;
+          background: #f5f5f5;
+          cursor: pointer;
+        }
+        .delete-box {
+          color: #00b0ff;
+          width: 50%;
+          height: 50px;
+          line-height: 50px;
+          border: 1px solid #eee;
+          background: #f5f5f5;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  //投稿クリックエリアのCSS
+  .label-content{
+    margin-bottom: 10px;
+    width: 620px;
+    .label-box {
+      display: block;
+      border: 1px dashed #ccc;
+      position: relative;
+      background: #f5f5f5;
+      width: 170%;
+      height: 162px;
+      cursor: pointer;
+      &__text-visible {
+        position: absolute;
+        top: 50%;
+        left: 16px;
+        right: 16px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.5;
+        font-weight: bold;
+        -webkit-transform: translate(0, -50%);
+        transform: translate(0, -50%);
+        pointer-events: none;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+    }
+  }
+
+  //file_fieldのcss
+  .hidden-content {
+    .hidden-checkbox {
+      display: none;
+    }
+    .hidden-field {
+      display: none;
+    }
+  }
+}
+
+
