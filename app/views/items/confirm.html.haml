@@ -18,12 +18,14 @@
           .confirm__main__field__items__item__area
             .confirm__main__field__items__item__area__box
               .confirm-itemImage
-                = image_tag 'a007.png'
+                = image_tag @item.item_images[0].item_image.url
                 .confirm__itemText
                   .confirm-itemName
-                    product3
+                    = @item.name
                   .confirm-itemPrice
-                    ¥30,000 (税込) 送料込み
+                    ¥
+                    = @item.price
+                    = @item.delivery_price.delivery_price
 
         .confirm__main__field__items__price
           .confirm__main__field__items__price__area
@@ -32,7 +34,8 @@
                 %li.price-title
                   支払い金額
                 %li.price-amount
-                  ¥30,000
+                  ¥
+                  = @item.price
               .price-point
                 = check_box_tag :check1
                 = label_tag :check1, "ポイントを使用(所持ポイント:P0)", class: "check-text"
