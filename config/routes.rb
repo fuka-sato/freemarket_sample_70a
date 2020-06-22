@@ -11,9 +11,7 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-    member do
-      get 'confirm'
-    end
+    
   end
   
   resources :users do
@@ -28,6 +26,11 @@ Rails.application.routes.draw do
       end
     end
   end
+
+  resources :orders do
+  end
+
+  
   # ↓バックエンド作業の際、usersにネストさせる！
   resources :creditcards, only: [:new, :show, :destroy, :create] do
   end
