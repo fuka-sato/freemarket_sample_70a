@@ -1,10 +1,10 @@
 class ItemsController < ApplicationController
-    def index
+before_action :set_item,only: [:show,:confirm]
+  def index
     #@items = Item.all
   end
   
   def show
-    @item = Item.find(params[:id])
     @category_id = @item.category_id
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
@@ -15,7 +15,6 @@ class ItemsController < ApplicationController
   end
 
   def confirm
-    @item = Item.find(params[:id])
   end
 
   def new
@@ -53,6 +52,10 @@ class ItemsController < ApplicationController
   end
 
   private
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(
       :name, 
