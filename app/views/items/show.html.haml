@@ -7,7 +7,7 @@
   %ul.details__breadcrumbs__text
     %li.text__category
       = link_to "#", class: "breadcrumbs__text" do
-        HURIMA
+        FURIMA
     %li.text__category
       = icon('fas', 'angle-right')
     %li.text__category
@@ -30,30 +30,28 @@
     .mainProduct__content__top
       .mainProduct__content__top__items
         %h2.mainProduct__content__top__items__name
-          product3
+          = @item.name
         .mainProduct__content__top__items__image
-          = image_tag 'a007.png', class: "big"
+          = image_tag @item.item_images[0].item_image.url, class:"big"
         %ul.mainProduct__content__top__items__images
-          %li
-            = image_tag 'a007.png', class: "small"
-          %li
-            = image_tag 'a001.png', class: "small"
-          %li
-            = image_tag 'a004.png', class: "small"
-        
+          - @item.item_images.each do |image|
+            %li
+              = image_tag image.item_image.url, :width => "75", :height => "75",class:"small"
+            %li
         .mainProduct__content__top__items__price
           .amount
-            ¥30000
+            ¥
+            = @item.price
           %span.details
             （税込）
           %span.details
-            送料込み
+            = @item.delivery_price.delivery_price
         
         .mainProduct__content__top__items__buy
           = link_to "購入画面に進む", "#"
         
         .mainProduct__content__top__items__introduction
-          親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+          = @item.discription
         
         .mainProduct__content__top__items__table
           %table
@@ -62,55 +60,67 @@
                 %th.table-left
                   出品者
                 %td.table-right 
-                  hogehoge  
+                  = @item.seller.nickname
   
               %tr.itemTable2
                 %th.table-left
                   カテゴリー
                 %td.table-right 
-                  %a(href="#")
-                    ベビー・キッズ
-                    %br/
-                  %a(href="#")
-                    ベビー服(男女兼用) ~95cm
-                    %br/
-                  %a(href="#")
-                    アウター
+                  = link_to "#{@category_parent.name}","#"
+                  %br
+                  = link_to "#{@category_child.name}","#"
+                  %br
+                  = link_to "#{@category_grandchild.name}","#"
             
               %tr.itemTable
                 %th.table-left
                   ブランド
                 %td.table-right
-            
+                  = @item.brand.brand
             
               %tr.itemTable
                 %th.table-left
                   商品のサイズ
                 %td.table-right
+                  = @item.size.size
             
               %tr.itemTable
                 %th.table-left
                   商品の状態
                 %td.table-right
-                  未使用に近い
+                  = @item.condition.condition
                     
               %tr.itemTable
                 %th.table-left
                   配送料の負担
                 %td.table-right
-                  送料込み（出品者負担）
+                  = @item.delivery_price.delivery_price
                 
               %tr.itemTable
                 %th.table-left
                   発送元の地域
                 %td.table-right
-                  岩手県
+                  = @item.delivery_area.delivery_area
                     
               %tr.itemTable
                 %th.table-left
                   発送日の目安
                 %td.table-right
-                  4-7日で発送
+                  = @item.delivery_day.delivery_day
+
+          - if user_signed_in? && @item.seller_id == current_user.id
+            .items-show-button__edit
+              = link_to '編集する', "#"
+            .items-show-button__cancel
+              = link_to '出品を取り消す', "#"
+
+          - else
+            .buy-link-box
+              - if user_signed_in?
+                = link_to '購入確認画面へ',confirm_item_path
+              - else
+                = link_to "ログイン" ,new_user_session_path
+          
         
         .mainProduct__content__top__items__optional
           %ul.optional
