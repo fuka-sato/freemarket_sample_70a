@@ -1,13 +1,10 @@
 class ItemsController < ApplicationController
     def index
-    #@items = Item.all
+    @items = Item.all
   end
   
   def show
-    # @item = Item.find(params[:id])
-  end
-
-  def edit
+    @item = Item.find(params[:id])
   end
 
   def confirm
@@ -43,6 +40,25 @@ class ItemsController < ApplicationController
   #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
   @category_grandchildren = Category.find("#{params[:child_id]}").children
   end
+  
+
+  def edit
+    @item = Item.find_by(id: params[:id])
+  end
+
+
+  def update
+    @item = Item.find(params[:id])
+    @user = User.find(params[:id])
+  if @item.update(item_params)
+    redirect_to item_path, notice: ''
+  else
+    #updateを失敗すると編集ページへ
+    render 'edit'
+  end
+end
+
+
 
   private
   def item_params
