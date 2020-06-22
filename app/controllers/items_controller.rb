@@ -1,10 +1,14 @@
 class ItemsController < ApplicationController
-    def index
+  before_action :set_item,only: [:show,:confirm]
+  def index
     #@items = Item.all
   end
   
   def show
-    # @item = Item.find(params[:id])
+    @category_id = @item.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
 
   def edit
@@ -20,6 +24,9 @@ class ItemsController < ApplicationController
       @item.item_images.build
       #セレクトボックスの初期値設定
       @category_parent_array = ["---"]
+      Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
     else
       redirect_to onestep_users_path
     end
@@ -45,6 +52,10 @@ class ItemsController < ApplicationController
   end
 
   private
+  def set_item
+    @item = Item.find(params[:id])
+  end
+
   def item_params
     params.require(:item).permit(
       :name, 
