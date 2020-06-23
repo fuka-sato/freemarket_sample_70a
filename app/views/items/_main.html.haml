@@ -90,6 +90,8 @@
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
         
 
+
+
   .main__pickupC
     .main__pickupC__head
       ピックアップカテゴリー
@@ -98,22 +100,33 @@
         = link_to "#" do
           新規投稿商品
       .main__pickupC__productBox__productlists
-        .main__pickupC__productBox__productlists__list
-          .main__pickupC__productBox__productlists__list__picture
-          -# 以下のpath指定は仮置きのため、一覧表示の際に修正必要
-          = link_to image_tag("a001.png", class:"pic"), "/items/1"
-          .main__pickupC__productBox__productlists__list__text
-            text
-        .main__pickupC__productBox__productlists__list
-          .main__pickupC__productBox__productlists__list__picture
-          = image_tag("a004.png", class:"pic")
-          .main__pickupC__productBox__productlists__list__text
-            text
-        .main__pickupC__productBox__productlists__list
-          .main__pickupC__productBox__productlists__list__picture
-          = image_tag("a007.png", class:"pic")
-          .main__pickupC__productBox__productlists__list__text
-            text
+        - @items.first(4).each do |item|
+          = link_to item_path(item.id) do
+            .main__pickupC__productBox__productlists__list
+              .main__pickupC__productBox__productlists__list__picture
+                = image_tag item.item_images[0].item_image.url, :width => "180",:height => "180"
+              .main__pickupC__productBox__productlists__list__text
+                = item.name 
+              .main__pickupC__productBox__productlists__list__price
+                = item.price
+
+
+          -#   = link_to image_tag("a001.png", class:"pic"), "/items/1"
+          -#   .main__pickupC__productBox__productlists__list__text
+          -#     text
+          -# .main__pickupC__productBox__productlists__list
+          -#   .main__pickupC__productBox__productlists__list__picture
+          -#   = image_tag("a004.png", class:"pic")
+          -#   .main__pickupC__productBox__productlists__list__text
+          -#     text
+          -# .main__pickupC__productBox__productlists__list
+          -#   .main__pickupC__productBox__productlists__list__picture
+          -#   = image_tag("a007.png", class:"pic")
+          -#   .main__pickupC__productBox__productlists__list__text
+          -#     text
+
+
+
   
   .main__pickupC
     .main__pickupC__head

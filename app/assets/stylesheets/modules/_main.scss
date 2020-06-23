@@ -235,7 +235,7 @@
   
   a {
     text-decoration: none;
-    color: #3CCACE;
+    color: rgb(0, 0, 0);
   
   }
 
@@ -251,7 +251,7 @@
 
     &__producthead {
       font-size: 24px;
-      color: #3CCACE;
+      color: rgb(0, 0, 0);
     }
 
     &__productlists {
@@ -261,10 +261,11 @@
       justify-content: space-around;
 
       &__list {
-        width: 220px;
+        width: 180px;
         height: 250px;
         display: inline-block;
         background-color: white;
+        margin:5px;
 
         &__picture {
           width: 100%;
@@ -273,6 +274,10 @@
 
         &__text {
           
+        }
+
+        &__price:after{
+          content: '円';
         }
       }
     }

@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item,only: [:show,:confirm]
   def index
-    #@items = Item.all
+    @items = Item.all.order("created_at desc")
   end
   
   def show
