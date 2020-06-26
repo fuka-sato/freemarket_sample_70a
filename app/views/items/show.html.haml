@@ -109,7 +109,7 @@
             .items-show-button__edit
               = link_to '編集する', "#"
             .items-show-button__cancel
-              = link_to '出品を取り消す', "#"
+              = link_to '出品を取り消す', item_path(@item.id), method: :delete
 
           - else
             .buy-link-box

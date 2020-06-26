@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item,only: [:show,:confirm]
+  before_action :set_item,only: [:show, :confirm, :destroy]
   def index
     #@items = Item.all
   end
@@ -39,6 +39,14 @@ class ItemsController < ApplicationController
     else
       render :new and return
     end 
+  end
+
+  def destroy
+    if @item.destroy
+      redirect_to root_path, notice: '商品を削除しました'
+    else
+      redirect_to item_path, notice: '商品を削除できませんでした'
+    end
   end
 
 

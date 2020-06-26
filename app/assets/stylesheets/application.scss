@@ -1,3 +1,16 @@
+.notifications {
+  color: white;
+  text-align: center;  
+
+  .notice {
+    background-color: lightBlue;
+  }
+
+  .alert {
+    background-color: red;
+  }
+}
+
 @import "reset";
 @import "font-awesome-sprockets";
 @import "font-awesome";
