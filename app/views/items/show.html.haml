@@ -47,8 +47,11 @@
           %span.details
             = @item.delivery_price.delivery_price
         
-        .mainProduct__content__top__items__buy
-          = link_to "購入画面に進む", "#"
+        - if @item.buyer_id.blank?
+          = link_to "購入画面に進む", confirm_item_path(@item.id), class: "mainProduct__content__top__items__buy"
+        - else
+          .mainProduct__content__top__items__sold
+            売り切れました
         
         .mainProduct__content__top__items__introduction
           = @item.discription

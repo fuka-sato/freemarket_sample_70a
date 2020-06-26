@@ -181,7 +181,8 @@
             &__box{
               height: 93px;
               width: 348px;
-              padding-top: 43px;
+              padding-top: 20px;
+              padding-bottom: 15px;
               border-bottom: 1px solid #f8f8f8;
               .shipping-box{
                 height: 40px;
@@ -216,25 +217,45 @@
             &__box{
               height: 93px;
               width: 348px;
-              padding-top: 35px;
+              padding-top: 10px;
+              color: red;
+              
             
               .buy-link-box{
                 height: 50px;
                 width:  348px;
-                background-color: #3ccace;
-                a {
-                  text-decoration: none;
+                text-align: center;
+                margin-top: 5px;
                 
                 
-                  .buy-text{
-                  
+                  input {
                   color: #ffffff;
                   font-weight: bolder;
-                  text-align: center;
+                  background-color: #3ccace;
                   font-size:  16px;
-                  line-height: 50px;
-                    
+                  height: 50px;
+                  width:  348px;
+                  border: none;
+                  cursor: pointer;
                   }
+              
+              }
+              .text-if{
+                color: #ffffff;
+                font-weight: bolder;
+                background-color: #dcdcdc;
+                font-size:  16px;
+                height: 50px;
+                width:  348px;
+                border: none;
+                position: relative;
+                left: 0;
+                top: 0;
+                text{
+                  margin-top: 10px;
+                  position: absolute;
+                  left: 140px;
+                  top: 2px;
                 }
               }
             }

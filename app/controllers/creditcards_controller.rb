@@ -5,7 +5,7 @@ class CreditcardsController < ApplicationController
 
 
 
-  def new # カードの登録画面。送信ボタンを押すとcreateアクションへ。
+  def new # カードの登録画面。送信ボタンを押すとcreateアクション
     @card = Creditcard.find_by(user_id: current_user.id)
     redirect_to creditcard_path(current_user.id) if @card.present?
   end
@@ -82,4 +82,6 @@ class CreditcardsController < ApplicationController
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
     end
   end
+ 
+  
 end

@@ -102,6 +102,10 @@
         }
       } 
         &__buy{
+          text-decoration: none;
+          color: white;
+            font-size: 25px;
+            font-weight: bolder;
           width: 610px;
           height: 60px;
           display: flex;
@@ -111,13 +115,20 @@
           margin-bottom: 15px;
           cursor : pointer;
 
-          a{
-            text-decoration: none;
-            color: white;
-            font-size: 25px;
-            font-weight: bolder;
+          
+        }
 
-          }
+        &__sold{
+          font-weight: bolder;
+          font-size: 25px;
+          color: white;
+          width: 610px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: grey;
+          margin-bottom: 15px;
         }
         &__introduction {
             display: block;      
