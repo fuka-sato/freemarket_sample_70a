@@ -27,6 +27,7 @@ class ItemsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
       @card_brand = @default_card_information.brand
+    
       
 
 
@@ -45,6 +46,8 @@ class ItemsController < ApplicationController
         @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1398199435"
       end
     end
+    
+    
   end
 
   def payment
@@ -58,6 +61,8 @@ class ItemsController < ApplicationController
       )
       @buyer = Item.find(params[:id])
       @buyer.update(buyer_id: current_user.id)
+      
+      redirect_to done_items_path
   end
 
 
@@ -102,6 +107,9 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
   #選択された子カテゴリーに紐付く孫カテゴリーの配列を取得
   @category_grandchildren = Category.find("#{params[:child_id]}").children
+  end
+
+  def done
   end
 
   
