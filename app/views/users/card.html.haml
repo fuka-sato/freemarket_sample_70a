@@ -9,7 +9,7 @@
         .mypage__main__content
           .mypage__main__content__upper
             .mypage__main__content__upper__btn
-              = link_to "クレジットカード情報登録","#"
+              = link_to "クレジットカード情報登録","/creditcards/show", data: {"turbolinks" => false}
         .mypage__main__side
           = render "mypage-side"
     .mypage__subfooter

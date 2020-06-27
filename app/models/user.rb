@@ -25,6 +25,7 @@ class User < ApplicationRecord
   has_one :profile
   has_one :shipping_address
   accepts_nested_attributes_for :profile
+  has_many :creditcards
   has_many :items
 
   # 購入未・済などを区別して取り出せるようにするアソシエーション
