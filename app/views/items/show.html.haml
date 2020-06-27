@@ -120,7 +120,10 @@
           - else
             .buy-link-box
               - if user_signed_in?
-                = link_to '購入確認画面へ',confirm_item_path
+                -if @item.buyer_id.blank?
+                  = link_to '購入確認画面へ',confirm_item_path, class: "buy-link-if"
+                - else
+                  .buy-link-else
               - else
                 = link_to "ログイン" ,new_user_session_path
           
