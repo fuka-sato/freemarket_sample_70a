@@ -10,11 +10,14 @@ Rails.application.routes.draw do
     collection do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
+      # get 'item_images'
     end
     member do
       get 'confirm'
     end
+    resources :item_images
   end
+  
   
   resources :users do
     collection do

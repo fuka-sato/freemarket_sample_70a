@@ -5,7 +5,7 @@
 
 .seller
   .seller__in
-    = form_for [@item] do |f|
+    =form_for [@item] do |f|
       = render 'layouts/validationerror', model: f.object
       .seller__in__item
         .seller__in__item__image
@@ -16,15 +16,14 @@
             %p 最大3枚までアップロードできます
           .post__drop__box__container
             .prev-content
-              .label-content
-                %label{for: "item_item_images_attributes_0_item_image", class: "label-box", id: "label-box--0"}
-                  %pre.label-box__text-visible クリックしてファイルをアップロード
-              .hidden-content
-                = f.fields_for :item_images do |i|
-                  = i.file_field :item_image, class: "hidden-field"
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][item_image]", id: "item_images_attributes_1_image" }
-                  %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][item_image]", id: "item_images_attributes_2_image" }
-            
+            .label-content
+              %label{for: "item_item_images_attributes_0_item_image", class: "label-box", id: "label-box--0"}
+                %pre.label-box__text-visible クリックしてファイルをアップロード
+            .hidden-content
+              - @item.item_images.each do |image|
+                %li
+                  = image_tag image.item_image.url, :width => "75", :height => "75",class:"small"
+      
         .seller__in__item__name
           .seller__in__item__name__text
             %h2 商品名
@@ -37,7 +36,9 @@
           %h2 商品説明
           %span 必須
         .seller__in__details__product
-          = f.text_area :discription,:size => '21x7', class: 'product-box', placeholder: '商品の説明。(必須 1,000文字以内)&#13;&#10;(色、素材、重さ、低下、注意点など)&#13;&#10;&#13;&#10;例）2010年ごろに1万円で購入したジャケットです。&#13;&#10; 食べ物をこぼしてしまい、目立つ汚れがあります。'.html_safe, value: '', maxlength: '1000'
+          = f.text_area :discription, :size => '21x7', class: 'product-box', placeholder: '商品の説明。(必須 1,000文字以内)&#13;&#10;(色、素材、重さ、低下、注意点など)&#13;&#10;&#13;&#10;例）2010年ごろに1万円で購入したジャケットです。&#13;&#10; 食べ物をこぼしてしまい、目立つ汚れがあります。'.html_safe, value: '', maxlength: '1000'
+          =@item.discription
+            
 
       .seller__in__genre
         .seller__in__genre__title
@@ -47,7 +48,13 @@
           %span 必須
         .seller__in__genre__input  
           .seller__in__genre__input__box
-            = f.collection_select :category_id,Category.roots, :id,:name,{include_blank: "---"},required: true, class: 'listing-select-wrapper__box--select', id: 'parent_category'
+            = link_to "#{@category_parent.name}","#"
+            %br
+            = link_to "#{@category_child.name}","#"
+            %br
+            = link_to "#{@category_grandchild.name}","#"
+
+
 
         .seller__in__genre__size
           %h2 サイズ
@@ -106,10 +113,10 @@
           %li ー
 
       .seller__in__sale
-        %input.seller__in__sale__input{type: "submit", value: "変更する"}
-       
+        %input.seller__in__sale__input{type: "submit", value: "出品する"}
+        %input.seller__in__sale__draft{type: "submit", value: "下書きに保存"} 
     .seller__in__retern
-      = link_to "キャンセル","#",class: "retern"
+      = link_to "もどる","#",class: "retern"
     .seller__in__promise
       禁止されている
       =link_to "行為","#"

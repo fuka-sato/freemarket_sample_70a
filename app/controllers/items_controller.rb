@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item,only: [:show, :confirm, :destroy]
+  before_action :set_item,only: [:show, :edit, :update, :confirm, :destroy]
   def index
     #@items = Item.all
   end
@@ -9,9 +9,6 @@ class ItemsController < ApplicationController
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
     @category_grandchild = Category.find(@category_id)
-  end
-
-  def edit
   end
 
   def confirm
@@ -61,20 +58,22 @@ class ItemsController < ApplicationController
   
 
   def edit
-    @item = Item.find_by(id: params[:id])
+    @category_id = @item.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
 
 
   def update
-    @item = Item.find(params[:id])
     @user = User.find(params[:id])
-  if @item.update(item_params)
-    redirect_to item_path, notice: ''
-  else
-    #updateを失敗すると編集ページへ
-    render 'edit'
+    if @item.update(item_params)
+      redirect_to item_path, notice: ''
+    else
+      #updateを失敗すると編集ページへ
+      render 'edit'
+    end
   end
-end
 
 
 

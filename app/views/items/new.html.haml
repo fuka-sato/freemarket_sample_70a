@@ -21,10 +21,10 @@
                 %pre.label-box__text-visible クリックしてファイルをアップロード
             .hidden-content
               = f.fields_for :item_images do |i|
-                = i.file_field :item_image, class: "hidden-field"
+                = i.file_field :item_image, multiple: true, type: 'file', name: "item_images[item_image][]", class: "hidden-field"
                 %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][item_image]", id: "item_images_attributes_1_image" }
                 %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][item_image]", id: "item_images_attributes_2_image" }
-            
+      
         .seller__in__item__name
           .seller__in__item__name__text
             %h2 商品名
