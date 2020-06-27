@@ -8,7 +8,7 @@
       .clearfix
         .creditcard
           .creditcard__content
-          = form_with url: creditcards_path, method: :post, html: { name: "inputForm" } do |f|
+          = form_with url: payments_path, method: :post, html: { name: "inputForm" } do |f|
             .creditcard__content__title
               %h2クレジットカード情報入力
             .creditcard__content__form
@@ -51,8 +51,6 @@
                   = f.text_field :cvc, type: 'text', class: 'security-number', placeholder: 'カード背面4桁もしくは3桁の番号', maxlength: "4"
                 .creditcard__content__form__box__btn#card_token
                   = f.submit '追加する', class: 'content-bottom--add-btn', id: 'token_submit'
-        .mypage__main__side
-          = render "/users/mypage-side"
     .mypage__subfooter
       = render "/items/subfooter"
     .mypage__footer

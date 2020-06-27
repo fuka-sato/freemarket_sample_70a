@@ -1,0 +1,23 @@
+.wrapper
+  .mypage
+    .mypage__header
+      = render "/items/header"
+    .mypage__breadcrumbs
+      = render "/items/bread-crumbs"
+    .mypage__main
+      .clearfix
+        .done
+          .done__content
+          
+            .done__content__title
+              %h2 購入が完了しました！
+            .done__content__form
+              = link_to "トップページへ戻る", root_path, class: "homepage"
+                 
+        
+    .mypage__subfooter
+      = render "/items/subfooter"
+    .mypage__footer
+      = render "/items/footer"
+  .button
+    = render "/items/exhibit-btn"

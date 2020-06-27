@@ -12,7 +12,59 @@ class ItemsController < ApplicationController
   end
 
   def confirm
+    @user = current_user
+    @card = Creditcard.find_by(user_id: current_user.id)
+    @address = ShippingAddress.find_by(user_id: current_user.id)
+    @item = Item.find(params[:id])
+    @buyer
+
+    if @card.blank?
+    else
+      Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
+      customer = Payjp::Customer.retrieve(@card.customer_id)
+      @default_card_information = customer.cards.retrieve(@card.card_id)
+      @card_brand = @default_card_information.brand
+    
+      
+
+
+      case @card_brand
+      when "Visa"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?1398199435"
+      when "JCB"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/jcb.svg?1398199435"
+      when "MasterCard"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?1398199435"
+      when "American Express"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/american_express.svg?1398199435"
+      when "Diners Club"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/dinersclub.svg?1398199435"
+      when "Discover"
+        @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1398199435"
+      end
+    end
+    
+    
   end
+
+  def payment
+    @creditcard = Creditcard.where(user_id: current_user.id).first
+    @item = Item.find(params[:id])
+    Payjp.api_key = ENV['PAYJP_ACCESS_KEY']
+    charge = Payjp::Charge.create(
+      amount: @item.price,
+      customer: Payjp::Customer.retrieve(@creditcard.customer_id),
+      currency: 'jpy'
+      )
+      @buyer = Item.find(params[:id])
+      @buyer.update(buyer_id: current_user.id)
+      
+      redirect_to done_items_path
+  end
+
+
+
+  
 
   def new
     # 商品出品関連
@@ -29,15 +81,22 @@ class ItemsController < ApplicationController
     end
   end
 
+  
+
   def create
     @item = Item.new(item_params)
     if @item.save
-      redirect_to  root_path and return
+      redirect_to users_path and return
     else
       render :new and return
     end 
   end
 
+  
+
+  def edit
+  end
+  
   def destroy
     if @item.destroy
       redirect_to root_path, notice: '商品を削除しました'
@@ -77,6 +136,11 @@ class ItemsController < ApplicationController
 
 
 
+  def done
+  end
+
+  
+
   private
   def set_item
     @item = Item.find(params[:id])
@@ -85,6 +149,7 @@ class ItemsController < ApplicationController
   def item_params
     params.require(:item).permit(
       :name, 
+      :buyer_id,
       :discription,
       :category_id,
       :size_id,

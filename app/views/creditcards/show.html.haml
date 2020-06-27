@@ -1,0 +1,35 @@
+.wrapper
+  .mypage
+    .mypage__header
+      = render "/items/header"
+    .mypage__breadcrumbs
+      = render "/items/bread-crumbs"
+    .mypage__main
+      .clearfix
+        .formcontent
+          .formcontent__field
+            .formcontent__field__title
+              %h2 支払い方法
+            .formcontent__field__box
+              .formcontent__field__box__card
+                .card
+                  %h2 クレジットカード一覧
+                  = image_tag "#{@card_src}", alt: @card_brand, id: "card_image"
+                  %br
+                  = "**** **** **** " + @default_card_information.last4
+                  %br
+                  - exp_month = @default_card_information.exp_month.to_s
+                  - exp_year = @default_card_information.exp_year.to_s.slice(2,3)
+                  = exp_month + " / " + exp_year
+                  = form_tag(creditcard_path(current_user.id), method: :delete, id: 'charge-form',  name: "inputForm") do
+                    %input{ type: "hidden", name: "card_id", value: "" }
+                    %button 削除する
+              
+        .mypage__main__side
+          = render "/users/mypage-side"
+    .mypage__subfooter
+      = render "/items/subfooter"
+    .mypage__footer
+      = render "/items/footer"
+  .button
+    = render "/items/exhibit-btn"
