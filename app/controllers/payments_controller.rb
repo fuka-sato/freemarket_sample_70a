@@ -4,8 +4,6 @@ class PaymentsController < ApplicationController
 
   require "payjp"
   before_action :set_card
-  
-
 
   def new # カードの登録画面。送信ボタンを押すとcreateアクション
     @card = Creditcard.find_by(user_id: current_user.id)
@@ -28,7 +26,6 @@ class PaymentsController < ApplicationController
       if @card.save 
         redirect_to (request.referer) if @card.present?
         # redirect_to request.referrer if @card.present?
-        
       else
         redirect_to action: "new"
       end
@@ -70,8 +67,4 @@ class PaymentsController < ApplicationController
       Payjp.api_key = Rails.application.credentials.payjp[:PAYJP_ACCESS_KEY]
     end
   end
- 
-  
-
-
 end
