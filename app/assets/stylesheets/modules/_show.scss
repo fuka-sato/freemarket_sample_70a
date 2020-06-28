@@ -117,6 +117,20 @@
 
           
         }
+        &__buy-if{
+          text-decoration: none;
+          color: white;
+            font-size: 25px;
+            font-weight: bolder;
+          width: 610px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #3ccace;
+          margin-bottom: 15px;
+          cursor : pointer;
+        }
 
         &__sold{
           font-weight: bolder;
