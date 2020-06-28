@@ -46,12 +46,16 @@
             （税込）
           %span.details
             = @item.delivery_price.delivery_price
-        
-        - if @item.buyer_id.blank?
-          = link_to "購入画面に進む", confirm_item_path(@item.id), class: "mainProduct__content__top__items__buy"
+
+        -if @item.seller_id == current_user.id
+          = link_to "編集画面に進む", "#", class: "mainProduct__content__top__items__buy-if"
         - else
-          .mainProduct__content__top__items__sold
-            売り切れました
+          - if @item.buyer_id.blank?
+            = link_to "購入画面に進む", confirm_item_path(@item.id), class: "mainProduct__content__top__items__buy"
+          - else
+            .mainProduct__content__top__items__sold
+              売り切れました
+        
         
         .mainProduct__content__top__items__introduction
           = @item.discription
