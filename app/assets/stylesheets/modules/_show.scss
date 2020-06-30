@@ -100,7 +100,50 @@
         
           .details {
         }
-      }
+      } 
+        &__buy{
+          text-decoration: none;
+          color: white;
+            font-size: 25px;
+            font-weight: bolder;
+          width: 610px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: red;
+          margin-bottom: 15px;
+          cursor : pointer;
+
+          
+        }
+        &__buy-if{
+          text-decoration: none;
+          color: white;
+          font-size: 25px;
+          font-weight: bolder;
+          width: 610px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #3ccace;
+          margin-bottom: 15px;
+          cursor : pointer;
+        }
+
+        &__sold{
+          font-weight: bolder;
+          font-size: 25px;
+          color: white;
+          width: 610px;
+          height: 60px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: grey;
+          margin-bottom: 15px;
+        }
         &__introduction {
             display: block;      
             font-size: 19px;
@@ -276,43 +319,43 @@
     }
   }
   .buy-link-box{
-    height: 50px;
-    width:  100%;
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    width: 610px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #3ccace;
-    margin-top: 30px;
-    text-align: center;
-    line-height: 50px;
     margin-bottom: 15px;
+    cursor : pointer;
 
     a {
       text-decoration: none;
       color: white;
       }
-  }
-  .items-show-button__edit {
-    height: 50px;
-    width:  100%;
-    background-color: #00b0ff;
-    margin-top: 30px;
-    text-align: center;
-    line-height: 50px;
-    margin-bottom: 15px;
-  a {
-    text-decoration: none;
-    color: white;
-    }
+      .buy-link-else{
+        height: 50px;
+        width:  100%;
+        background-color: white;
+      }
   }
   .items-show-button__cancel {
-    height: 50px;
-    width:  100%;
-    background-color: #00b0ff;
-    margin-top: 30px;
-    text-align: center;
-    line-height: 50px;
-    margin-bottom: 15px;
-  a {
-    text-decoration: none;
     color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    width: 610px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #3ccace;
+    margin-bottom: 15px;
+    cursor : pointer;
+    a {
+      text-decoration: none;
+      color: white;
+      }
     }
-  }
 }

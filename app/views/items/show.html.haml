@@ -46,7 +46,22 @@
             （税込）
           %span.details
             = @item.delivery_price.delivery_price
-        
+
+        - if user_signed_in? && @item.seller_id == current_user.id 
+          = link_to "編集画面に進む", "#", class: "mainProduct__content__top__items__buy-if"
+          .items-show-button__cancel
+            = link_to '出品を取り消す', item_path(@item.id), method: :delete
+        - else
+          - if user_signed_in?
+            - if @item.buyer_id.blank?
+              = link_to "購入画面に進む", confirm_item_path(@item.id), class: "mainProduct__content__top__items__buy"
+            - else
+              .mainProduct__content__top__items__sold
+                売り切れました
+          - else
+            .buy-link-box
+              = link_to "ログインする" ,new_user_session_path
+
         .mainProduct__content__top__items__introduction
           = @item.discription
         
@@ -104,19 +119,6 @@
                   発送日の目安
                 %td.table-right
                   = @item.delivery_day.delivery_day
-
-          - if user_signed_in? && @item.seller_id == current_user.id
-            .items-show-button__edit
-              = link_to '編集する', "#"
-            .items-show-button__cancel
-              = link_to '出品を取り消す', "#"
-
-          - else
-            .buy-link-box
-              - if user_signed_in?
-                = link_to '購入確認画面へ',confirm_item_path
-              - else
-                = link_to "ログイン" ,new_user_session_path
           
         
         .mainProduct__content__top__items__optional
@@ -145,9 +147,6 @@
             = icon('fas', 'comment', class: "comment-icon")
             コメントする
       
-
-
-
 
       .mainProduct__content__top__links
         %ul.item-prev
