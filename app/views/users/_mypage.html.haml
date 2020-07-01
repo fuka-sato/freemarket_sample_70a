@@ -2,7 +2,8 @@
   .mypage__header
     = render "/items/header"
   .mypage__breadcrumbs
-    = render "/items/bread-crumbs"
+    - breadcrumb :user, @user
+    = render "items/bread-crumbs"
   .mypage__main
     .clearfix
       .mypage__main__content
