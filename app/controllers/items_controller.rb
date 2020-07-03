@@ -1,5 +1,7 @@
 class ItemsController < ApplicationController
+
   before_action :set_item,only: [:show, :confirm, :destroy]
+  
   def index
     #@items = Item.all
   end
@@ -11,8 +13,7 @@ class ItemsController < ApplicationController
     @category_grandchild = Category.find(@category_id)
   end
 
-  def edit
-  end
+  
 
   def confirm
     @user = current_user
@@ -27,9 +28,6 @@ class ItemsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
       @card_brand = @default_card_information.brand
-    
-      
-
 
       case @card_brand
       when "Visa"
@@ -46,8 +44,6 @@ class ItemsController < ApplicationController
         @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1398199435"
       end
     end
-    
-    
   end
 
   def payment
@@ -98,8 +94,59 @@ class ItemsController < ApplicationController
   
 
   def edit
+    @item = Item.find(params[:id])
+    
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = []
+    Category.where(ancestry: nil).each do |parent|
+      @category_parent_array << parent.name
+    end
+
+    @category_children_array = []
+    Category.where(ancestry: child_category.ancestry).each do |children|
+      @category_children_array << children
+    end
+
+    @category_grandchildren_array = []
+    Category.where(ancestry: grandchild_category.ancestry).each do |grandchildren|
+      @category_grandchildren_array << grandchildren
+    end
+
   end
+
   
+
+  def update
+    if item_params[:item_images_attributes].nil?
+      flash.now[:alert] = '更新できませんでした 【画像を１枚以上入れてください】'
+      render :edit
+    else
+      exit_ids = []
+      item_params[:item_images_attributes].each do |a,b|
+        exit_ids << item_params[:item_images_attributes].dig(:"#{a}",:id).to_i
+      end
+      ids = ItemImage.where(item_id: params[:id]).map{|image| image.id }
+      delete__db = ids - exit_ids
+      ItemImage.where(id:delete__db).destroy_all
+      @item.touch
+      if @item.update(item_params)
+        redirect_to  update_done_items_path
+      else
+        flash.now[:alert] = '更新できませんでした'
+        render :edit
+      end
+    end
+  end
+
+  def update_done
+    @item_update = Item.order("updated_at DESC").first
+  end
+
+
+
+
   def destroy
     if @item.destroy
       redirect_to root_path, notice: '商品を削除しました'
@@ -144,4 +191,11 @@ class ItemsController < ApplicationController
       :item_images_attributes => [:item_image,:_destroy]
     ).merge(seller_id: current_user.id)
   end
+
+  
+
+  
+  
+
+  
 end
