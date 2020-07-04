@@ -27,7 +27,7 @@
                         %span 削除
 
             .label-content
-              = f.label :"item_images_attributes_#{@item.item_images.length}_item_image", class: "label-box", id: "label-box--#{@item.item_images.length}" do
+              %label{for: "item_images_attributes_#{@item.item_images.length}_item_image", class: "label-box", id: "label-box--#{@item.item_images.length}"}
                 %pre.label-box__text-visible クリックしてファイルをアップロード
             .hidden-content
               = f.fields_for :item_images do |i|
@@ -35,7 +35,7 @@
                 = i.check_box :_destroy, class: "hidden-checkbox"
 
               - @item.item_images.length.upto(2) do |i|
-                %input{name: "item[item_images_attributes][#{i}][item_image]", id: "item_images_attributes_#{i}_item_image", class:"hidden-field", type:"file"}
+                %input{name: "item[item_images_attributes][#{i}][item_image]", id: "item_attributes_#{i}_image", class:"hidden-field", type:"file"}
             
         .seller__in__item__name
           .seller__in__item__name__text
