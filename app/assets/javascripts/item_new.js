@@ -7,10 +7,10 @@ $(document).on('turbolinks:load', function(){
                     <div class="upper-box">
                       <img src="" alt="preview">
                     </div>
-                    <div class="update-box">
-                        <label class="edit_btn">編集</label>
-                      </div>
                     <div class="lower-box">
+                      <div class="update-box">
+                          <label class="edit_btn">編集</label>
+                      </div>
                       <div class="delete-box" id="delete_btn_${count}">
                         <span>削除</span>
                       </div>
@@ -81,8 +81,8 @@ $(document).on('turbolinks:load', function(){
         }
 
         //プレビュー削除したフィールドにdestroy用のチェックボックスがあった場合、チェックを外す
-        if ($(`#item_images_attributes_${id}__destroy`)){
-          $(`#item_images_attributes_${id}__destroy`).prop('checked',false);
+        if ($(`#item_item_images_attributes_${id}__destroy`)){
+          $(`#item_item_images_attributes_${id}__destroy`).prop('checked',false);
         } 
 
         //ラベルのwidth操作
@@ -106,9 +106,9 @@ $(document).on('turbolinks:load', function(){
 
       //新規投稿時
       //削除用チェックボックスの有無で判定
-      if ($(`#item_images_attributes_${id}__destroy`).length == 0) {
+      if ($(`#item_item_images_attributes_${id}__destroy`).length == 0) {
         //フォームの中身を削除 
-        $(`#item_images_attributes_${id}_item_image`).val("");
+        $(`#item_item_images_attributes_${id}_item_image`).val("");
         var count = $('.preview-box').length;
         //3個めが消されたらラベルを表示
         if (count == 2) {
@@ -116,12 +116,12 @@ $(document).on('turbolinks:load', function(){
         }
         setLabel(count);
         if(id < 3){
-          $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_item_image`});
+          $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_item_image`});
 
         }
       } else {
         //投稿編集時
-        $(`#item_images_attributes_${id}__destroy`).prop('checked',true);
+        $(`#item_item_images_attributes_${id}__destroy`).prop('checked',true);
         //3個めが消されたらラベルを表示
         if (count == 2) {
           $('.label-content').show();
@@ -137,7 +137,7 @@ $(document).on('turbolinks:load', function(){
       }
 
       //フォームの中身を削除 
-      $(`#item_images_attributes_${id}_item_image`).val("");
+      $(`#item_item_images_attributes_${id}_item_image`).val("");
 
       //削除時のラベル操作
       var count = $('.preview-box').length;
