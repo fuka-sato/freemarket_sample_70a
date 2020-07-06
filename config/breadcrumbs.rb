@@ -4,9 +4,14 @@ crumb :root do
 end
 
 crumb :user do
-  link "マイページ", users_path
+  link "マイページ", users_path(current_user)
+  parent :root
 end
 
+crumb :show do
+  link "商品詳細", item_path
+  parent :root
+end
 
 # crumb :projects do
 #   link "Projects", projects_path

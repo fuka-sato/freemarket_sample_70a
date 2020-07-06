@@ -2,8 +2,8 @@
   .mypage__header
     = render "/items/header"
   .mypage__breadcrumbs
-    - breadcrumb :user, user
-    = breadcrumbs pretext: "",separator: " &rsaquo; ", class: "breadcrumbs-list"
+    - breadcrumb :user, @user
+    = render "/items/bread-crumbs"
   .mypage__main
     .clearfix
       .mypage__main__content
