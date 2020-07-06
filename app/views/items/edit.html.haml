@@ -16,14 +16,31 @@
             %p 最大3枚までアップロードできます
           .post__drop__box__container
             .prev-content
+              - @item.item_images.each do |image|
+                .preview-box
+                  .upper-box
+                    = image_tag image.item_image.url, width: "112", height: "112", alt: "preview"
+                  .lower-box
+                    .delete-box
+                      .delete-btn
+                        %span 削除
+
             .label-content
-              %label{for: "item_item_images_attributes_0_item_image", class: "label-box", id: "label-box--0"}
+              %label{for: "item_item_images_attributes_#{@item.item_images.length}_item_image", class: "label-box", id: "label-box--#{@item.item_images.length}"}
                 %pre.label-box__text-visible クリックしてファイルをアップロード
+              -# = f.label :"images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.length}" do
+              -# = f.label :"item_item_images_attributes_#{@item.item_images.length}_item_image", class: "label-box", id: "label-box--#{@item.item_images.length}" do
             .hidden-content
               = f.fields_for :item_images do |i|
+
+                //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
                 = i.file_field :item_image, class: "hidden-field"
-                %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][item_image]", id: "item_images_attributes_1_image" }
-                %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][item_image]", id: "item_images_attributes_2_image" }
+                = i.check_box :_destroy, class: "hidden-checkbox"
+
+                //5つのfile_fieldを準備するに当たって、足りない分を表示
+              -# - @item.item_images.length.upto(2) do |i|
+              -#   %input{name: "item[images_attributes][#{i}][item_image]", id: "item_images_attributes_#{i}item_image", class:"hidden-field", type:"file"}
+        .sell__block__form__name
             
         .seller__in__item__name
           .seller__in__item__name__text
@@ -37,7 +54,7 @@
           %h2 商品説明
           %span 必須
         .seller__in__details__product
-          = f.text_area :discription, :size => '21x7', class: 'product-box', placeholder: '商品の説明。(必須 1,000文字以内)&#13;&#10;(色、素材、重さ、低下、注意点など)&#13;&#10;&#13;&#10;例）2010年ごろに1万円で購入したジャケットです。&#13;&#10; 食べ物をこぼしてしまい、目立つ汚れがあります。'.html_safe, value: '', maxlength: '1000'
+          = f.text_area :discription,:size => '21x7', class: 'product-box', placeholder: '商品の説明。(必須 1,000文字以内)&#13;&#10;(色、素材、重さ、低下、注意点など)&#13;&#10;&#13;&#10;例）2010年ごろに1万円で購入したジャケットです。&#13;&#10; 食べ物をこぼしてしまい、目立つ汚れがあります。'.html_safe, maxlength: '1000'
 
       .seller__in__genre
         .seller__in__genre__title
