@@ -20,6 +20,16 @@
                     = image_tag image.item_image.url, data: { index: i }, width: "100", height: '100' 
                     -# %span.js-remove
                     -#   削除
+          .post__drop__box__container
+            .prev-content
+              - @item.item_images.each do |image|
+                .preview-box
+                  .upper-box
+                    = image_tag image.item_image.url, width: "112", height: "112", alt: "preview"
+                  .lower-box
+                    .delete-box
+                      .delete-btn
+                        %span 削除
 
 
               = f.fields_for :item_images do |i|
@@ -59,8 +69,8 @@
                 -# = i.check_box :_destroy, class: "hidden-checkbox"
 
                 //5つのfile_fieldを準備するに当たって、足りない分を表示
-              -# - @item.item_images.length.upto(2) do |i|
-              -#   %input{name: "item[images_attributes][#{i}][item_image]", id: "item_images_attributes_#{i}item_image", class:"hidden-field", type:"file"}
+              - @item.item_images.length.upto(2) do |i|
+                %input{name: "item[images_attributes][#{i}][item_image]", id: "item_item_images_attributes_#{i}_item_image", class:"hidden-field", type:"file"}
         .sell__block__form__name
             
         .seller__in__item__name

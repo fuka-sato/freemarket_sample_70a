@@ -18,6 +18,21 @@
 //                   </div>`
 //       return html;
 //     }
+    //プレビューのhtmlを定義
+    function buildHTML(count) {
+      var html = `<div class="preview-box" id="preview-box__${count}">
+                    <div class="upper-box">
+                      <img src="" alt="preview">
+                    </div>
+                    <div class="lower-box">
+
+                      <div class="delete-box" id="delete_btn_${count}">
+                        <span>削除</span>
+                      </div>
+                    </div>
+                  </div>`
+      return html;
+    }
 
 //     // 投稿編集時
 //     //items/:i/editページへリンクした際のアクション=======================================

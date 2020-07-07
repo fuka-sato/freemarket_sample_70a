@@ -24,6 +24,9 @@
                   = i.file_field :item_image, class: "js-file"
                   %span.js-remove
                     削除
+                = i.file_field :item_image, class: "hidden-field"
+                %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][1][item_image]", id: "item_item_images_attributes_1_item_image" }
+                %input{class:"hidden-field", type: "file", name: "item[item_images_attributes][2][item_image]", id: "item_item_images_attributes_2_item_image" }
             
         .seller__in__item__name
           .seller__in__item__name__text
