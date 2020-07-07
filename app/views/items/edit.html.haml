@@ -13,13 +13,6 @@
             %span 必須
           .seller__in__item__image__images
             %p 最大3枚までアップロードできます
-            #image-box
-              #previews
-                - if @item.persisted?
-                  = @item.item_images.each_with_index do |image, i|
-                    = image_tag image.item_image.url, data: { index: i }, width: "100", height: '100' 
-                    -# %span.js-remove
-                    -#   削除
           .post__drop__box__container
             .prev-content
               - @item.item_images.each do |image|
@@ -31,42 +24,15 @@
                       .delete-btn
                         %span 削除
 
-
+            .label-content
+              %label{for: "item_item_images_attributes_#{@item.item_images.length}_item_image", class: "label-box", id: "label-box--#{@item.item_images.length}"}
+                %pre.label-box__text-visible クリックしてファイルをアップロード
+            .hidden-content
               = f.fields_for :item_images do |i|
-                .js-file_group{ data: { index: i.index } }
-                  = i.file_field :item_image, class: "js-file"
-                  
-                - if @item.persisted? 
-                  = i.check_box :_destroy, data:{ index: i.index }, class: 'hidden-destroy' 
-              - if @item.persisted? 
-                .js-file_group{ data: { index: @item.item_images.count } }
-                  = file_field_tag :item_image, name: "item[item_images_attributes][#{@item.item_images.count}][item_image]", class: 'js-file'
-                  -# %span.js-remove
-                  -#   削除
-          -# .post__drop__box__container
-          -#   .prev-content
-          -#     - @item.item_images.each do |image|
-          -#       .preview-box
-          -#         .upper-box
-          -#           = image_tag image.item_image.url, width: "112", height: "112", alt: "preview"
-          -#         .lower-box
-          -#           .update-box
-          -#             %label.edit-btn 編集
-          -#           .delete-box
-          -#             .delete-btn
-          -#               %span 削除
-
-            -# .label-content
-            -#   %label{for: "item_item_images_attributes_#{@item.item_images.length}_item_image", class: "label-box", id: "label-box--#{@item.item_images.length}"}
-            -#     %pre.label-box__text-visible クリックしてファイルをアップロード
-              -# = f.label :"images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.length}" do
-              -# = f.label :"item_item_images_attributes_#{@item.item_images.length}_item_image", class: "label-box", id: "label-box--#{@item.item_images.length}" do
-            -# .hidden-content
-            -#   = f.fields_for :item_images do |i|
 
                 //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
-                -# = i.file_field :item_image, class: "hidden-field"
-                -# = i.check_box :_destroy, class: "hidden-checkbox"
+                = i.file_field :item_image, class: "hidden-field"
+                = i.check_box :_destroy, class: "hidden-checkbox"
 
                 //5つのfile_fieldを準備するに当たって、足りない分を表示
               - @item.item_images.length.upto(2) do |i|
