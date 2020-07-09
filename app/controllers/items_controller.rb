@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item,only: [:show, :confirm, :destroy,:edit]
+  before_action :set_item,only: [:show, :confirm, :destroy,:edit, :update]
   def index
     #@items = Item.all
   end
@@ -117,30 +117,15 @@ class ItemsController < ApplicationController
   
 
   def update
-    if item_params[:item_images_attributes].nil?
-      flash.now[:alert] = '更新できませんでした 【画像を１枚以上入れてください】'
-      render :edit
-    else
-      exit_ids = []
-      item_params[:item_images_attributes].each do |a,b|
-        exit_ids << item_params[:item_images_attributes].dig(:"#{a}",:id).to_i
-      end
-      ids = ItemImage.where(item_id: params[:id]).map{|image| image.id }
-      delete__db = ids - exit_ids
-      ItemImage.where(id:delete__db).destroy_all
-      @item.touch
-      if @item.update(item_params)
-        redirect_to  update_done_items_path
-      else
-        flash.now[:alert] = '更新できませんでした'
-        render :edit
-      end
+    if @item.update(item_params)
+       redirect_to root_path
+    else 
+      redirect_to edit_item_path
     end
+  
   end
 
-  def update_done
-    @item_update = Item.order("updated_at DESC").first
-  end
+  
 
 
 
@@ -190,10 +175,5 @@ class ItemsController < ApplicationController
     ).merge(seller_id: current_user.id)
   end
 
-  
 
-  
-  
-
-  
 end
