@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_item,only: [:show, :confirm, :destroy]
+  before_action :set_item,only: [:show, :confirm, :destroy,:edit, :update]
   def index
     #@items = Item.all
   end
@@ -11,8 +11,7 @@ class ItemsController < ApplicationController
     @category_grandchild = Category.find(@category_id)
   end
 
-  def edit
-  end
+  
 
   def confirm
     @user = current_user
@@ -27,9 +26,6 @@ class ItemsController < ApplicationController
       customer = Payjp::Customer.retrieve(@card.customer_id)
       @default_card_information = customer.cards.retrieve(@card.card_id)
       @card_brand = @default_card_information.brand
-    
-      
-
 
       case @card_brand
       when "Visa"
@@ -46,8 +42,6 @@ class ItemsController < ApplicationController
         @card_src = "//www-mercari-jp.akamaized.net/assets/img/card/discover.svg?1398199435"
       end
     end
-    
-    
   end
 
   def payment
@@ -98,8 +92,43 @@ class ItemsController < ApplicationController
   
 
   def edit
+    @item = Item.find(params[:id])
+    
+    grandchild_category = @item.category
+    child_category = grandchild_category.parent
+
+    @category_parent_array = []
+    Category.pluck(:ancestry) 
+    
+    @category_children_array = []
+    Category.pluck(:ancestry) 
+
+    @category_grandchildren_array = []
+    Category.pluck(:ancestry)
   end
+
   
+
+  def update
+    if item_params[:item_images_attributes].nil?
+      flash.now[:alert] = '更新できませんでした 【画像を１枚以上入れてください】'
+      render :edit
+    else
+      if @item.update(item_params)
+        redirect_to  update_done_items_path
+      else
+        flash.now[:alert] = '更新できませんでした'
+        render :edit
+      end
+    end
+  
+  end
+
+  
+
+
+
+
   def destroy
     if @item.destroy
       redirect_to root_path, notice: '商品を削除しました'
@@ -141,7 +170,7 @@ class ItemsController < ApplicationController
       :delivery_day_id,
       :price,
       :brand_id,
-      :item_images_attributes => [:item_image,:_destroy]
+      :item_images_attributes => [:item_image,:_destroy, :id]
     ).merge(seller_id: current_user.id)
-  end
+  end  
 end

@@ -4,12 +4,13 @@ $(function(){
     var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
+
   // 子カテゴリーの表示作成
   function appendChildrenBox(insertHTML){
     var childSelectHtml = '';
     childSelectHtml = `<div class='seller__in__genre__input__added' id= 'children_input'>
                         <div class='seller__in__genre__input__box'>
-                          <select class="seller__in__genre__input__box--select" id="child_category"> 
+                          <select class="seller__in__genre__input__box--select" id="child_category">
                             <option value="---" data-category="---">---</option>
                             ${insertHTML}
                           </select>
@@ -45,7 +46,6 @@ $(function(){
       .done(function(children){
         $('#children_input').remove(); //親が変更された時、子以下を削除
         $('#grandchildren_input').remove();
-        
         var insertHTML = '';
         children.forEach(function(child){
           insertHTML += appendOption(child);
@@ -53,7 +53,7 @@ $(function(){
         appendChildrenBox(insertHTML);
       })
       .fail(function(){
-        alert('カテゴリー取得に失敗しました');
+        alert('子カテゴリー取得に失敗しました');
       })
     }else{
       $('#children_input').remove(); //親が変更された時、子以下を削除
@@ -81,7 +81,7 @@ $(function(){
         }
       })
       .fail(function(){
-        alert('カテゴリー取得に失敗しました');
+        alert('孫カテゴリー取得に失敗しました');
       })
     }else{
       $('#grandchildren_input').remove(); //子カテゴリーが初期値になった時、孫以下を削除する
