@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :set_item,only: [:show, :confirm, :destroy]
   def index
-    #@items = Item.all
+    @items = Item.order("updated_at DESC")
   end
   
   def show
@@ -9,6 +9,7 @@ class ItemsController < ApplicationController
     @category_parent = Category.find(@category_id).parent.parent
     @category_child = Category.find(@category_id).parent
     @category_grandchild = Category.find(@category_id)
+  
   end
 
   def edit
