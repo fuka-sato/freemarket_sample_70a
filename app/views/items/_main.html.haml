@@ -109,7 +109,9 @@
                 = item.name 
               .main__pickupC__productBox__productlists__list__price
                 = item.price
-
+              -if item.buyer_id.present?
+                .sold
+                  SOLDOUT
 
  
 
@@ -131,4 +133,6 @@
                 = item.name 
               .main__pickupC__productBox__productlists__list__price
                 = item.price
-
+              -if item.buyer_id.present?
+                .sold
+                  SOLDOUT
