@@ -31,7 +31,7 @@
             = @item.delivery_price.delivery_price
 
         - if user_signed_in? && @item.seller_id == current_user.id 
-          = link_to "編集画面に進む", "#", class: "mainProduct__content__top__items__buy-if"
+          = link_to "編集画面に進む", edit_item_path(@item.id), class: "mainProduct__content__top__items__buy-if"
           .items-show-button__cancel
             = link_to '出品を取り消す', item_path(@item.id), method: :delete
         - else
