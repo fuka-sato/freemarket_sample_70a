@@ -1,4 +1,4 @@
--# 商品出品ページ メインコンテンツ
+-# 商品出品ページ 編集コンテンツ
 
 .head-logo
   =image_tag '/assets/logo.png', class:"logo"
@@ -28,8 +28,6 @@
             .label-content
               %label{for: "item_item_images_attributes_#{@item.item_images.length}_item_image", class: "label-box", id: "label-box--#{@item.item_images.length}"}
                 %pre.label-box__text-visible クリックしてファイルをアップロード
-              -# = f.label :"images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.length}" do
-              -# = f.label :"item_item_images_attributes_#{@item.item_images.length}_item_image", class: "label-box", id: "label-box--#{@item.item_images.length}" do
             .hidden-content
               = f.fields_for :item_images do |i|
 
