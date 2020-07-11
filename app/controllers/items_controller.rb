@@ -136,11 +136,10 @@ class ItemsController < ApplicationController
         render :edit
       end
     end
+  
   end
 
-  def update_done
-    @item_update = Item.order("updated_at DESC").first
-  end
+  
 
 
 
