@@ -1,2 +1,154 @@
-%h1 Items#edit
-%p Find me in app/views/items/edit.html.haml
+-# 商品出品ページ 編集コンテンツ
+
+.head-logo
+  =image_tag '/assets/logo.png', class:"logo"
+
+.seller
+  .seller__in
+    = form_for [@item] do |f|
+      = render 'layouts/validationerror', model: f.object
+      .seller__in__item
+        .seller__in__item__image
+          .seller__in__item__image__text
+            %h2 出品画像
+            %span 必須
+          .seller__in__item__image__images
+            %p 最大3枚までアップロードできます
+          .post__drop__box__container
+            .prev-content
+              - @item.item_images.each do |image|
+                .preview-box
+                  .upper-box
+                    = image_tag image.item_image.url, width: "112", height: "112", alt: "preview"
+                  .lower-box
+                    .delete-box
+                      .delete-btn
+                        %span 削除
+
+            .label-content
+              %label{for: "item_item_images_attributes_#{@item.item_images.length}_item_image", class: "label-box", id: "label-box--#{@item.item_images.length}"}
+                %pre.label-box__text-visible クリックしてファイルをアップロード
+            .hidden-content
+              = f.fields_for :item_images do |i|
+
+                //プレビューが出ている分のfile_fieldとdelete用のチェックボックスを設置
+                = i.file_field :item_image, class: "hidden-field"
+                = i.check_box :_destroy, class: "hidden-checkbox"
+
+                //5つのfile_fieldを準備するに当たって、足りない分を表示
+              - @item.item_images.length.upto(2) do |i|
+                %input{name: "item[images_attributes][#{i}][item_image]", id: "item_item_images_attributes_#{i}_item_image", class:"hidden-field", type:"file"}
+        .sell__block__form__name
+            
+        .seller__in__item__name
+          .seller__in__item__name__text
+            %h2 商品名
+            %span 必須
+          .seller__in__item__name__message
+            = f.text_field :name, class: 'seller__in__item__name__message__input', placeholder: '40文字まで', maxlength: "40"
+
+      .seller__in__details
+        .seller__in__details__text
+          %h2 商品説明
+          %span 必須
+        .seller__in__details__product
+          = f.text_area :discription,:size => '21x7', class: 'product-box', placeholder: '商品の説明。(必須 1,000文字以内)&#13;&#10;(色、素材、重さ、低下、注意点など)&#13;&#10;&#13;&#10;例）2010年ごろに1万円で購入したジャケットです。&#13;&#10; 食べ物をこぼしてしまい、目立つ汚れがあります。'.html_safe, maxlength: '1000'
+
+      .seller__in__genre
+        .seller__in__genre__title
+          %P 商品の詳細
+        .seller__in__genre__categoly
+          %h2 カテゴリー
+          %span 必須
+        .seller__in__genre__input
+          .seller__in__genre__input__box
+            = f.collection_select :category_id, Category.roots, :id,:name,{include_blank: "---",selected: @item.category.parent.parent.id}, required: true, class: 'listing-select-wrapper__box--select', id: 'parent_category'
+            
+            = f.collection_select :category_id, @item.category.parent.siblings, :id,:name,{include_blank: "---",selected: @item.category.parent.id}, required: true, class: 'listing-select-wrapper__box--select', id: 'children_input'
+        
+            = f.collection_select :category_id, @item.category.siblings, :id,:name,{include_blank: "---",selected: @item.category.id}, required: true, class: 'listing-select-wrapper__box--select', id: 'grandchildren_input'
+        .seller__in__genre__size
+          %h2 サイズ
+          %span 必須
+        .seller__in__genre__size-select
+          = f.collection_select :size_id, Size.all, :id, :size, :prompt => "サイズを選択"
+        .seller__in__genre__brand
+          %h2 ブランド
+          %span 必須
+          
+        .seller__in__genre__brand-input
+          = f.collection_select :brand_id, Brand.all, :id, :brand, :prompt => "ブランドを選択"
+
+      .seller__in__status
+        .seller__in__status__item
+          %h2 商品の状態
+          %span 必須
+        .seller__in__status__input
+          = f.collection_select :condition_id, Condition.all, :id, :condition, :prompt => "商品の状態を選択"
+      .seller__in__delivery
+        .seller__in__delivery__title
+          配送について
+          = icon('fas', 'question-circle', class: 'question')
+        .seller__in__delivery__pattern
+          %h2 配送料の負担
+          %span 必須
+        .seller__in__delivery__way
+          = f.collection_select :delivery_price_id, DeliveryPrice.all, :id, :delivery_price, :prompt => "選択して下さい"
+        .seller__in__delivery__area
+          %h2 発送元の地域
+          %span 必須
+        .seller__in__delivery__input
+          = f.collection_select :delivery_area_id, DeliveryArea.all, :id, :delivery_area, :prompt => "選択して下さい"
+        .seller__in__delivery__day
+          .seller__in__delivery__day__date 
+            %h2 発送までの日数
+            %span 必須
+          .seller__in__delivery__day__input
+            = f.collection_select :delivery_day_id, DeliveryDay.all, :id, :delivery_day, :prompt => "選択して下さい"
+      .seller__in__price
+        .seller__in__price__title
+          価格  (¥300~9,999,999)
+          = icon('fas', 'question-circle', class: 'question')
+        %ul.seller__in__price__item
+          %li.seller__in__price__item__list
+            %h2 販売価格
+            %span 必須
+          %li.seller__in__price__item__list
+            = label_tag (:"¥")
+            = f.number_field :price, class: "price-box", min: 300, max: 9999999
+        %ul.seller__in__price__tax
+          %li 販売手数料  (10％）
+          %li ー
+        %ul.seller__in__price__fee
+          %li 販売利益
+          %li ー
+
+      .seller__in__sale
+        %input.seller__in__sale__input{type: "submit", value: "更新する"}
+        %input.seller__in__sale__draft{type: "submit", value: "下書きに保存"} 
+    .seller__in__retern
+      = link_to "もどる","#",class: "retern"
+    .seller__in__promise
+      禁止されている
+      =link_to "行為","#"
+      および
+      =link_to "出品物","#"
+      を必ずご確認ください。
+      =link_to "偽ブランド品","#"
+      や
+      =link_to "盗品物","#"
+      などの販売は犯罪であり、法律により処罰される可能性があります。また、出品を持ちまして
+      =link_to "加盟店規約","#"
+      に同意したことになります。
+  .seller__rule
+    %ul.seller__rule__text
+      %li 
+      =link_to "プライバシーポリシー","#"
+      %li
+      =link_to "フリマ利用規約","#"
+      %li
+      =link_to "特定商取引に関する表記","#"
+.footer-logo
+  =image_tag '/assets/logo-white.png', class:"white-logo"
+  %p.footer__company-name
+    © FURIMA.Inc.

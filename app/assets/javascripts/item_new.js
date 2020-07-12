@@ -8,15 +8,35 @@ $(document).on('turbolinks:load', function(){
                       <img src="" alt="preview">
                     </div>
                     <div class="lower-box">
-                      <div class="update-box">
-                        <label class="edit_btn">編集</label>
-                      </div>
+
                       <div class="delete-box" id="delete_btn_${count}">
                         <span>削除</span>
                       </div>
                     </div>
                   </div>`
       return html;
+    }
+
+    // 投稿編集時
+    //items/:i/editページへリンクした際のアクション=======================================
+    if (window.location.href.match(/\/items\/\d+\/edit/)){
+      //登録済み画像のプレビュー表示欄の要素を取得する
+      var prevContent = $('.label-content').prev();
+      labelWidth = (620 - $(prevContent).css('width').replace(/[^0-9]/g, ''));
+      $('.label-content').css('width', labelWidth);
+      //プレビューにidを追加
+      $('.preview-box').each(function(index, box){
+        $(box).attr('id', `preview-box__${index}`);
+      })
+      //削除ボタンにidを追加
+      $('.delete-box').each(function(index, box){
+        $(box).attr('id', `delete_btn_${index}`);
+      })
+      var count = $('.preview-box').length;
+      //プレビューが3あるときは、投稿ボックスを消しておく
+      if (count == 3) {
+        $('.label-content').hide();
+      }
     }
 
     // ラベルのwidth操作
@@ -33,7 +53,7 @@ $(document).on('turbolinks:load', function(){
       //hidden-fieldのidの数値のみ取得
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       //labelボックスのidとforを更新
-      $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
+      $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_item_image`});
       //選択したfileのオブジェクトを取得
       var file = this.files[0];
       var reader = new FileReader();
@@ -58,12 +78,17 @@ $(document).on('turbolinks:load', function(){
           $('.label-content').hide();
         }
 
+        //プレビュー削除したフィールドにdestroy用のチェックボックスがあった場合、チェックを外す
+        if ($(`#item_item_images_attributes_${id}__destroy`)){
+          $(`#item_item_images_attributes_${id}__destroy`).prop('checked',false);
+        } 
+
         //ラベルのwidth操作
         setLabel();
         //ラベルのidとforの値を変更
         if(count < 3){
           //プレビューの数でラベルのオプションを更新する
-          $('.label-box').attr({id: `label-box--${count}`,for: `item_images_attributes_${count}_image`});
+          $('.label-box').attr({id: `label-box--${count}`,for: `item_item_images_attributes_${count}_item_image`});
         }
       }
     });
@@ -76,21 +101,53 @@ $(document).on('turbolinks:load', function(){
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       //取得したidに該当するプレビューを削除
       $(`#preview-box__${id}`).remove();
-      console.log("new")
+
+      //新規投稿時
+      //削除用チェックボックスの有無で判定
+      if ($(`#item_item_images_attributes_${id}__destroy`).length == 0) {
+        //フォームの中身を削除 
+        $(`#item_item_images_attributes_${id}_item_image`).val("");
+        var count = $('.preview-box').length;
+        //3個めが消されたらラベルを表示
+        if (count == 2) {
+          $('.label-content').show();
+        }
+        setLabel(count);
+        if(id < 3){
+          $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_item_image`});
+
+        }
+      } else {
+        //投稿編集時
+        $(`#item_item_images_attributes_${id}__destroy`).prop('checked',true);
+        //3個めが消されたらラベルを表示
+        if (count == 2) {
+          $('.label-content').show();
+        }
+
+        //ラベルのwidth操作
+        setLabel();
+        //ラベルのidとforの値を変更
+        //削除したプレビューのidによって、ラベルのidを変更する
+        if(id < 3){
+          $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_item_image`});
+        }
+      }
+
       //フォームの中身を削除 
-      $(`#item_images_attributes_${id}_image`).val("");
+      $(`#item_item_images_attributes_${id}_item_image`).val("");
 
       //削除時のラベル操作
       var count = $('.preview-box').length;
       //3個めが消されたらラベルを表示
-      if (count == 4) {
+      if (count == 2) {
         $('.label-content').show();
       }
       setLabel(count);
 
       if(id < 3){
         //削除された際に、空っぽになったfile_fieldをもう一度入力可能にする
-        $('.label-box').attr({id: `label-box--${id}`,for: `item_images_attributes_${id}_image`});
+        $('.label-box').attr({id: `label-box--${id}`,for: `item_item_images_attributes_${id}_item_image`});
       }
     });
   });
