@@ -1,4 +1,5 @@
--# 商品出品ページ メインコンテンツ
+-# 商品出品ページ 編集コンテンツ
+
 .head-logo
   =image_tag '/assets/logo.png', class:"logo"
 
@@ -59,10 +60,13 @@
         .seller__in__genre__categoly
           %h2 カテゴリー
           %span 必須
-        .seller__in__genre__input  
+        .seller__in__genre__input
           .seller__in__genre__input__box
-            = f.collection_select :category_id,Category.roots, :id,:name,{include_blank: "---"},required: true, class: 'listing-select-wrapper__box--select', id: 'parent_category'
-
+            = f.collection_select :category_id, Category.roots, :id,:name,{include_blank: "---",selected: @item.category.parent.parent.id}, required: true, class: 'listing-select-wrapper__box--select', id: 'parent_category'
+            
+            = f.collection_select :category_id, @item.category.parent.siblings, :id,:name,{include_blank: "---",selected: @item.category.parent.id}, required: true, class: 'listing-select-wrapper__box--select', id: 'children_input'
+        
+            = f.collection_select :category_id, @item.category.siblings, :id,:name,{include_blank: "---",selected: @item.category.id}, required: true, class: 'listing-select-wrapper__box--select', id: 'grandchildren_input'
         .seller__in__genre__size
           %h2 サイズ
           %span 必須
@@ -120,7 +124,7 @@
           %li ー
 
       .seller__in__sale
-        %input.seller__in__sale__input{type: "submit", value: "出品する"}
+        %input.seller__in__sale__input{type: "submit", value: "更新する"}
         %input.seller__in__sale__draft{type: "submit", value: "下書きに保存"} 
     .seller__in__retern
       = link_to "もどる","#",class: "retern"

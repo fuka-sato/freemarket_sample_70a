@@ -4,25 +4,8 @@
 
 -# 商品詳細ページ
 .details__breadcrumbs
-  %ul.details__breadcrumbs__text
-    %li.text__category
-      = link_to "#", class: "breadcrumbs__text" do
-        FURIMA
-    %li.text__category
-      = icon('fas', 'angle-right')
-    %li.text__category
-      = link_to "#", class: "breadcrumbs__text" do
-        ベビー・キッズ 
-    %li.text__category
-      = icon('fas', 'angle-right')
-    %li.text__category
-      = link_to "#", class: "breadcrumbs__text" do
-        ベビー服(男女兼用)~95cmアウター
-    %li.text__category
-      = icon('fas', 'angle-right')
-    %li.text__category
-      = link_to "#", class: "breadcrumbs__text" do
-        product3
+  - breadcrumb :show
+  = render "/items/bread-crumbs"
 
 -# 商品詳細メインコンテンツ
 .mainProduct
@@ -48,7 +31,7 @@
             = @item.delivery_price.delivery_price
 
         - if user_signed_in? && @item.seller_id == current_user.id 
-          = link_to "編集画面に進む", "#", class: "mainProduct__content__top__items__buy-if"
+          = link_to "編集画面に進む", edit_item_path(@item.id), class: "mainProduct__content__top__items__buy-if"
           .items-show-button__cancel
             = link_to '出品を取り消す', item_path(@item.id), method: :delete
         - else

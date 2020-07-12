@@ -82,4 +82,7 @@ gem 'pry-rails'
 gem 'ancestry'
 gem 'jquery-rails'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'mini_magick'
+gem 'gon'
+gem "gretel"
