@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
   validates_confirmation_of :password  
   attr_accessor :password_confirmation 
@@ -27,11 +27,9 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
   has_many :creditcards
   has_many :items
+  has_many :sns_credentials
 
-  # 購入未・済などを区別して取り出せるようにするアソシエーション
-  # has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
-  # has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
-  # has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
+  
 end
 
 
