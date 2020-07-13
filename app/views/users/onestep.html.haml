@@ -12,7 +12,8 @@
         %button.new-user_registration__main__in__form__f(type="id")
           Facebookでログイン
         %button.new-user_registration__main__in__form__g(type="id")
-          Googleでログイン
+          = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
+
 
   .new-user_registration__footer
     %ul.new-user_registration__footer__etc
