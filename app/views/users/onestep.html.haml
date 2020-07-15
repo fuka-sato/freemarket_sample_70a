@@ -10,7 +10,7 @@
         .new-user_registration__main__in__form__new
           = link_to "メールアドレスで登録する" ,new_user_registration_path
         %button.new-user_registration__main__in__form__f(type="id")
-          Facebookでログイン
+          = link_to 'Facebookで登録する', user_facebook_omniauth_authorize_path, method: :post
         %button.new-user_registration__main__in__form__g(type="id")
           = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
 

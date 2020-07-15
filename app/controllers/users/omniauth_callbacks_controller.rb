@@ -5,6 +5,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     authorization
   end
 
+  def facebook
+    authorization
+  end
+
   def failure
     redirect_to root_path
   end
