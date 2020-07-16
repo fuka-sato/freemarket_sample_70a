@@ -10,9 +10,9 @@
           = link_to "新規会員登録" ,new_user_registration_path
       .login__main__in__form
         %button.login__main__in__form__f(type="id")
-          facebookでログイン
+          = link_to 'facebookでログイン', user_facebook_omniauth_authorize_path, method: :post
         %button.login__main__in__form__g(type="id")
-          googleでログイン
+          = link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post
       .login__main__in__form
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .login__main__in__form__input

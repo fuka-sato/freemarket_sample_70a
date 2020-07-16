@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable
+  :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2,:facebook]
 
   validates_confirmation_of :password  
   attr_accessor :password_confirmation 
@@ -27,11 +27,22 @@ class User < ApplicationRecord
   accepts_nested_attributes_for :profile
   has_many :creditcards
   has_many :items
+  has_many :sns_credentials
 
-  # 購入未・済などを区別して取り出せるようにするアソシエーション
-  # has_many :buyed_items, foreign_key: "buyer_id", class_name: "Item"
-  # has_many :saling_items, -> { where("buyer_id is NULL") }, foreign_key: "saler_id", class_name: "Item"
-  # has_many :sold_items, -> { where("buyer_id is not NULL") }, foreign_key: "saler_id", class_name: "Item"
+  def self.from_omniauth(auth)
+    sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
+    # sns認証したことがあればアソシエーションで取得
+    # 無ければemailでユーザー検索して取得orビルド(保存はしない)
+    user = sns.user || User.where(email:auth.info.email).first_or_initialize(
+      nickname: auth.info.name,
+      email: auth.info.email
+    )
+    if user.persisted?
+      sns.user = user
+      sns.save
+    end
+    user
+  end
 end
 
 

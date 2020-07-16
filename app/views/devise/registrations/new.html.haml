@@ -41,7 +41,7 @@
             %span必須
             %br
             .sign_up__main__in__form__input__name-kanji__box
-              = f.fields_for :profile do |f|
+              = f.fields_for :profile, @user.build_profile do |f|
                 = f.text_field :family_name, class: 'fami-box', placeholder: '例）山田'          
                 = f.text_field :first_name, class: 'input-box', placeholder: '例）彩'  
 
@@ -50,7 +50,7 @@
             %span必須
             %br
             .sign_up__main__in__form__input__name-katakana__box
-              = f.fields_for :profile do |f|
+              = f.fields_for :profile,@user.build_profiledo |f|
                 = f.text_field :family_name_kana, class: 'fami-box', placeholder: '例）ヤマダ'          
                 = f.text_field :first_name_kana, class: 'input-box', placeholder: '例）アヤ'  
 
@@ -59,7 +59,7 @@
             %span必須
             %br
             .select
-              = f.fields_for :profile do |f|
+              = f.fields_for :profile,@user.build_profile do |f|
                 = f.date_select :birth_day, use_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1), date_separator: '/ '
             
             %p.sign_up__main__in__form__input__birth__text

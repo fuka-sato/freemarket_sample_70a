@@ -61,6 +61,7 @@
             width: 345px;
             padding: 5px;
             border-radius: 4px;
+            text-decoration: none;
             }
           }
 
@@ -70,12 +71,22 @@
           border: 1px solid transparent;
           margin-top: 15px;
           padding: 5px;
+
+          a {
+            color: #fff;
+            text-decoration: none;
+          }
         }
         &__g {
           background: #fff;
           border: 1px solid;
           margin-top: 15px;
           padding: 5px;
+
+          a {
+            color: black;
+            text-decoration: none;
+          }
         }
         &__input {
           input {
