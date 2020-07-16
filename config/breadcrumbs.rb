@@ -13,6 +13,21 @@ crumb :show do
   parent :root
 end
 
+crumb :creditcard1 do
+  link "お支払方法", card_users_path(current_user)
+  parent :user
+end
+
+crumb :creditcard2 do
+  link "クレジットカード登録", creditcard_path(current_user)
+  parent :creditcard1
+end
+
+crumb :exit do
+  link "ログアウト", destroy_user_session_path(current_user)
+  parent :user
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
