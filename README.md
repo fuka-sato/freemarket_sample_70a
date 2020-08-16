@@ -87,10 +87,9 @@ Pass: 2222<br>
 ### 新規登録画面
 ![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E6%96%B0%E8%A6%8F%E4%BC%9A%E5%93%A1%E7%99%BB%E9%8C%B2%E7%94%BB%E9%9D%A2.png)
 
-### 出品画面<br>
+### 出品画面①<br>
 ![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E5%87%BA%E5%93%81%E7%94%BB%E9%9D%A2%E2%91%A0.png)
-<br>
-<br>
+### 出品画面②<br>
 ![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E5%87%BA%E5%93%81%E7%94%BB%E9%9D%A2%E2%91%A1.png)
 
 ### 商品詳細画面
