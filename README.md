@@ -1,6 +1,6 @@
  # README
 
-## アプリ名
+# アプリ名
 freemarket_sample_70a
 
 ## アプリの概要
@@ -11,6 +11,7 @@ freemarket_sample_70a
 ・facebook/googele での omniauth 認証(ローカル環境のみ)<br>
 ・商品出品機能（画像複数枚投稿とプレビュー機能、多階層カテゴリー機能つき）<br>
 ・payjpを用いた商品購入機能
+
 
 ## 開発状況
 開発体制<br>
@@ -81,18 +82,24 @@ Pass: 2222<br>
 
 ## デモ
 トップページ<br>
-
+![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E3%83%88%E3%83%83%E3%83%97%E3%83%9A%E3%83%BC%E3%82%B8.png)
+<br>
 新規登録画面<br>
-
+![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E6%96%B0%E8%A6%8F%E4%BC%9A%E5%93%A1%E7%99%BB%E9%8C%B2%E7%94%BB%E9%9D%A2.png)
+<br>
 出品画面<br>
-
+![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E5%87%BA%E5%93%81%E7%94%BB%E9%9D%A2%E2%91%A0.png)
+<br>
+![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E5%87%BA%E5%93%81%E7%94%BB%E9%9D%A2%E2%91%A1.png)
+<br>
 商品詳細画面<br>
-
+![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E8%A9%B3%E7%B4%B0%E7%94%BB%E9%9D%A2.png)
+<br>
 マイページ<br>
+![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E3%83%9E%E3%82%A4%E3%83%9A%E3%83%BC%E3%82%B8.png)
 
 
 # DB設計
-
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
