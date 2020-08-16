@@ -125,9 +125,7 @@ Pass: 2222<br>
 |first_name|string|null :false|
 |family_name_kana|string|null :false|
 |first_name_kana|string|null :false|
-|birth_year|integer|null :false|
-|birth_month|integer|null :false|
-|birth_day|integer|null :false|
+|birth_day|date|null :false|
 
 ### Association
 - belongs_to :user
@@ -137,8 +135,8 @@ Pass: 2222<br>
 |------|----|-------|
 |name|string|null :false|
 |discription|text|null :false|
+|buyer_id|integer||
 |seller_id|references|null :false, foreign_key: true|
-|buyer_id|references|null :false, foreign_key: true|
 |category_id|references|null :false, foreign_key: true|
 |brand_id|references|foreign_key: true|
 |size_id|references|null :false, foreign_key: true|
@@ -176,7 +174,7 @@ Pass: 2222<br>
 |city|string|null :false|
 |address|string|null :false|
 |building_name|string||
-|telephone_number|integer||
+|telephone_number|string||
 
 ### Association
 - belongs_to :user
