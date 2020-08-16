@@ -63,10 +63,10 @@ Pass: 2222<br>
 
 ### サーバーサイド
 ■ユーザー新規登録/ログインとSNSのAPIを用いた新規登録、ログイン（ローカルのみ）<br>
-■商品出品機能
-■商品編集機能
-■商品削除機能
-■商品詳細表示機能
+■商品出品機能<br>
+■商品編集機能<br>
+■商品削除機能<br>
+■商品詳細表示機能<br>
 
 
 ## 工夫点
@@ -81,21 +81,21 @@ Pass: 2222<br>
 また、実装が難しいと言われている部分は自身の知識の向上のために、できるだけ関わるようにしていました。
 
 ## デモ
-トップページ<br>
+### トップページ
 ![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E3%83%88%E3%83%83%E3%83%97%E3%83%9A%E3%83%BC%E3%82%B8.png)
-<br>
-新規登録画面<br>
+
+### 新規登録画面
 ![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E6%96%B0%E8%A6%8F%E4%BC%9A%E5%93%A1%E7%99%BB%E9%8C%B2%E7%94%BB%E9%9D%A2.png)
-<br>
-出品画面<br>
+
+### 出品画面<br>
 ![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E5%87%BA%E5%93%81%E7%94%BB%E9%9D%A2%E2%91%A0.png)
 <br>
+<br>
 ![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E5%87%BA%E5%93%81%E7%94%BB%E9%9D%A2%E2%91%A1.png)
-<br>
-商品詳細画面<br>
+
+### 商品詳細画面
 ![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E8%A9%B3%E7%B4%B0%E7%94%BB%E9%9D%A2.png)
-<br>
-マイページ<br>
+### マイページ<br>
 ![画像名](https://github.com/fuka-sato/freemarket_sample_70a/blob/master/app/assets/images/%E3%83%9E%E3%82%A4%E3%83%9A%E3%83%BC%E3%82%B8.png)
 
 
