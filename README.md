@@ -20,7 +20,7 @@
 
 ## 使用言語
 ruby 2.5.1p57<br>
-Rails 5.0.7.2<br>
+Rails 5.2.4<br>
 MySQL<br>
 Haml<br>
 JavaScript<br>
